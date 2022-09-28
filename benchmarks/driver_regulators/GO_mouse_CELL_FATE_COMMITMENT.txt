@@ -1,0 +1,515 @@
+MGI Gene/Marker ID	Symbol	Name	Chr	Qualifier	Annotated Term	Context	Proteoform	Evidence	Inferred From	Reference(s)
+MGI:87911	Acvr1	activin A receptor, type 1	2		cardiac muscle cell fate commitment			ISO	Q04771 	J:164563 	
+MGI:87911	Acvr1	activin A receptor, type 1	2		endocardial cushion cell fate commitment			ISO	Q04771 	J:164563 	
+MGI:88039	Apc	APC, WNT signaling pathway regulator	18		cell fate specification			IBA	PTN000288612 	J:265628 	
+MGI:1346052	Apc2	APC regulator of WNT signaling pathway 2	10		cell fate specification			IBA	PTN000288612 	J:265628 	
+MGI:88064	Ar	androgen receptor	X		activation of prostate induction by androgen receptor signaling pathway	happens in prostate gland		IMP	MGI:3716756 	J:122327 	
+MGI:103264	Arhgef2	rho/rac guanine nucleotide exchange factor (GEF) 2	3		asymmetric neuroblast division			IMP		J:242973 	
+MGI:103264	Arhgef2	rho/rac guanine nucleotide exchange factor (GEF) 2	3		asymmetric neuroblast division			ISO	Q92974 	J:164563 	
+MGI:1097716	Arx	aristaless related homeobox	X		epithelial cell fate commitment	happens in body of stomach,results in a cell's commitment to type A cell of stomach|happens in pyloric antrum,results in a cell's commitment to type G enteroendocrine cell		IMP	MGI:3803178 	J:184887 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		commitment of neuronal cell to specific neuron type in forebrain	happens in diencephalon		IMP	MGI:1857470 	J:188110 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		neuroblast fate determination	happens in telencephalon ventricular layer,results in a cell's determination to become neuroblast (sensu Vertebrata)		IMP	MGI:1857470 	J:79854 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		neuroblast fate determination			IMP	MGI:1857470 	J:65410 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		neuron fate commitment			IDA		J:241054 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		neuron fate commitment	has the participant future spinal cord,results in a cell's commitment to interneuron		IGI	MGI:2151057 	J:100187 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		neuron fate commitment	has the participant retina,results in a cell's commitment to neuron		IMP	MGI:1857470 	J:151457 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		neuron fate commitment	has the participant spinal cord,results in a cell's commitment to interneuron		IMP	MGI:1857470 	J:110261 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		neuron fate commitment	has the participant olfactory lobe,results in a cell's commitment to sensory neuron|has the participant olfactory epithelium,results in a cell's commitment to sensory neuron		IMP	MGI:1857470 	J:82270 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		neuron fate specification			IDA		J:241054 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		neuron fate specification			IMP	MGI:1857470 	J:110059 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		noradrenergic neuron fate commitment			ISO	P50553 	J:164563 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		oligodendrocyte cell fate commitment	happens in cerebral cortex,results in a cell's commitment to oligodendrocyte		IMP	MGI:1857470 	J:132162 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		spinal cord oligodendrocyte cell fate specification	happens in spinal cord		IMP	MGI:1857470 	J:135661 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		subpallium neuron fate commitment	happens in cerebral cortex,results in a cell's commitment to CNS neuron (sensu Vertebrata)		IMP	MGI:1857470 	J:51598 	
+MGI:96919	Ascl1	achaete-scute family bHLH transcription factor 1	10		ventral spinal cord interneuron fate commitment			IMP		J:100187 	
+MGI:104654	Atoh1	atonal bHLH transcription factor 1	6		auditory receptor cell fate determination	happens in cochlea,results in a cell's determination to become auditory hair cell		IDA		J:104323 	
+MGI:104654	Atoh1	atonal bHLH transcription factor 1	6		auditory receptor cell fate specification			IMP	MGI:2155983 	J:55694 	
+MGI:2143322	AW551984	expressed sequence AW551984	9		cardiac muscle cell fate commitment			IGI	MGI:98956 	J:177756 	
+MGI:1859314	Barhl2	BarH like homeobox 2	5		cell fate commitment	happens in retina inner nuclear layer,has the participant amacrine cell		IDA		J:89191 	
+MGI:1859314	Barhl2	BarH like homeobox 2	5		cell fate determination			IMP		J:82674 	
+MGI:1859147	Batf	basic leucine zipper transcription factor, ATF-like	12		T-helper 17 cell lineage commitment			IMP		J:150643 J:190118 	
+MGI:88138	Bcl2	B cell leukemia/lymphoma 2	1		B cell lineage commitment	happens in bone marrow,results in a cell's commitment to B cell		IMP	MGI:2156165 	J:31364 	
+MGI:88138	Bcl2	B cell leukemia/lymphoma 2	1		CD8-positive, alpha-beta T cell lineage commitment	happens in bone marrow,results in a cell's commitment to CD8-positive, alpha-beta T cell|happens in thymus,results in a cell's commitment to CD8-positive, alpha-beta T cell|happens in spleen,results in a cell's commitment to CD8-positive, alpha-beta T cell|happens in lymph node,results in a cell's commitment to CD8-positive, alpha-beta T cell		IMP	MGI:2156165 	J:73660 	
+MGI:88138	Bcl2	B cell leukemia/lymphoma 2	1		T cell lineage commitment	happens in spleen,happens in T cell		IMP	MGI:2156165 	J:31364 	
+MGI:1929913	Bcl11b	B cell leukemia/lymphoma 11B	12		commitment of neuronal cell to specific neuron type in forebrain			IGI	MGI:2679336 	J:192361 	
+MGI:88177	Bmp2	bone morphogenetic protein 2	2		cell fate commitment	has the participant T cell		IMP		J:80062 	
+MGI:88180	Bmp4	bone morphogenetic protein 4	14		cell fate commitment	has the participant pro-T cell		IDA		J:80062 	
+MGI:88180	Bmp4	bone morphogenetic protein 4	14		mesodermal cell fate determination			IMP	MGI:1857137 	J:28717 	
+MGI:88180	Bmp4	bone morphogenetic protein 4	14		neuron fate commitment	has the participant trigeminal ganglion,results in a cell's commitment to peripheral neuron		IDA		J:126770 	
+MGI:88180	Bmp4	bone morphogenetic protein 4	14		neuron fate commitment	has the participant trigeminal ganglion,results in a cell's commitment to peripheral neuron		IMP	MGI:2158495 	J:126770 	
+MGI:88180	Bmp4	bone morphogenetic protein 4	14		regulation of cell fate commitment			ISO	P12644 	J:164563 	
+MGI:1338938	Bmpr1a	bone morphogenetic protein receptor, type 1A	14		regulation of lateral mesodermal cell fate specification			IGI	MGI:95522 	J:119568 	
+MGI:1338938	Bmpr1a	bone morphogenetic protein receptor, type 1A	14	NOT	regulation of neural crest cell fate specification			IMP		J:89521 	
+MGI:88190	Braf	Braf transforming gene	6		CD4-positive or CD8-positive, alpha-beta T cell lineage commitment			IMP	MGI:1857579 	J:131579 	
+MGI:5434104	Bvht	braveheart long non-coding RNA	18		cardiac cell fate commitment			IMP		J:207590 	
+MGI:107739	Casp3	caspase 3	8		cell fate commitment	happens in embryo,has the participant keratinocyte		IMP	MGI:2178778 	J:90057 	
+MGI:1196251	Casz1	castor zinc finger 1	4		negative regulation of retinal cone cell fate commitment			IMP	MGI:3052661 MGI:4841554 	J:219894 	
+MGI:1196251	Casz1	castor zinc finger 1	4		retinal rod cell fate commitment			IDA		J:219894 	
+MGI:1196251	Casz1	castor zinc finger 1	4		retinal rod cell fate commitment			IMP	MGI:3052661 MGI:4841554 	J:219894 	
+MGI:106211	Cdc42	cell division cycle 42	4		neuron fate determination	results in a cell's determination to become neuron		IMP	MGI:3619134 	J:113146 	
+MGI:2384876	Cdc73	cell division cycle 73, Paf1/RNA polymerase II complex component	1		endodermal cell fate commitment			IMP		J:149841 	
+MGI:1926387	Cdon	cell adhesion molecule-related/down-regulated by oncogenes	9		cell fate specification	has the participant diencephalon floor plate		IGI	MGI:98297 	J:108747 	
+MGI:1933172	Chrdl1	chordin-like 1	X		cell fate determination			ISO	RGD:735215 	J:155856 	
+MGI:88276	Ctnnb1	catenin (cadherin associated protein), beta 1	9		cell fate determination	happens in telencephalon,results in a cell's determination to become CNS neuron (sensu Vertebrata)		IMP	MGI:2148567 MGI:2176173 	J:96233 	
+MGI:88276	Ctnnb1	catenin (cadherin associated protein), beta 1	9		cell fate specification	results in a cell being specified to become chondrocyte|results in a cell being specified to become osteoblast		IMP	MGI:2148591 MGI:2148594 MGI:2450929 	J:98426 	
+MGI:88276	Ctnnb1	catenin (cadherin associated protein), beta 1	9		endodermal cell fate commitment	happens in foregut diverticulum endoderm,results in a cell's commitment to endodermal cell		IMP	MGI:1858007 MGI:2148567 	J:108981 	
+MGI:88276	Ctnnb1	catenin (cadherin associated protein), beta 1	9		glial cell fate determination			IDA		J:124867 	
+MGI:109345	Ctr9	CTR9 homolog, Paf1/RNA polymerase II complex component	7		endodermal cell fate commitment			IMP		J:149841 	
+MGI:88564	Ctsl	cathepsin L	13		CD4-positive, alpha-beta T cell lineage commitment			IMP		J:82888 	
+MGI:1921506	Cyld	CYLD lysine 63 deubiquitinase	8		CD4-positive or CD8-positive, alpha-beta T cell lineage commitment			IMP	MGI:3664438 	J:112392 	
+MGI:2176159	Cyp26b1	cytochrome P450, family 26, subfamily b, polypeptide 1	6		cell fate determination			IMP	MGI:3039046 	J:108333 	
+MGI:94867	Dbx1	developing brain homeobox 1	7		ventral spinal cord interneuron specification	happens in neural tube,results in a cell being specified to become interneuron		IMP	MGI:2182329 	J:70191 	
+MGI:94891	Dhh	desert hedgehog	15		cell fate specification			IBA	PTN001726121 	J:265628 	
+MGI:1329040	Dkk1	dickkopf WNT signaling pathway inhibitor 1	19		negative regulation of canonical Wnt signaling pathway involved in cardiac muscle cell fate commitment			ISO	O94907 	J:164563 	
+MGI:1329040	Dkk1	dickkopf WNT signaling pathway inhibitor 1	19		negative regulation of mesodermal cell fate specification			ISO	O94907 	J:164563 	
+MGI:1329040	Dkk1	dickkopf WNT signaling pathway inhibitor 1	19		positive regulation of heart induction by negative regulation of canonical Wnt signaling pathway			IDA		J:145669 	
+MGI:1329040	Dkk1	dickkopf WNT signaling pathway inhibitor 1	19		regulation of endodermal cell fate specification			ISO	O94907 	J:164563 	
+MGI:104659	Dll1	delta like canonical Notch ligand 1	17		auditory receptor cell fate commitment			NAS		J:56415 J:60836 	
+MGI:104659	Dll1	delta like canonical Notch ligand 1	17		endothelial tip cell fate specification			IMP		J:192694 	
+MGI:104659	Dll1	delta like canonical Notch ligand 1	17		lateral inhibition			IDA		J:143172 	
+MGI:104659	Dll1	delta like canonical Notch ligand 1	17		lateral inhibition			IMP		J:177887 	
+MGI:104659	Dll1	delta like canonical Notch ligand 1	17		neuron fate specification			IDA		J:143172 	
+MGI:104659	Dll1	delta like canonical Notch ligand 1	17		Notch signaling pathway involved in arterial endothelial cell fate commitment			IMP		J:148902 	
+MGI:1096877	Dll3	delta like canonical Notch ligand 3	7		cell fate determination			NAS		J:42455 	
+MGI:1859388	Dll4	delta like canonical Notch ligand 4	2		ventral spinal cord interneuron fate commitment			ISO	Q9NR61 	J:164563 	
+MGI:94901	Dlx1	distal-less homeobox 1	2		cerebral cortex GABAergic interneuron fate commitment	happens in cerebral cortex,results in a cell's commitment to GABAergic neuron		IGI	MGI:94902 	J:132162 	
+MGI:94902	Dlx2	distal-less homeobox 2	2		cerebral cortex GABAergic interneuron fate commitment	happens in cerebral cortex,results in a cell's commitment to GABAergic neuron		IGI	MGI:94901 	J:132162 	
+MGI:2449470	Dmrt3	doublesex and mab-3 related transcription factor 3	19		ventral spinal cord interneuron specification	happens in spinal cord		IMP	MGI:4420993 	J:187218 	
+MGI:2653629	Dmrta2	doublesex and mab-3 related transcription factor like family A2	4		neuron fate specification	results in a cell being specified to become embryonic stem cell		IMP		J:173231 	
+MGI:1914549	Dock7	dedicator of cytokinesis 7	4		establishment of neuroblast polarity			ISO	Q96N67 	J:164563 	
+MGI:894332	Ebf2	early B cell factor 2	14		cell fate determination	results in a cell's determination to become brown fat cell		IDA		J:198125 	
+MGI:2148922	Ehmt2	euchromatic histone lysine N-methyltransferase 2	17		neuron fate specification			IMP	MGI:4418499 	J:212015 	
+MGI:1335079	Elf5	E74-like factor 5	2		ectodermal cell fate commitment	happens in extraembryonic ectoderm		IGI	MGI:95456 	J:218169 	
+MGI:1201683	Eomes	eomesodermin	9		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:1201683	Eomes	eomesodermin	9		endodermal cell fate specification			IBA	PTN002601220 	J:265628 	
+MGI:1201683	Eomes	eomesodermin	9		endodermal cell fate specification			IMP	MGI:3774028 	J:168146 	
+MGI:109169	Epas1	endothelial PAS domain protein 1	17		myoblast fate commitment			IMP		J:167144 	
+MGI:2143991	Epop	elongin BC and polycomb repressive complex 2 associated protein	11		neuron fate commitment			IBA	PTN000573256 	J:265628 	
+MGI:2143991	Epop	elongin BC and polycomb repressive complex 2 associated protein	11		neuron fate commitment			IDA		J:200240 	
+MGI:2143991	Epop	elongin BC and polycomb repressive complex 2 associated protein	11		neuron fate commitment			IMP		J:200240 	
+MGI:104771	Erbb4	erb-b2 receptor tyrosine kinase 4	1		cell fate commitment	happens in pancreas body islets of Langerhans,has the participant type B pancreatic cell|happens in pancreas body islets of Langerhans,has the participant PP cell|happens in pancreas body islets of Langerhans,has the participant pancreatic D cell		IDA		J:80421 	
+MGI:1917326	Esrp1	epithelial splicing regulatory protein 1	4		regulation of inner ear auditory receptor cell fate specification			IMP		J:245876 	
+MGI:95456	Ets2	E26 avian leukemia oncogene 2, 3' domain	16		ectodermal cell fate commitment	happens in extraembryonic ectoderm		IGI	MGI:1335079 	J:218169 	
+MGI:99253	Etv2	ets variant 2	7		BMP signaling pathway involved in mesodermal cell fate specification			IDA		J:155850 	
+MGI:894663	Ext1	exostosin glycosyltransferase 1	15		cell fate commitment			IMP		J:160035 	
+MGI:109344	Eya1	EYA transcriptional coactivator and phosphatase 1	1		cell fate commitment	happens in otic pit epithelium,has the participant neuroblast (sensu Vertebrata)		IMP	MGI:1857803 	J:98114 	
+MGI:109344	Eya1	EYA transcriptional coactivator and phosphatase 1	1		cell fate commitment	happens in metanephric mesenchyme,has the participant mesenchymal stem cell		IMP	MGI:2150426 	J:100569 	
+MGI:109344	Eya1	EYA transcriptional coactivator and phosphatase 1	1		mesodermal cell fate specification			IDA		J:129070 	
+MGI:109344	Eya1	EYA transcriptional coactivator and phosphatase 1	1		neuron fate specification			IGI	MGI:102780 	J:184001 	
+MGI:2449712	Fev	FEV transcription factor, ETS family member	1		neuron fate specification			IMP	MGI:2449922 	J:165266 	
+MGI:1859823	Fezf2	Fez family zinc finger 2	14		commitment of neuronal cell to specific neuron type in forebrain	results in a cell's commitment to neuron of cerebral cortex		IGI	MGI:2679336 	J:192361 	
+MGI:1859823	Fezf2	Fez family zinc finger 2	14		commitment of neuronal cell to specific neuron type in forebrain	happens in cortical layer V,results in a cell's commitment to CNS neuron (sensu Vertebrata)		IMP	MGI:3046867 	J:174743 	
+MGI:1859823	Fezf2	Fez family zinc finger 2	14		commitment of neuronal cell to specific neuron type in forebrain	results in a cell's commitment to neuron of cerebral cortex		IMP	MGI:3525887 	J:192361 	
+MGI:1859823	Fezf2	Fez family zinc finger 2	14		neuron fate determination	results in a cell's determination to become glutamatergic neuron,results in a cell's determination to become motor neuron		IDA		J:214959 	
+MGI:95516	Fgf2	fibroblast growth factor 2	3		positive regulation of cell fate specification			ISO	P09038 	J:139252 	
+MGI:99604	Fgf8	fibroblast growth factor 8	19		cell fate commitment	happens in organ of Corti,has the participant pillar cell		IGI	MGI:1345138 	J:98303 	
+MGI:1099809	Fgf10	fibroblast growth factor 10	13		muscle cell fate commitment	results in a cell's commitment to smooth muscle cell		IMP	MGI:1859647 MGI:3629660 	J:98521 	
+MGI:109178	Fgf13	fibroblast growth factor 13	X	NOT	establishment of neuroblast polarity			IMP		J:186253 	
+MGI:109178	Fgf13	fibroblast growth factor 13	X		establishment of neuroblast polarity			IMP		J:186253 	
+MGI:95522	Fgfr1	fibroblast growth factor receptor 1	8		regulation of lateral mesodermal cell fate specification			IGI	MGI:1338938 	J:119568 	
+MGI:95523	Fgfr2	fibroblast growth factor receptor 2	7		cell fate commitment	happens in cerebral cortex,has the participant radial glial cell		IDA		J:94813 	
+MGI:95523	Fgfr2	fibroblast growth factor receptor 2	7		cell fate commitment			IMP	MGI:3629660 	J:114396 	
+MGI:95524	Fgfr3	fibroblast growth factor receptor 3	5		epithelial cell fate commitment	happens in small intestine,results in a cell's commitment to paneth cell		IMP	MGI:1931521 	J:151194 	
+MGI:1341070	Fkbp8	FK506 binding protein 8	8		cell fate specification	has the participant neural tube,results in a cell being specified to become CNS neuron (sensu Vertebrata)		IMP	MGI:3042750 	J:89364 	
+MGI:1341070	Fkbp8	FK506 binding protein 8	8		cell fate specification	has the participant neural tube		IMP	MGI:3042750 	J:138713 	
+MGI:1347472	Foxa1	forkhead box A1	12		neuron fate specification	happens in midbrain,results in a cell being specified to become dopaminergic neuron		IGI	MGI:1347476 	J:124122 	
+MGI:1347476	Foxa2	forkhead box A2	2		cell fate specification			IDA		J:130846 	
+MGI:1347476	Foxa2	forkhead box A2	2		neuron fate specification	happens in midbrain,results in a cell being specified to become dopaminergic neuron		IGI	MGI:1347472 	J:124122 	
+MGI:1347476	Foxa2	forkhead box A2	2		neuron fate specification	happens in future hindbrain,results in a cell being specified to become serotonergic neuron		IMP	MGI:2176222 MGI:2177337 	J:128441 	
+MGI:1347481	Foxc2	forkhead box C2	8		paraxial mesodermal cell fate commitment			IMP	MGI:1857865 	J:39636 	
+MGI:1347464	Foxg1	forkhead box G1	12		neuron fate determination	results in a cell's determination to become pyramidal neuron		IDA		J:188355 	
+MGI:102949	Foxn1	forkhead box N1	11		T cell lineage commitment			IMP		J:207150 	
+MGI:2151057	Foxn4	forkhead box N4	5		neuron fate commitment	has the participant future spinal cord,results in a cell's commitment to interneuron		IGI	MGI:96919 	J:100187 	
+MGI:2151057	Foxn4	forkhead box N4	5		ventral spinal cord interneuron fate commitment			IMP		J:100187 J:128001 	
+MGI:1891436	Foxp3	forkhead box P3	X		CD4-positive, CD25-positive, alpha-beta regulatory T cell lineage commitment			TAS		J:136164 	
+MGI:108570	Fzd7	frizzled class receptor 7	1		negative regulation of ectodermal cell fate specification			ISO	O75084 	J:164563 	
+MGI:95639	Gap43	growth associated protein 43	16		cell fate commitment			IMP		J:96764 	
+MGI:95655	Gas1	growth arrest specific 1	13		cell fate commitment	happens in neural tube floor plate		IGI	MGI:98297 	J:121553 	
+MGI:95655	Gas1	growth arrest specific 1	13		cell fate commitment			IMP	MGI:2388397 	J:70735 	
+MGI:95655	Gas1	growth arrest specific 1	13		cell fate commitment	happens in neural tube floor plate		IMP	MGI:3711070 	J:121553 	
+MGI:95661	Gata1	GATA binding protein 1	X		cell fate commitment			IBA	PTN000800998 	J:265628 	
+MGI:95661	Gata1	GATA binding protein 1	X		eosinophil fate commitment			ISO	P15976 	J:164563 	
+MGI:95662	Gata2	GATA binding protein 2	6		cell fate commitment			IBA	PTN000800998 	J:265628 	
+MGI:95662	Gata2	GATA binding protein 2	6		cell fate determination			IDA		J:70561 	
+MGI:95662	Gata2	GATA binding protein 2	6		commitment of neuronal cell to specific neuron type in forebrain	happens in diencephalon		IMP	MGI:4818492 	J:188110 	
+MGI:95662	Gata2	GATA binding protein 2	6		eosinophil fate commitment			ISO	P23769 	J:164563 	
+MGI:95662	Gata2	GATA binding protein 2	6		neuron fate commitment	has the participant midbrain,results in a cell's commitment to GABAergic neuron|has the participant rhombomere 1,results in a cell's commitment to serotonergic neuron		IMP	MGI:4818492 	J:143527 	
+MGI:95663	Gata3	GATA binding protein 3	2		cell fate commitment			IBA	PTN000800998 	J:265628 	
+MGI:95663	Gata3	GATA binding protein 3	2		cell fate determination	results in a cell's determination to become epidermal cell		IDA		J:85304 	
+MGI:95664	Gata4	GATA binding protein 4	14		cell fate commitment			IBA	PTN000800998 	J:265628 	
+MGI:95664	Gata4	GATA binding protein 4	14		epithelial cell fate commitment	happens in jejunum,results in a cell's commitment to goblet cell		IMP	MGI:3053826 MGI:3526854 	J:117570 	
+MGI:109497	Gata5	GATA binding protein 5	2		cell fate commitment			IBA	PTN000800998 	J:265628 	
+MGI:107516	Gata6	GATA binding protein 6	18		cell fate commitment			IBA	PTN000800998 	J:265628 	
+MGI:107516	Gata6	GATA binding protein 6	18		endodermal cell fate determination			IDA		J:159322 	
+MGI:95667	Gbx1	gastrulation brain homeobox 1	5		neuron fate commitment	happens in spinal cord dorsal horn,results in a cell's commitment to GABAergic interneuron		IMP		J:201154 	
+MGI:108045	Gcm1	glial cells missing homolog 1	9		astrocyte fate commitment	happens in brain,results in a cell's commitment to astrocyte		IDA		J:109989 	
+MGI:95686	Gdf3	growth differentiation factor 3	6		regulation of cell fate commitment			ISO	Q9NR23 	J:164563 	
+MGI:95690	Gdf7	growth differentiation factor 7	12		cell fate commitment	happens in future spinal cord neural crest,has the participant sensory neuron		IDA		J:99238 	
+MGI:103170	Gfi1	growth factor independent 1 transcription repressor	5		cell fate commitment	happens in crypt of lieberkuhn,has the participant paneth cell		IMP	MGI:2449921 	J:102106 	
+MGI:103170	Gfi1	growth factor independent 1 transcription repressor	5		negative regulation of cell fate specification	regulates a function/process that happens in crypt of lieberkuhn,regulates a cell's specification to goblet cell		IMP	MGI:2449921 	J:102106 	
+MGI:103170	Gfi1	growth factor independent 1 transcription repressor	5		positive regulation of cell fate specification	regulates a function/process that happens in crypt of lieberkuhn,regulates a cell's specification to enteroendocrine cell		IMP	MGI:2449921 	J:102106 	
+MGI:95728	Gli2	GLI-Kruppel family member GLI2	1		smoothened signaling pathway involved in spinal cord motor neuron cell fate specification	happens in future spinal cord,happens in motor neuron		IGI	MGI:95729 	J:92067 	
+MGI:95728	Gli2	GLI-Kruppel family member GLI2	1		smoothened signaling pathway involved in ventral spinal cord interneuron specification	happens in future spinal cord,happens in interneuron		IGI	MGI:95729 	J:92067 	
+MGI:95729	Gli3	GLI-Kruppel family member GLI3	13		neuron fate commitment	has the participant cerebral cortex,results in a cell's commitment to Cajal-Retzius cell		IMP	MGI:1856276 	J:103594 	
+MGI:95729	Gli3	GLI-Kruppel family member GLI3	13		smoothened signaling pathway involved in spinal cord motor neuron cell fate specification	happens in future spinal cord,happens in motor neuron		IGI	MGI:95728 	J:92067 	
+MGI:95729	Gli3	GLI-Kruppel family member GLI3	13		smoothened signaling pathway involved in ventral spinal cord interneuron specification	happens in future spinal cord,happens in interneuron		IGI	MGI:95728 	J:92067 	
+MGI:2386723	Glis1	GLIS family zinc finger 1	4		negative regulation of cell fate commitment			IMP		J:273557 	
+MGI:95841	Gsc	goosecoid homeobox	12		neural crest cell fate specification			ISO	P56915 	J:164563 	
+MGI:95842	Gsx1	GS homeobox 1	5		neuron fate commitment	has the participant spinal cord,results in a cell's commitment to inhibitory interneuron		IGI	MGI:95843 	J:110261 	
+MGI:95843	Gsx2	GS homeobox 2	5		neuron fate commitment	has the participant spinal cord,results in a cell's commitment to inhibitory interneuron		IGI	MGI:95842 	J:110261 	
+MGI:95843	Gsx2	GS homeobox 2	5		neuron fate specification	happens in neural tube lateral wall,results in a cell being specified to become CNS interneuron		IMP	MGI:2150162 	J:98802 	
+MGI:95843	Gsx2	GS homeobox 2	5		subpallium neuron fate commitment	happens in telencephalon,results in a cell's commitment to CNS neuron (sensu Vertebrata)		IMP	MGI:2150162 	J:66590 	
+MGI:103577	Hand1	heart and neural crest derivatives expressed 1	11		cell fate determination			NAS		J:152657 	
+MGI:104853	Hes1	hes family bHLH transcription factor 1	16		cell fate commitment	happens in lung,has the participant club cell		IMP	MGI:2149672 	J:64088 	
+MGI:104853	Hes1	hes family bHLH transcription factor 1	16		lateral inhibition	has the participant nasal pit epithelium		IMP	MGI:2149672 	J:62024 	
+MGI:104853	Hes1	hes family bHLH transcription factor 1	16		negative regulation of cell fate determination	regulates a cell's commitment to auditory hair cell		IMP	MGI:2149672 	J:70081 	
+MGI:104876	Hes5	hes family bHLH transcription factor 5	4		glial cell fate commitment	happens in retina,results in a cell's commitment to Mueller cell		IMP	MGI:2149674 	J:62537 	
+MGI:1341884	Hey2	hairy/enhancer-of-split related with YRPW motif 2	10		cell fate commitment	has the participant pillar cell		IMP		J:144981 	
+MGI:98505	Hnf1b	HNF1 homeobox B	11		endodermal cell fate specification			IMP	MGI:1857856 	J:139252 	
+MGI:96174	Hoxa2	homeobox A2	6		cell fate commitment	happens in 2nd branchial arch mesenchyme derived from neural crest,has the participant mesenchymal stem cell		IMP	MGI:1857530 	J:16389 	
+MGI:96174	Hoxa2	homeobox A2	6		cell fate commitment	happens in 2nd branchial arch mesenchyme derived from neural crest,has the participant mesenchymal stem cell		IMP	MGI:1857626 	J:16388 	
+MGI:96174	Hoxa2	homeobox A2	6		cell fate determination	happens in 2nd branchial arch		IMP	MGI:2385711 	J:102845 	
+MGI:96172	Hoxa11	homeobox A11	6		mesodermal cell fate specification			IDA		J:129070 	
+MGI:96173	Hoxa13	homeobox A13	6		endothelial cell fate specification			IMP	MGI:2152356 	J:136953 	
+MGI:96192	Hoxc10	homeobox C10	15		spinal cord motor neuron cell fate specification	happens in L1 vertebral cartilage condensation,results in a cell being specified to become motor neuron|happens in L2 vertebral cartilage condensation,results in a cell being specified to become motor neuron		IGI	MGI:96202 	J:130489 	
+MGI:96202	Hoxd10	homeobox D10	2		spinal cord motor neuron cell fate specification	happens in L1 vertebral cartilage condensation|happens in L2 vertebral cartilage condensation		IGI	MGI:96192 	J:130489 	
+MGI:96397	Id2	inhibitor of DNA binding 2	12		neuron fate commitment			IMP		J:163127 	
+MGI:96533	Ihh	Indian hedgehog	1		camera-type eye photoreceptor cell fate commitment			IMP	MGI:1934258 	J:139168 	
+MGI:96533	Ihh	Indian hedgehog	1		cell fate specification			IBA	PTN001726121 	J:265628 	
+MGI:96533	Ihh	Indian hedgehog	1		cell fate specification			IMP	MGI:1934258 	J:139168 	
+MGI:96556	Il4	interleukin 4	11		T-helper 1 cell lineage commitment			IGI	MGI:103034 	J:165738 	
+MGI:96559	Il6	interleukin 6	5		T-helper 17 cell lineage commitment			IDA		J:260609 	
+MGI:96559	Il6	interleukin 6	5		T-helper 17 cell lineage commitment			IMP		J:115922 	
+MGI:105304	Il6ra	interleukin 6 receptor, alpha	3		T-helper 17 cell lineage commitment			IDA		J:260609 	
+MGI:96561	Il7	interleukin 7	3		T cell lineage commitment	happens in thymus,happens in T cell		IMP	MGI:1857652 	J:42039 	
+MGI:1932410	Il23a	interleukin 23, alpha subunit p19	10		positive regulation of T-helper 17 cell lineage commitment			IBA	PTN000409283 	J:265628 	
+MGI:1932410	Il23a	interleukin 23, alpha subunit p19	10		positive regulation of T-helper 17 cell lineage commitment			IDA		J:150655 	
+MGI:1096873	Irf4	interferon regulatory factor 4	13		T-helper 17 cell lineage commitment			IMP		J:190118 	
+MGI:101791	Isl1	ISL1 transcription factor, LIM/homeodomain	13		cardiac cell fate determination	happens in embryo		IMP		J:158135 	
+MGI:101791	Isl1	ISL1 transcription factor, LIM/homeodomain	13		cardiac cell fate determination			ISO	P61371 	J:164563 	
+MGI:101791	Isl1	ISL1 transcription factor, LIM/homeodomain	13		neuron fate commitment	has the participant spinal cord,results in a cell's commitment to motor neuron		IGI	MGI:109156 	J:89755 	
+MGI:101791	Isl1	ISL1 transcription factor, LIM/homeodomain	13		neuron fate specification			IBA	PTN001197637 	J:265628 	
+MGI:101791	Isl1	ISL1 transcription factor, LIM/homeodomain	13		neuron fate specification			IMP		J:141110 	
+MGI:101791	Isl1	ISL1 transcription factor, LIM/homeodomain	13		spinal cord motor neuron cell fate specification	happens in future spinal cord		IGI	MGI:102673 	J:152175 	
+MGI:109156	Isl2	insulin related protein 2 (islet 2)	9		neuron fate commitment	has the participant spinal cord,results in a cell's commitment to motor neuron		IGI	MGI:101791 	J:89755 	
+MGI:109156	Isl2	insulin related protein 2 (islet 2)	9		neuron fate commitment	has the participant spinal cord,results in a cell's commitment to motor neuron		IMP	MGI:3046260 	J:89755 	
+MGI:109156	Isl2	insulin related protein 2 (islet 2)	9		neuron fate specification			IBA	PTN001197637 	J:265628 	
+MGI:109156	Isl2	insulin related protein 2 (islet 2)	9		spinal cord motor neuron cell fate specification	happens in future spinal cord		IGI	MGI:102673 	J:152175 	
+MGI:96610	Itgb1	integrin beta 1 (fibronectin receptor beta)	8		cell fate specification	results in a cell being specified to become cardiac muscle myoblast		IMP	MGI:2154539 	J:37583 	
+MGI:1098270	Jag2	jagged 2	12		auditory receptor cell fate commitment			IMP		J:53432 	
+MGI:1098270	Jag2	jagged 2	12		cell fate determination			NAS		J:63637 	
+MGI:2448492	Kdm6b	KDM1 lysine (K)-specific demethylase 6B	11		cell fate commitment			IMP		J:139680 	
+MGI:96683	Kdr	kinase insert domain protein receptor	5		cell fate commitment			IMP		J:81796 	
+MGI:1333883	Lats1	large tumor suppressor	10		inner cell mass cell fate commitment			IGI	MGI:1354386 	J:199456 	
+MGI:1354386	Lats2	large tumor suppressor 2	14		inner cell mass cell fate commitment			IGI	MGI:1333883 	J:199456 	
+MGI:104867	Lbx1	ladybird homeobox 1	19		neuron fate commitment	has the participant neural tube,results in a cell's commitment to neuron		IMP	MGI:1352738 	J:76659 	
+MGI:104867	Lbx1	ladybird homeobox 1	19		neuron fate determination	happens in spinal cord roof plate,results in a cell's determination to become glutamatergic neuron|happens in spinal cord roof plate,results in a cell's determination to become GABAergic neuron|happens in spinal cord lateral wall,results in a cell's determination to become glutamatergic neuron|happens in spinal cord lateral wall,results in a cell's determination to become GABAergic neuron		IGI	MGI:1351209 	J:102513 	
+MGI:104867	Lbx1	ladybird homeobox 1	19		neuron fate determination	happens in spinal cord roof plate,results in a cell's determination to become GABAergic neuron|happens in spinal cord lateral wall,results in a cell's determination to become GABAergic neuron		IMP	MGI:2182635 	J:102513 	
+MGI:2685031	Leo1	Leo1, Paf1/RNA polymerase II complex component	9		endodermal cell fate commitment			IMP		J:149841 	
+MGI:102673	Lhx3	LIM homeobox protein 3	2		spinal cord motor neuron cell fate specification	happens in future spinal cord		IGI	MGI:101791 MGI:109156 	J:152175 	
+MGI:102673	Lhx3	LIM homeobox protein 3	2		ventral spinal cord interneuron specification			IDA		J:152175 	
+MGI:1306803	Lhx6	LIM homeobox protein 6	2		forebrain neuron fate commitment	happens in cerebral cortex,results in a cell's commitment to inhibitory interneuron		IGI	MGI:108067 	J:135983 	
+MGI:109360	Lmo4	LIM domain only 4	3		regulation of cell fate specification	regulates a cell's specification to interneuron		IMP	MGI:3664560 	J:147271 	
+MGI:1337004	Loxl3	lysyl oxidase-like 3	6		negative regulation of T-helper 17 cell lineage commitment			IMP		J:239159 	
+MGI:96885	Ly9	lymphocyte antigen 9	1		T-helper 17 cell lineage commitment			ISO	Q9HBG7 	J:164563 	
+MGI:99458	Mef2c	myocyte enhancer factor 2C	13		cell fate commitment	has the participant common lymphoid progenitor		IMP	MGI:3603182 	J:146135 	
+MGI:99458	Mef2c	myocyte enhancer factor 2C	13		muscle cell fate determination	happens in skeletal muscle tissue,results in a cell's determination to become slow muscle cell		IMP	MGI:3718323 	J:127416 	
+MGI:1316736	Men1	multiple endocrine neoplasia 1	19		osteoblast fate commitment			IGI	MGI:109452 MGI:1328787 MGI:99829 	J:93345 	
+MGI:107785	Mesp1	mesoderm posterior 1	7		cardiac cell fate determination			IDA		J:159135 	
+MGI:107785	Mesp1	mesoderm posterior 1	7		negative regulation of endodermal cell fate specification			IDA		J:159135 	
+MGI:107785	Mesp1	mesoderm posterior 1	7		negative regulation of mesodermal cell fate specification			IDA		J:159135 	
+MGI:107785	Mesp1	mesoderm posterior 1	7		positive regulation of heart induction by negative regulation of canonical Wnt signaling pathway			IDA		J:145669 	
+MGI:1352483	Mga	MAX gene associated	2		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:3629953	Mir450b	microRNA 450b	X		epidermal cell fate specification			ISO	100126302 	J:190177 	
+MGI:3629953	Mir450b	microRNA 450b	X		epithelial cell fate commitment			ISO	100126302 	J:190177 	
+MGI:104554	Mitf	melanogenesis associated transcription factor	6		cell fate commitment			IMP	MGI:1856085 	J:94374 	
+MGI:109160	Mnx1	motor neuron and pancreas homeobox 1	5		spinal cord motor neuron cell fate specification			IBA	PTN002803306 	J:265628 	
+MGI:109160	Mnx1	motor neuron and pancreas homeobox 1	5		spinal cord motor neuron cell fate specification			IMP	MGI:2182358 MGI:2182361 MGI:2182363 	J:57340 	
+MGI:1928394	Mtor	mechanistic target of rapamycin kinase	4		T-helper 1 cell lineage commitment			IMP		J:233777 	
+MGI:97272	Myl2	myosin, light polypeptide 2, regulatory, cardiac, slow	5		muscle cell fate specification			IMP		J:19811 	
+MGI:97275	Myod1	myogenic differentiation 1	7		myoblast fate determination			IDA		J:82185 	
+MGI:6278009	Myoparr	myogenin promoter-associated myogenic regulatory antisense lncRNA	1		myoblast fate specification			IDA		J:271538 	
+MGI:1100511	Myt1l	myelin transcription factor 1-like	12		neuron fate commitment			IDA		J:240999 J:241054 	
+MGI:1100511	Myt1l	myelin transcription factor 1-like	12		neuron fate specification			IDA		J:240999 J:241054 	
+MGI:1919200	Nanog	Nanog homeobox	6		endodermal cell fate specification			ISO	Q9H9S0 	J:168146 	
+MGI:1919200	Nanog	Nanog homeobox	6		mesodermal cell fate commitment	results in a cell's commitment to mesodermal cell		IGI	MGI:109452 	J:111703 	
+MGI:1919200	Nanog	Nanog homeobox	6		negative regulation of cell fate commitment	regulates a cell's commitment to mesodermal cell		IDA		J:111703 	
+MGI:1919200	Nanog	Nanog homeobox	6		negative regulation of cell fate commitment	regulates a cell's commitment to mesodermal cell		IGI	MGI:109452 	J:111703 	
+MGI:1919200	Nanog	Nanog homeobox	6		negative regulation of endodermal cell fate specification			TAS		J:114820 	
+MGI:1339708	Neurod1	neurogenic differentiation 1	2		cell fate commitment	happens in retina layer,has the participant amacrine cell		IGI	MGI:108055 	J:74573 	
+MGI:1339708	Neurod1	neurogenic differentiation 1	2		pancreatic A cell fate commitment	happens in pancreas,results in a cell's commitment to pancreatic A cell		IGI	MGI:97347 	J:129103 	
+MGI:1339708	Neurod1	neurogenic differentiation 1	2		pancreatic PP cell fate commitment	happens in pancreas,results in a cell's commitment to PP cell		IGI	MGI:97347 	J:129103 	
+MGI:108055	Neurod4	neurogenic differentiation 4	10		cell fate commitment	happens in retina layer,has the participant amacrine cell		IGI	MGI:1339708 	J:65410 	
+MGI:107754	Neurog1	neurogenin 1	13		cell fate commitment	happens in cerebral cortex,has the participant GABAergic neuron|happens in cerebral cortex,has the participant autonomic neuron		IGI	MGI:109619 	J:93057 	
+MGI:109619	Neurog2	neurogenin 2	3		cell fate commitment	happens in cerebral cortex,has the participant GABAergic neuron|happens in cerebral cortex,has the participant autonomic neuron		IGI	MGI:107754 	J:93057 	
+MGI:99421	Nfe2l1	nuclear factor, erythroid derived 2,-like 1	11		glial cell fate commitment			IDA		J:199442 	
+MGI:108067	Nkx2-1	NK2 homeobox 1	12		forebrain neuron fate commitment	happens in cerebral cortex,results in a cell's commitment to inhibitory interneuron		IGI	MGI:1306803 	J:135983 	
+MGI:108067	Nkx2-1	NK2 homeobox 1	12		forebrain neuron fate commitment	happens in cerebral cortex,results in a cell's commitment to inhibitory interneuron		IMP	MGI:1857494 	J:135983 	
+MGI:108067	Nkx2-1	NK2 homeobox 1	12		neuron fate commitment	has the participant telencephalon,results in a cell's commitment to interneuron|has the participant cerebral cortex,results in a cell's commitment to interneuron		IMP	MGI:3653645 	J:145461 	
+MGI:108067	Nkx2-1	NK2 homeobox 1	12		neuron fate commitment			IMP	MGI:3653645 	J:157830 	
+MGI:97347	Nkx2-2	NK2 homeobox 2	2		neuron fate specification	happens in midbrain,results in a cell being specified to become serotonergic neuron		IGI	MGI:97451 	J:104370 	
+MGI:97347	Nkx2-2	NK2 homeobox 2	2		neuron fate specification	happens in midbrain		IMP	MGI:1932100 	J:152847 	
+MGI:97347	Nkx2-2	NK2 homeobox 2	2		pancreatic A cell fate commitment	happens in pancreas,results in a cell's commitment to pancreatic A cell		IGI	MGI:1339708 	J:129103 	
+MGI:97347	Nkx2-2	NK2 homeobox 2	2		pancreatic A cell fate commitment	happens in pancreas,results in a cell's commitment to type B pancreatic cell		IMP	MGI:1932100 	J:119914 	
+MGI:97347	Nkx2-2	NK2 homeobox 2	2		pancreatic PP cell fate commitment	happens in pancreas,results in a cell's commitment to PP cell		IGI	MGI:1339708 	J:129103 	
+MGI:97347	Nkx2-2	NK2 homeobox 2	2		spinal cord oligodendrocyte cell fate specification	happens in spinal cord		IDA		J:135661 	
+MGI:97347	Nkx2-2	NK2 homeobox 2	2		type B pancreatic cell fate commitment	happens in pancreas,results in a cell's commitment to type B pancreatic cell		IMP	MGI:1932100 	J:119914 	
+MGI:97347	Nkx2-2	NK2 homeobox 2	2		type B pancreatic cell fate commitment	happens in pancreas,results in a cell's commitment to type B pancreatic cell		IMP	MGI:1932100 	J:129103 	
+MGI:97347	Nkx2-2	NK2 homeobox 2	2		ventral spinal cord interneuron fate determination	happens in future spinal cord,results in a cell's determination to become interneuron		IMP	MGI:1932100 	J:54240 	
+MGI:97350	Nkx2-5	NK2 homeobox 5	17		atrioventricular node cell fate commitment	happens in atrioventricular node,results in a cell's commitment to cardiac muscle cell		IMP	MGI:3042511 	J:89404 	
+MGI:1352738	Nkx6-2	NK6 homeobox 2	7		negative regulation of cell fate commitment	regulates a function/process that happens in future spinal cord,regulates a cell's commitment to interneuron		IMP	MGI:2651850 	J:71607 	
+MGI:1352738	Nkx6-2	NK6 homeobox 2	7		positive regulation of cell fate commitment	regulates a function/process that happens in future spinal cord,regulates a function/process that happens in interneuron		IMP	MGI:2651850 	J:71607 	
+MGI:1921811	Nkx6-3	NK6 homeobox 3	8		cell fate determination			IMP	MGI:3795186 	J:136085 	
+MGI:97359	Nodal	nodal	10		axial mesodermal cell fate specification			IMP		J:85863 	
+MGI:97359	Nodal	nodal	10		cell fate commitment			IMP	MGI:2668418 	J:84300 	
+MGI:97363	Notch1	notch 1	2		auditory receptor cell fate commitment	results in a cell's commitment to auditory hair cell		IMP	MGI:3044585 MGI:3046196 	J:144981 	
+MGI:97363	Notch1	notch 1	2		cell fate commitment	happens in crypt of lieberkuhn,results in a cell's commitment to enterocyte		IMP	MGI:2447212 MGI:2684314 	J:101154 	
+MGI:97363	Notch1	notch 1	2		cell fate specification	happens in embryo,results in a cell being specified to become keratinocyte		IMP	MGI:2178778 	J:90057 	
+MGI:97363	Notch1	notch 1	2		neuron fate commitment	has the participant cerebral cortex ventricular layer,results in a cell's commitment to CNS neuron (sensu Vertebrata)		IGI	MGI:99460 	J:101735 	
+MGI:97363	Notch1	notch 1	2		osteoblast fate commitment			NAS		J:101495 	
+MGI:97364	Notch2	notch 2	3		cell fate determination			ISO	RGD:3188 	J:155856 	
+MGI:97364	Notch2	notch 2	3		cell fate determination			TAS		J:115539 	
+MGI:99460	Notch3	notch 3	17		neuron fate commitment	has the participant cerebral cortex ventricular layer,results in a cell's commitment to CNS neuron (sensu Vertebrata)		IGI	MGI:97363 	J:101735 	
+MGI:1100526	Nr2e1	nuclear receptor subfamily 2, group E, member 1	10		cell fate commitment	happens in cerebral cortex,has the participant GABAergic neuron|happens in cerebral cortex,has the participant autonomic neuron		IGI	MGI:97490 	J:93057 	
+MGI:1352452	Nr2f2	nuclear receptor subfamily 2, group F, member 2	7		lymphatic endothelial cell fate commitment			ISO	P24468 	J:164563 	
+MGI:96083	Nrg1	neuregulin 1	8		glial cell fate commitment			IDA		J:166449 	
+MGI:96083	Nrg1	neuregulin 1	8		neuron fate commitment			IMP		J:70080 	
+MGI:97380	Ntf3	neurotrophin 3	6		glial cell fate determination			IMP	MGI:1933844 	J:54402 	
+MGI:97381	Ntf5	neurotrophin 5	7		ganglion mother cell fate determination			IMP	MGI:1933845 	J:60927 	
+MGI:97385	Ntrk3	neurotrophic tyrosine kinase, receptor, type 3	7		neuron fate specification			ISO	RGD:3214 	J:155856 	
+MGI:1355334	Olig1	oligodendrocyte transcription factor 1	16		neuron fate commitment			IMP	MGI:2179311 	J:75868 	
+MGI:1355331	Olig2	oligodendrocyte transcription factor 2	16		neuron fate commitment			IMP	MGI:2179312 	J:75868 	
+MGI:1355331	Olig2	oligodendrocyte transcription factor 2	16		oligodendrocyte cell fate specification			IEA	IPR032658 	J:72247 	
+MGI:1355331	Olig2	oligodendrocyte transcription factor 2	16		spinal cord oligodendrocyte cell fate specification	happens in spinal cord		IDA		J:135661 	
+MGI:2149955	Olig3	oligodendrocyte transcription factor 3	10		spinal cord motor neuron cell fate specification			IMP	MGI:3573868 	J:96749 	
+MGI:1196423	Onecut1	one cut domain, family member 1	9		cell fate commitment	happens in hepatic duct,has the participant duct epithelial cell		IGI	MGI:1891408 	J:100352 	
+MGI:1891408	Onecut2	one cut domain, family member 2	18		cell fate commitment	happens in hepatic duct,has the participant duct epithelial cell		IGI	MGI:1196423 	J:100352 	
+MGI:1859615	Otud5	OTU domain containing 5	X		T-helper 17 cell lineage commitment			IMP	MGI:2386448 MGI:5752247 	J:219495 	
+MGI:97451	Otx2	orthodenticle homeobox 2	14		cell fate commitment	happens in future midbrain,has the participant CNS neuron (sensu Vertebrata)		IMP	MGI:2661065 	J:89367 	
+MGI:97451	Otx2	orthodenticle homeobox 2	14		cell fate specification	has the participant future midbrain,results in a cell being specified to become CNS neuron (sensu Vertebrata)		IMP	MGI:2176222 MGI:2661065 	J:98336 	
+MGI:97451	Otx2	orthodenticle homeobox 2	14		eye photoreceptor cell fate commitment			IMP	MGI:2178753 	J:86636 	
+MGI:97451	Otx2	orthodenticle homeobox 2	14		neuron fate commitment	happens in ganglionic eminence		IMP	MGI:2178753 MGI:3665330 	J:224836 	
+MGI:97451	Otx2	orthodenticle homeobox 2	14		neuron fate commitment	has the participant midbrain,results in a cell's commitment to dopaminergic neuron		IMP	MGI:2446434 MGI:2661065 	J:104370 	
+MGI:97451	Otx2	orthodenticle homeobox 2	14		neuron fate determination	results in a cell's determination to become CNS neuron (sensu Vertebrata)|happens in midbrain		IMP	MGI:2446434 MGI:2661065 	J:152847 	
+MGI:1923988	Paf1	Paf1, RNA polymerase II complex component	7		endodermal cell fate commitment			IMP		J:149841 	
+MGI:97486	Pax2	paired box 2	19		cell fate determination	happens in optic cup,results in a cell's determination to become pigmented epithelial cell		IMP	MGI:1857673 	J:83532 	
+MGI:97486	Pax2	paired box 2	19		mesodermal cell fate specification			IDA		J:129070 	
+MGI:97487	Pax3	paired box 3	1		neuron fate commitment	has the participant future spinal cord,results in a cell's commitment to interneuron		IGI	MGI:97491 	J:51645 	
+MGI:97490	Pax6	paired box 6	2		cell fate commitment	happens in cerebral cortex,has the participant autonomic neuron|happens in cerebral cortex,has the participant GABAergic neuron		IGI	MGI:1100526 	J:93057 	
+MGI:97490	Pax6	paired box 6	2		cell fate commitment	happens in cerebral cortex ventricular layer,has the participant glutamatergic neuron		IMP	MGI:1856155 	J:99239 	
+MGI:97490	Pax6	paired box 6	2		cell fate determination	happens in optic cup,results in a cell's determination to become pigmented epithelial cell		IMP	MGI:1934347 	J:83532 	
+MGI:97490	Pax6	paired box 6	2		commitment of neuronal cell to specific neuron type in forebrain	happens in telencephalon,results in a cell's commitment to CNS neuron (sensu Vertebrata)		IMP	MGI:1856158 	J:66590 	
+MGI:97490	Pax6	paired box 6	2		oligodendrocyte cell fate specification	happens in spinal cord,results in a cell being specified to become oligodendrocyte		IMP	MGI:1856155 	J:50974 	
+MGI:97490	Pax6	paired box 6	2		positive regulation of cell fate specification			ISO	RGD:3258 	J:155856 	
+MGI:97491	Pax7	paired box 7	4		neuron fate commitment	has the participant future spinal cord,results in a cell's commitment to interneuron		IGI	MGI:97487 	J:51645 	
+MGI:97491	Pax7	paired box 7	4		regulation of cell fate commitment			IMP	MGI:1857831 MGI:3047633 	J:188254 	
+MGI:97491	Pax7	paired box 7	4		skeletal muscle satellite cell commitment	happens in skeletal musculature,results in a cell's commitment to skeletal muscle satellite cell		IMP	MGI:1857831 	J:64793 	
+MGI:103098	Pdpn	podoplanin	4		lymphatic endothelial cell fate commitment			IMP		J:160267 	
+MGI:107374	Pitx1	paired-like homeodomain transcription factor 1	13		myoblast fate commitment	happens in 1st branchial arch,results in a cell's commitment to myoblast		IMP	MGI:2384494 	J:120320 	
+MGI:104662	Pml	promyelocytic leukemia	9		cell fate commitment	happens in mammary gland epithelium		IMP	MGI:2429949 	J:147092 	
+MGI:97588	Pou1f1	POU domain, class 1, transcription factor 1	16		cell fate specification			IDA		J:70561 	
+MGI:101895	Pou3f2	POU domain, class 3, transcription factor 2	4		neuron fate commitment			IDA		J:241054 	
+MGI:101895	Pou3f2	POU domain, class 3, transcription factor 2	4		neuron fate specification			IDA		J:241054 	
+MGI:102525	Pou4f1	POU domain, class 4, transcription factor 1	14		neuron fate specification			IMP		J:154369 J:160718 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		cardiac cell fate determination			ISO	Q01860 	J:164563 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		cell fate commitment	happens in epiblast,has the participant epiblast cell		IMP	MGI:1933381 	J:51139 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		cell fate commitment involved in formation of primary germ layer			ISO	Q01860 	J:164563 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		ectodermal cell fate commitment	results in a cell's commitment to trophectodermal cell		IDA		J:61492 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		endodermal cell fate commitment	results in a cell's commitment to endodermal cell		IDA		J:61492 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		endodermal cell fate specification			ISO	Q01860 	J:168146 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		mesodermal cell fate commitment	results in a cell's commitment to mesodermal cell		IDA		J:61492 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		regulation of heart induction by regulation of canonical Wnt signaling pathway			ISO	Q01860 	J:164563 	
+MGI:97747	Pparg	peroxisome proliferator activated receptor gamma	6		cell fate commitment	has the participant epithelial cell		IGI	MGI:102784 	J:95883 	
+MGI:97747	Pparg	peroxisome proliferator activated receptor gamma	6		cell fate commitment			IMP	MGI:2651605 	J:213144 	
+MGI:99655	Prdm1	PR domain containing 1, with ZNF domain	10		cell fate commitment			IBA	PTN000421213 	J:265628 	
+MGI:99655	Prdm1	PR domain containing 1, with ZNF domain	10		cell fate commitment	happens in primordial germ cell of yolk sac,has the participant primordial germ cell		IMP	MGI:3586884 	J:99994 	
+MGI:99655	Prdm1	PR domain containing 1, with ZNF domain	10		cell fate commitment	happens in primordial germ cell of yolk sac,has the participant primordial germ cell		IMP	MGI:3605483 	J:101718 	
+MGI:3588194	Prdm14	PR domain containing 14	1		cell fate specification	results in a cell being specified to become germ cell		IMP	MGI:3805889 	J:138571 	
+MGI:3588194	Prdm14	PR domain containing 14	1		inner cell mass cell fate commitment			IDA		J:203762 	
+MGI:1925144	Prickle2	prickle planar cell polarity protein 2	6		trophectodermal cell fate commitment	happens in early embryo	PR:000045529	IMP	MGI:4941925 	J:183948 	
+MGI:104779	Prkdc	protein kinase, DNA activated, catalytic polypeptide	16		B cell lineage commitment	happens in thymus,results in a cell's commitment to B cell|happens in bone marrow,results in a cell's commitment to B cell|happens in spleen,results in a cell's commitment to B cell		IMP	MGI:1857113 	J:31364 	
+MGI:104779	Prkdc	protein kinase, DNA activated, catalytic polypeptide	16		T cell lineage commitment	happens in thymus,happens in T cell|happens in bone marrow,happens in T cell|happens in spleen,happens in T cell		IMP	MGI:1857113 	J:31364 	
+MGI:97772	Prox1	prospero homeobox 1	1		cell fate determination	happens in retina,results in a cell's determination to become retina horizontal cell		IMP	MGI:2386336 	J:83185 	
+MGI:97772	Prox1	prospero homeobox 1	1		lymphatic endothelial cell fate commitment			ISO	Q92786 	J:164563 	
+MGI:97712	Prrx1	paired related homeobox 1	1		neuron fate determination			IDA		J:196061 	
+MGI:1202717	Psen1	presenilin 1	12		cell fate specification	has the participant hair inner root sheath		IGI	MGI:109284 	J:94517 	
+MGI:109284	Psen2	presenilin 2	1		cell fate specification	has the participant hair inner root sheath		IGI	MGI:1202717 	J:94517 	
+MGI:105373	Ptch1	patched 1	13		cell fate determination			IGI	MGI:1095405 	J:210838 	
+MGI:105373	Ptch1	patched 1	13		epidermal cell fate specification			IGI	MGI:1095405 	J:210838 	
+MGI:1095405	Ptch2	patched 2	4		cell fate determination			IGI	MGI:105373 	J:210838 	
+MGI:1095405	Ptch2	patched 2	4		epidermal cell fate specification			IGI	MGI:105373 	J:210838 	
+MGI:1328312	Ptf1a	pancreas specific transcription factor, 1a	2		cell fate commitment	happens in pancreas		IMP	MGI:2387804 	J:78710 	
+MGI:1328312	Ptf1a	pancreas specific transcription factor, 1a	2		cell fate commitment	happens in pancreas		IMP	MGI:2387804 MGI:3771319 	J:125691 	
+MGI:1328312	Ptf1a	pancreas specific transcription factor, 1a	2		neuron fate commitment	has the participant cerebellum,results in a cell's commitment to GABAergic neuron		IDA		J:100997 	
+MGI:105066	Rab10	RAB10, member RAS oncogene family	12		establishment of neuroblast polarity			ISO	RGD:620879 	J:155856 	
+MGI:97849	Rag2	recombination activating gene 2	2		B cell lineage commitment	happens in thymus,results in a cell's commitment to B cell|happens in bone marrow,results in a cell's commitment to B cell|happens in spleen,results in a cell's commitment to B cell		IMP	MGI:1858556 	J:31364 	
+MGI:97849	Rag2	recombination activating gene 2	2		T cell lineage commitment	happens in thymus,happens in T cell|happens in bone marrow,happens in T cell|happens in spleen,happens in T cell		IMP	MGI:1858556 	J:31364 	
+MGI:97856	Rara	retinoic acid receptor, alpha	11		Sertoli cell fate commitment			IMP		J:175162 	
+MGI:96522	Rbpj	recombination signal binding protein for immunoglobulin kappa J region	5		arterial endothelial cell fate commitment			IMP		J:93125 	
+MGI:96522	Rbpj	recombination signal binding protein for immunoglobulin kappa J region	5		auditory receptor cell fate commitment	results in a cell's commitment to cochlear inner hair cell		IMP	MGI:3046196 MGI:3583755 	J:144981 	
+MGI:96522	Rbpj	recombination signal binding protein for immunoglobulin kappa J region	5		blood vessel endothelial cell fate specification			IGI	P52800 	J:93125 	
+MGI:96522	Rbpj	recombination signal binding protein for immunoglobulin kappa J region	5		cell fate commitment	happens in adenohypophysis,has the participant somatotropin secreting cell|happens in adenohypophysis,has the participant thyrotroph		IMP	MGI:3583755 	J:112960 	
+MGI:96522	Rbpj	recombination signal binding protein for immunoglobulin kappa J region	5		epidermal cell fate specification	happens in epidermis stratum spinosum,results in a cell being specified to become keratinocyte		IMP	MGI:1926500 MGI:3583755 	J:114702 	
+MGI:96522	Rbpj	recombination signal binding protein for immunoglobulin kappa J region	5		Notch signaling pathway involved in arterial endothelial cell fate commitment			IC	GO:0060844 	J:93125 	
+MGI:96522	Rbpj	recombination signal binding protein for immunoglobulin kappa J region	5		positive regulation of canonical Wnt signaling pathway involved in cardiac muscle cell fate commitment			IMP	MGI:3583755 	J:186421 	
+MGI:1096342	Rhoa	ras homolog family member A	9		alpha-beta T cell lineage commitment			IMP		J:221513 	
+MGI:1347521	Ror2	receptor tyrosine kinase-like orphan receptor 2	13		cell fate commitment			IMP	MGI:3793279 	J:163602 	
+MGI:1309480	Rtf1	RTF1, Paf1/RNA polymerase II complex component	2		endodermal cell fate commitment			IMP		J:149841 	
+MGI:1913654	Rtf2	replication termination factor 2	2		site-specific DNA replication termination at RTS1 barrier			IBA	PTN000299506 	J:265628 	
+MGI:99852	Runx1	runt related transcription factor 1	16		neuron fate commitment	results in a cell's commitment to mechanoreceptor cell		IMP		J:221586 	
+MGI:99829	Runx2	runt related transcription factor 2	17		osteoblast fate commitment			IGI	MGI:1316736 	J:93345 	
+MGI:2679336	Satb2	special AT-rich sequence binding protein 2	1		commitment of neuronal cell to specific neuron type in forebrain	results in a cell's commitment to neuron of cerebral cortex		IGI	MGI:107404 MGI:1859823 MGI:1929913 	J:192361 	
+MGI:2679336	Satb2	special AT-rich sequence binding protein 2	1		commitment of neuronal cell to specific neuron type in forebrain	results in a cell's commitment to neuron of cerebral cortex		IMP	MGI:3692768 	J:192361 	
+MGI:2443685	Scart2	scavenger receptor family member expressed on T cells 2	7		gamma-delta T cell lineage commitment	happens in thymus		IDA		J:137854 	
+MGI:892014	Sfrp1	secreted frizzled-related protein 1	8		neural crest cell fate commitment			IMP	MGI:3045799 	J:157931 	
+MGI:108078	Sfrp2	secreted frizzled-related protein 2	3		negative regulation of mesodermal cell fate specification	regulates a cell's specification to epiblast cell		IGI	MGI:98956 	J:121773 	
+MGI:2442062	Sh3pxd2b	SH3 and PX domains 2B	11		osteoblast fate commitment			IMP		J:235640 	
+MGI:98297	Shh	sonic hedgehog	5		CD4-positive or CD8-positive, alpha-beta T cell lineage commitment			IMP		J:145323 	
+MGI:98297	Shh	sonic hedgehog	5		CD4-positive or CD8-positive, alpha-beta T cell lineage commitment			ISO	Q15465 	J:164563 	
+MGI:98297	Shh	sonic hedgehog	5		cell fate commitment	happens in neural tube floor plate		IGI	MGI:95655 	J:121553 	
+MGI:98297	Shh	sonic hedgehog	5		cell fate specification			IBA	PTN001726121 	J:265628 	
+MGI:98297	Shh	sonic hedgehog	5		cell fate specification			IDA		J:130846 	
+MGI:98297	Shh	sonic hedgehog	5		cell fate specification	has the participant diencephalon floor plate		IGI	MGI:1926387 	J:108747 	
+MGI:98297	Shh	sonic hedgehog	5		cell fate specification	has the participant otocyst		IMP	MGI:1857796 	J:79100 	
+MGI:98297	Shh	sonic hedgehog	5		neuron fate commitment	has the participant cerebral cortex,results in a cell's commitment to interneuron		IMP	MGI:1934268 	J:102950 	
+MGI:98297	Shh	sonic hedgehog	5		ventral spinal cord interneuron specification			ISO	Q63673 	J:73065 	
+MGI:102780	Six1	sine oculis-related homeobox 1	12		neuron fate specification			IGI	MGI:109344 	J:184001 	
+MGI:102778	Six2	sine oculis-related homeobox 2	17		mesodermal cell fate specification			IDA		J:129070 	
+MGI:1353620	Slamf6	SLAM family member 6	1		T-helper 17 cell lineage commitment			ISO	Q96DU3 	J:164563 	
+MGI:1921998	Slamf8	SLAM family member 8	1		B-1 B cell lineage commitment			IDA		J:266143 	
+MGI:109452	Smad1	SMAD family member 1	8		mesodermal cell fate commitment	results in a cell's commitment to mesodermal cell		IGI	MGI:1919200 	J:111703 	
+MGI:109452	Smad1	SMAD family member 1	8		osteoblast fate commitment			IGI	MGI:1316736 	J:93345 	
+MGI:108051	Smad2	SMAD family member 2	18		cell fate commitment			IMP	MGI:2668416 	J:84300 	
+MGI:894293	Smad4	SMAD family member 4	18		neuron fate commitment	has the participant trigeminal ganglion,results in a cell's commitment to peripheral neuron		IMP	MGI:2386393 MGI:2386570 	J:126770 	
+MGI:1328787	Smad5	SMAD family member 5	13		osteoblast fate commitment			IGI	MGI:1316736 	J:93345 	
+MGI:88192	Smarca4	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a, member 4	9		glial cell fate determination	happens in cerebral cortex,results in a cell's determination to become glioblast		IMP	MGI:2176173 MGI:3605892 	J:104327 	
+MGI:108075	Smo	smoothened, frizzled class receptor	6		cell fate specification	has the participant neural tube		IMP	MGI:2176255 	J:138713 	
+MGI:1913292	Sostdc1	sclerostin domain containing 1	12		negative regulation of cell fate commitment	regulates a function/process that happens in integumental system,regulates a cell's commitment to epithelial cell		IMP	MGI:3604658 	J:183911 	
+MGI:98357	Sox1	SRY (sex determining region Y)-box 1	8		ventral spinal cord interneuron specification			IMP	MGI:3653406 	J:164670 	
+MGI:98364	Sox2	SRY (sex determining region Y)-box 2	3		cell fate commitment			IBA	PTN000030807 	J:265628 	
+MGI:98364	Sox2	SRY (sex determining region Y)-box 2	3		cell fate commitment			IDA		J:136180 	
+MGI:98364	Sox2	SRY (sex determining region Y)-box 2	3		cell fate specification	has the participant epiblast|has the participant inner cell mass|has the participant extraembryonic ectoderm		IMP	MGI:2449045 	J:81180 	
+MGI:98364	Sox2	SRY (sex determining region Y)-box 2	3		endodermal cell fate specification			ISO	P48431 	J:168146 	
+MGI:98364	Sox2	SRY (sex determining region Y)-box 2	3		neuron fate commitment	has the participant fungiform papillae,results in a cell's commitment to neuronal receptor cell		IMP	MGI:3589809 	J:112945 	
+MGI:98367	Sox5	SRY (sex determining region Y)-box 5	6		asymmetric neuroblast division			ISO	P35711 	J:164563 	
+MGI:98367	Sox5	SRY (sex determining region Y)-box 5	6		cell fate commitment			IBA	PTN000030844 	J:265628 	
+MGI:98367	Sox5	SRY (sex determining region Y)-box 5	6		cell fate commitment	happens in thoracic vertebral cartilage condensation,has the participant chondroblast		IGI	MGI:98368 	J:95359 	
+MGI:98368	Sox6	SRY (sex determining region Y)-box 6	7		cell fate commitment			IBA	PTN000030844 	J:265628 	
+MGI:98368	Sox6	SRY (sex determining region Y)-box 6	7		cell fate commitment	happens in thoracic vertebral cartilage condensation,has the participant chondroblast		IGI	MGI:98367 	J:95359 	
+MGI:98368	Sox6	SRY (sex determining region Y)-box 6	7		oligodendrocyte cell fate specification			IMP	MGI:2447148 	J:116148 	
+MGI:98370	Sox8	SRY (sex determining region Y)-box 8	17		astrocyte fate commitment	happens in retina,results in a cell's commitment to Mueller cell		IGI	MGI:98371 	J:154500 	
+MGI:98370	Sox8	SRY (sex determining region Y)-box 8	17		cell fate commitment	happens in spinal cord mantle layer,has the participant oligodendrocyte		IGI	MGI:98371 	J:98585 	
+MGI:98371	Sox9	SRY (sex determining region Y)-box 9	11		astrocyte fate commitment	happens in retina,results in a cell's commitment to Mueller cell		IGI	MGI:98370 	J:154500 	
+MGI:98371	Sox9	SRY (sex determining region Y)-box 9	11		cell fate commitment	happens in spinal cord mantle layer,has the participant oligodendrocyte		IGI	MGI:98370 	J:98585 	
+MGI:98371	Sox9	SRY (sex determining region Y)-box 9	11		cell fate specification	results in a cell being specified to become neuron|results in a cell being specified to become glial cell		IMP	MGI:2429649 	J:84301 	
+MGI:98360	Sox12	SRY (sex determining region Y)-box 12	2		cell fate commitment			IEA	IPR031267 	J:72247 	
+MGI:98361	Sox13	SRY (sex determining region Y)-box 13	1		cell fate commitment			IBA	PTN000030844 	J:265628 	
+MGI:107543	Sox17	SRY (sex determining region Y)-box 17	1		cardiac cell fate determination			ISO	Q9H6I2 	J:164563 	
+MGI:107543	Sox17	SRY (sex determining region Y)-box 17	1		endodermal cell fate determination			IDA		J:159322 	
+MGI:107543	Sox17	SRY (sex determining region Y)-box 17	1		endodermal cell fate specification	is a part of cardiogenic plate morphogenesis|is a part of embryonic heart tube morphogenesis|is a part of embryonic foregut morphogenesis|is a part of endodermal digestive tract morphogenesis		IMP		J:170493 	
+MGI:107543	Sox17	SRY (sex determining region Y)-box 17	1		regulation of cardiac cell fate specification			IMP		J:120067 	
+MGI:107543	Sox17	SRY (sex determining region Y)-box 17	1		stem cell fate specification			IDA		J:160232 	
+MGI:103559	Sox18	SRY (sex determining region Y)-box 18	2		stem cell fate specification			IDA		J:160232 	
+MGI:1353422	Spdef	SAM pointed domain containing ets transcription factor	17		negative regulation of cell fate commitment	regulates a function/process that happens in respiratory system epithelium,regulates a cell's commitment to club cell		IMP	MGI:4398888 	J:154639 	
+MGI:1353422	Spdef	SAM pointed domain containing ets transcription factor	17		positive regulation of cell fate commitment	regulates a function/process that happens in respiratory system epithelium,regulates a function/process that happens in goblet cell		IMP	MGI:4398888 	J:154639 	
+MGI:98384	Spn	sialophorin	7		T-helper 1 cell lineage commitment			ISO	P16150 	J:164563 	
+MGI:1345138	Spry2	sprouty RTK signaling antagonist 2	14		cell fate commitment	happens in organ of Corti,has the participant Deiter's cell		IGI	MGI:99604 	J:98303 	
+MGI:1345138	Spry2	sprouty RTK signaling antagonist 2	14		cell fate commitment	happens in organ of Corti,has the participant Deiter's cell		IMP	MGI:3578633 	J:98303 	
+MGI:103038	Stat3	signal transducer and activator of transcription 3	11		T-helper 17 cell lineage commitment			IMP		J:239159 	
+MGI:103034	Stat6	signal transducer and activator of transcription 6	10		T-helper 1 cell lineage commitment			IGI	MGI:96556 	J:165738 	
+MGI:1345643	Sufu	SUFU negative regulator of hedgehog signaling	19		smoothened signaling pathway involved in spinal cord motor neuron cell fate specification	happens in neural tube,happens in motor neuron		IMP	MGI:4840420 	J:151923 	
+MGI:1345643	Sufu	SUFU negative regulator of hedgehog signaling	19		smoothened signaling pathway involved in ventral spinal cord interneuron specification	happens in neural tube,happens in interneuron		IMP	MGI:4840420 	J:151923 	
+MGI:98472	T	brachyury, T-box transcription factor T	17		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:98480	Tal1	T cell acute lymphocytic leukemia 1	4		astrocyte fate commitment	happens in spinal cord,results in a cell's commitment to astrocyte		IMP	MGI:2176173 MGI:2661471 	J:128879 	
+MGI:98480	Tal1	T cell acute lymphocytic leukemia 1	4		cell fate commitment			IMP		J:81796 	
+MGI:107404	Tbr1	T-box brain transcription factor 1	2		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:107404	Tbr1	T-box brain transcription factor 1	2		commitment of neuronal cell to specific neuron type in forebrain			IBA	PTN002601237 	J:265628 	
+MGI:107404	Tbr1	T-box brain transcription factor 1	2		commitment of neuronal cell to specific neuron type in forebrain	results in a cell's commitment to neuron of cerebral cortex		IGI	MGI:2679336 	J:192361 	
+MGI:98493	Tbx1	T-box 1	16		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:98493	Tbx1	T-box 1	16		cell fate specification	has the participant spinal cord,results in a cell being specified to become glutamatergic neuron		IGI	MGI:1351209 	J:90585 	
+MGI:98493	Tbx1	T-box 1	16		cell fate specification	has the participant otocyst,results in a cell being specified to become sensory neuron		IMP	MGI:2179191 	J:89188 	
+MGI:98493	Tbx1	T-box 1	16		muscle cell fate commitment	happens in 1st branchial arch mandibular component mesenchyme derived from head mesoderm|happens in 1st branchial arch maxillary component mesenchyme derived from head mesoderm|happens in 2nd branchial arch mesenchyme derived from head mesoderm|happens in 3rd branchial arch mesenchyme derived from head mesoderm		IMP	MGI:2179190 	J:139636 	
+MGI:98494	Tbx2	T-box 2	11		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:98494	Tbx2	T-box 2	11		muscle cell fate determination	happens in atrioventricular canal		IMP	MGI:3505715 	J:93610 	
+MGI:98495	Tbx3	T-box 3	5		cardiac muscle cell fate commitment	happens in heart,results in a cell's commitment to cardiac muscle cell		IMP	MGI:3710254 	J:149014 	
+MGI:98495	Tbx3	T-box 3	5		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:102556	Tbx4	T-box 4	11		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:102541	Tbx5	T-box 5	5		atrioventricular node cell fate commitment			IMP		J:92050 	
+MGI:102541	Tbx5	T-box 5	5		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:102539	Tbx6	T-box 6	7		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:102539	Tbx6	T-box 6	7		cell fate specification	has the participant trunk paraxial mesenchyme,results in a cell being specified to become mesodermal cell|has the participant tail paraxial mesenchyme,results in a cell being specified to become mesodermal cell		IMP	MGI:2447721 	J:80954 	
+MGI:1261436	Tbx10	T-box 10	19		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:1277234	Tbx15	T-box 15	3		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:1923615	Tbx18	T-box18	9		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:1923615	Tbx18	T-box18	9		sinoatrial node cell fate commitment			ISO	O95935 	J:164563 	
+MGI:1891158	Tbx19	T-box 19	1		cell fate commitment			IMP	MGI:2655153 	J:82562 	
+MGI:1891158	Tbx19	T-box 19	1		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:1888496	Tbx20	T-box 20	9		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:1888984	Tbx21	T-box 21	11		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:1888984	Tbx21	T-box 21	11		negative regulation of T-helper 17 cell lineage commitment			IMP		J:167439 	
+MGI:2389465	Tbx22	T-box 22	X		cell fate specification			IBA	PTN000137774 	J:265628 	
+MGI:98510	Tcf3	transcription factor 3	10		B cell lineage commitment			ISO	P15923 	J:164563 	
+MGI:1202879	Tcf7l2	transcription factor 7 like 2, T cell specific, HMG box	19		myoblast fate commitment			IMP		J:125420 	
+MGI:1202879	Tcf7l2	transcription factor 7 like 2, T cell specific, HMG box	19		myoblast fate commitment			ISO	Q9NQB0 	J:164563 	
+MGI:98553	Tcra	T cell receptor alpha chain	14		T cell lineage commitment	happens in thymus,happens in T cell		IMP	MGI:1857255 	J:66168 	
+MGI:109241	Tead3	TEA domain family member 3	17		asymmetric neuroblast division			ISO	Q99594 	J:164563 	
+MGI:106907	Tead4	TEA domain family member 4	6		cell fate commitment			IDA		J:184811 	
+MGI:106907	Tead4	TEA domain family member 4	6		cell fate specification			IMP	MGI:106907 	J:130047 	
+MGI:106907	Tead4	TEA domain family member 4	6		trophectodermal cell fate commitment			IMP	MGI:106907 	J:130047 	
+MGI:2447063	Tenm4	teneurin transmembrane protein 4	7		cardiac cell fate specification			IMP	MGI:3655239 	J:185712 	
+MGI:106032	Tfap2c	transcription factor AP-2, gamma	2		forebrain neuron fate commitment			IMP	MGI:2176695 	J:154645 	
+MGI:98725	Tgfb1	transforming growth factor, beta 1	7		CD4-positive, CD25-positive, alpha-beta regulatory T cell lineage commitment			TAS		J:136164 	
+MGI:98725	Tgfb1	transforming growth factor, beta 1	7		T-helper 17 cell lineage commitment			TAS		J:136164 	
+MGI:102784	Tgfb1i1	transforming growth factor beta 1 induced transcript 1	7		cell fate commitment	has the participant epithelial cell		IGI	MGI:97747 	J:95883 	
+MGI:98726	Tgfb2	transforming growth factor, beta 2	1		neuron fate commitment	has the participant cochlear ganglion,results in a cell's commitment to neuron|has the participant inner ear,results in a cell's commitment to neuron		IDA		J:100384 	
+MGI:98728	Tgfbr1	transforming growth factor, beta receptor I	4		neuron fate commitment	has the participant cochlear ganglion,results in a cell's commitment to neuron|has the participant inner ear,results in a cell's commitment to neuron		IMP		J:100384 	
+MGI:98769	Tlx1	T cell leukemia, homeobox 1	19		cell fate commitment	happens in spleen primordium		IMP	MGI:3581680 	J:107696 	
+MGI:1351209	Tlx3	T cell leukemia, homeobox 3	11		cell fate specification	has the participant spinal cord,results in a cell being specified to become GABAergic neuron		IGI	MGI:98769 	J:90585 	
+MGI:1351209	Tlx3	T cell leukemia, homeobox 3	11		cell fate specification	has the participant spinal cord,results in a cell being specified to become glutamatergic neuron		IMP	MGI:2180105 	J:90585 	
+MGI:1351209	Tlx3	T cell leukemia, homeobox 3	11		neuron fate specification	happens in spinal cord roof plate,results in a cell being specified to become glutamatergic neuron|happens in spinal cord lateral wall,results in a cell being specified to become glutamatergic neuron		IGI	MGI:104867 	J:102513 	
+MGI:1915884	Tm2d3	TM2 domain containing 3	7		lateral inhibition			ISO	Q9BRN9 	J:164563 	
+MGI:2673064	Tnfsf18	tumor necrosis factor (ligand) superfamily, member 18	1		negative regulation of T-helper 17 cell lineage commitment	happens in mesenteric lymph node,happens at the same time as inflammatory response		IMP		J:206613 	
+MGI:2181659	Tox	thymocyte selection-associated high mobility group box	4		CD4-positive, alpha-beta T cell lineage commitment			IMP		J:131287 	
+MGI:2181659	Tox	thymocyte selection-associated high mobility group box	4		CD4-positive, CD25-positive, alpha-beta regulatory T cell lineage commitment			IMP		J:131287 	
+MGI:2181659	Tox	thymocyte selection-associated high mobility group box	4		CD8-positive, alpha-beta T cell lineage commitment			IMP		J:74993 J:91035 	
+MGI:2181659	Tox	thymocyte selection-associated high mobility group box	4		NK T cell lineage commitment			IMP		J:131287 	
+MGI:98834	Trp53	transformation related protein 53	11		B cell lineage commitment	happens in thymus,results in a cell's commitment to B cell|happens in bone marrow,results in a cell's commitment to B cell|happens in spleen,results in a cell's commitment to B cell		IMP	MGI:1857590 	J:31364 	
+MGI:98834	Trp53	transformation related protein 53	11		T cell lineage commitment	happens in thymus,happens in T cell|happens in bone marrow,happens in T cell|happens in spleen,happens in T cell		IMP	MGI:1857590 	J:31364 	
+MGI:1917202	Tunar	Tcl1 upstream neural differentiation associated RNA	12		neuron fate commitment			IMP		J:212291 	
+MGI:88401	Vsx2	visual system homeobox 2	12		cell fate commitment	happens in neural retinal epithelium,has the participant neuron		IMP	MGI:1856112 	J:94374 	
+MGI:98953	Wnt1	wingless-type MMTV integration site family, member 1	15		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:98953	Wnt1	wingless-type MMTV integration site family, member 1	15		neuron fate commitment	has the participant midbrain,results in a cell's commitment to dopaminergic neuron		IMP	MGI:2153126 	J:104370 	
+MGI:98953	Wnt1	wingless-type MMTV integration site family, member 1	15		neuron fate determination	results in a cell's determination to become dopaminergic neuron		IMP	MGI:3046939 	J:104370 	
+MGI:98954	Wnt2	wingless-type MMTV integration site family, member 2	6		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:1261834	Wnt2b	wingless-type MMTV integration site family, member 2B	3		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:98955	Wnt3	wingless-type MMTV integration site family, member 3	11		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:98956	Wnt3a	wingless-type MMTV integration site family, member 3A	11		canonical Wnt signaling pathway involved in cardiac muscle cell fate commitment			ISO	P56704 	J:164563 	
+MGI:98956	Wnt3a	wingless-type MMTV integration site family, member 3A	11		cardiac muscle cell fate commitment			IGI	MGI:2143322 	J:177756 	
+MGI:98956	Wnt3a	wingless-type MMTV integration site family, member 3A	11		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:98956	Wnt3a	wingless-type MMTV integration site family, member 3A	11		negative regulation of heart induction by canonical Wnt signaling pathway			ISO	P56704 	J:164563 	
+MGI:98956	Wnt3a	wingless-type MMTV integration site family, member 3A	11		paraxial mesodermal cell fate commitment			IMP	MGI:1857489 	J:39344 	
+MGI:98956	Wnt3a	wingless-type MMTV integration site family, member 3A	11		positive regulation of mesodermal cell fate specification			ISO	P56704 	J:164563 	
+MGI:98957	Wnt4	wingless-type MMTV integration site family, member 4	4		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:98957	Wnt4	wingless-type MMTV integration site family, member 4	4		cell fate commitment	happens in adenohypophysis,has the participant somatotropin secreting cell|happens in adenohypophysis,has the participant thyrotroph		IMP	MGI:1857453 	J:132979 	
+MGI:98958	Wnt5a	wingless-type MMTV integration site family, member 5A	14		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:98958	Wnt5a	wingless-type MMTV integration site family, member 5A	14		positive regulation of heart induction by negative regulation of canonical Wnt signaling pathway			IGI	P48615 	J:184511 	
+MGI:98959	Wnt5b	wingless-type MMTV integration site family, member 5B	6		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:98960	Wnt6	wingless-type MMTV integration site family, member 6	1		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:98961	Wnt7a	wingless-type MMTV integration site family, member 7A	6		asymmetric protein localization involved in cell fate determination			IDA		J:149821 	
+MGI:98961	Wnt7a	wingless-type MMTV integration site family, member 7A	6		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:98962	Wnt7b	wingless-type MMTV integration site family, member 7B	15		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:107924	Wnt8a	wingless-type MMTV integration site family, member 8A	18		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:109485	Wnt8b	wingless-type MMTV integration site family, member 8B	19		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:2446084	Wnt9a	wingless-type MMTV integration site family, member 9A	11		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:1197020	Wnt9b	wingless-type MMTV integration site family, member 9B	11		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:108071	Wnt10a	wingless-type MMTV integration site family, member 10A	1		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:108061	Wnt10b	wingless-type MMTV integration site family, member 10B	15		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:101948	Wnt11	wingless-type MMTV integration site family, member 11	7		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:101948	Wnt11	wingless-type MMTV integration site family, member 11	7		positive regulation of heart induction by negative regulation of canonical Wnt signaling pathway			IGI	P22725 	J:184511 	
+MGI:2136018	Wnt16	wingless-type MMTV integration site family, member 16	6		cell fate commitment			IBA	PTN000246517 	J:265628 	
+MGI:98968	Wt1	Wilms tumor 1 homolog	2		cardiac muscle cell fate commitment			IMP		J:175370 	
+MGI:99204	Zfp57	zinc finger protein 57	17		maintenance of imprinting at mating-type locus			IGI	Q8R2V3 	J:272242 	
+MGI:1919404	Zfp157	zinc finger protein 157	5		regulation of cell fate commitment	regulates a cell's commitment to mammary alveolar cell		IMP	MGI:4124834 	J:184505 	
+MGI:2143340	Zfp445	zinc finger protein 445	9		maintenance of imprinting at mating-type locus			IGI	Q8C6P8 	J:272242 	
+MGI:95459	Zfp521	zinc finger protein 521	18		neuron fate commitment	results in a cell's commitment to mechanoreceptor cell		IMP		J:221586 	
+

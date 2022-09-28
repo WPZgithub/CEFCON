@@ -1,0 +1,15 @@
+TFs,TFs_ori,TFs_mouse,description
+POU5F1,OCT3B/4,Pou5f1,
+SOX2,SOX2,Sox2,
+NANOG,NANOG,Nanog,
+FOXD3,FOXD3,Foxd3,forkhead box D3 [Source:MGI Symbol;Acc:MGI:1347473]
+TAF8,TBN,Taf8,TATA-box binding protein associated factor 8 [Source:MGI Symbol;Acc:MGI:1926879]
+TEAD2,TEF4,Tead2,TEA domain family member 2 [Source:MGI Symbol;Acc:MGI:104904]
+EIF1AX,EIF4C,Eif1ax,"eukaryotic translation initiation factor 1A, X-linked [Source:MGI Symbol;Acc:MGI:1913485]"
+CDX2,5.1.1,Cdx2,caudal type homeobox 2 [Source:MGI Symbol;Acc:MGI:88361]
+ASCL2,HASH2,Ascl2,achaete-scute family bHLH transcription factor 2 [Source:MGI Symbol;Acc:MGI:96920]
+EOMES,7.1.1,Eomes,eomesodermin [Source:MGI Symbol;Acc:MGI:1201683]
+GATA6,GATA6,Gata6,
+DSC2,DSC2,N/A,N/A
+LIFR,LIFR,Lifr,LIF receptor alpha [Source:MGI Symbol;Acc:MGI:96788]
+ERBB4,ERBB4,Erbb4,erb-b2 receptor tyrosine kinase 4 [Source:MGI Symbol;Acc:MGI:104771]

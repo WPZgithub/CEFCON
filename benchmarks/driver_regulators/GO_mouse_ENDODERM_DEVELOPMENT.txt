@@ -1,0 +1,118 @@
+MGI Gene/Marker ID	Symbol	Name	Chr	Qualifier	Annotated Term	Context	Proteoform	Evidence	Inferred From	Reference(s)
+MGI:108448	Angpt1	angiopoietin 1	15		endoderm development			TAS		J:53333 	
+MGI:1202890	Angpt2	angiopoietin 2	8		endoderm development			TAS		J:53333 	
+MGI:1336887	Angpt4	angiopoietin 4	2		endoderm development			TAS		J:53333 	
+MGI:1932101	Ankrd17	ankyrin repeat domain 17	5		endoderm development			TAS		J:67263 	
+MGI:88067	Arc	activity regulated cytoskeletal-associated protein	15		endoderm development	results in the development of primitive endoderm		IMP	MGI:2386454 	J:61449 	
+MGI:88180	Bmp4	bone morphogenetic protein 4	14		endoderm development	happens in extraembryonic endoderm		IDA		J:228122 	
+MGI:1338938	Bmpr1a	bone morphogenetic protein receptor, type 1A	14		endoderm development	results in the development of definitive endoderm		IMP	MGI:2158342 	J:92179 	
+MGI:1338938	Bmpr1a	bone morphogenetic protein receptor, type 1A	14		mesendoderm development	results in the development of notochordal plate		IMP	MGI:2158342 	J:92179 	
+MGI:2444008	Bptf	bromodomain PHD finger transcription factor	11		endoderm development	results in the development of primitive endoderm		IMP	MGI:3841299 	J:147414 	
+MGI:2384876	Cdc73	cell division cycle 73, Paf1/RNA polymerase II complex component	1		endodermal cell fate commitment			IMP		J:149841 	
+MGI:109448	Cfc1	cripto, FRL-1, cryptic family 1	1		endoderm development	results in the development of extraembryonic visceral endoderm		IGI	MGI:97451 	J:70278 	
+MGI:88457	Col5a1	collagen, type V, alpha 1	2		negative regulation of endodermal cell differentiation			ISO	P20908 	J:164563 	
+MGI:88458	Col5a2	collagen, type V, alpha 2	1		negative regulation of endodermal cell differentiation			ISO	P05997 	J:164563 	
+MGI:88448	Col12a1	collagen, type XII, alpha 1	9		endodermal cell differentiation			IBA	PTN002770541 	J:265628 	
+MGI:88276	Ctnnb1	catenin (cadherin associated protein), beta 1	9		endoderm formation	results in the formation of definitive endoderm		IMP	MGI:1858007 MGI:2148567 	J:108981 	
+MGI:88276	Ctnnb1	catenin (cadherin associated protein), beta 1	9		endoderm formation			IMP	MGI:2148567 MGI:4418897 	J:198627 	
+MGI:88276	Ctnnb1	catenin (cadherin associated protein), beta 1	9		endodermal cell fate commitment	happens in foregut diverticulum endoderm,results in a cell's commitment to endodermal cell		IMP	MGI:1858007 MGI:2148567 	J:108981 	
+MGI:109345	Ctr9	CTR9 homolog, Paf1/RNA polymerase II complex component	7		endodermal cell fate commitment			IMP		J:149841 	
+MGI:109175	Dab2	disabled 2, mitogen-responsive phosphoprotein	15	NOT	endoderm development	has the participant embryonic stem cell	PR:P98078-3	IMP		J:183994 	
+MGI:109175	Dab2	disabled 2, mitogen-responsive phosphoprotein	15		endoderm development	has the participant embryonic stem cell	PR:P98078-1	IMP		J:183994 	
+MGI:1329040	Dkk1	dickkopf WNT signaling pathway inhibitor 1	19		endoderm development	results in the development of extraembryonic endoderm		IMP	MGI:2387760 	J:134688 	
+MGI:1329040	Dkk1	dickkopf WNT signaling pathway inhibitor 1	19		endoderm formation			IDA		J:155850 	
+MGI:1329040	Dkk1	dickkopf WNT signaling pathway inhibitor 1	19		regulation of endodermal cell fate specification			ISO	O94907 	J:164563 	
+MGI:105120	Dusp1	dual specificity phosphatase 1	17		endoderm formation			IBA	PTN000017039 	J:265628 	
+MGI:101911	Dusp2	dual specificity phosphatase 2	2		endoderm formation			IBA	PTN000017039 	J:265628 	
+MGI:2442191	Dusp4	dual specificity phosphatase 4	8		endoderm formation			IBA	PTN000017039 	J:265628 	
+MGI:2685183	Dusp5	dual specificity phosphatase 5	19		endoderm formation			IBA	PTN000017039 	J:265628 	
+MGI:1201683	Eomes	eomesodermin	9		endoderm development	results in the development of definitive endoderm		IMP	MGI:2656539 MGI:5698524 	J:226614 	
+MGI:1201683	Eomes	eomesodermin	9		endoderm formation			IMP	MGI:3774028 	J:168146 J:176969 	
+MGI:1201683	Eomes	eomesodermin	9		endoderm formation			IMP		J:131055 	
+MGI:1201683	Eomes	eomesodermin	9		endodermal cell fate specification			IBA	PTN002601220 	J:265628 	
+MGI:1201683	Eomes	eomesodermin	9		endodermal cell fate specification			IMP	MGI:3774028 	J:168146 	
+MGI:1201683	Eomes	eomesodermin	9		mesendoderm development			IMP	MGI:2656539 MGI:5698524 	J:226614 	
+MGI:103006	Epb41l5	erythrocyte membrane protein band 4.1 like 5	1		endoderm development			IMP	MGI:3822451 	J:142596 	
+MGI:894663	Ext1	exostosin glycosyltransferase 1	15		endoderm development			IMP	MGI:1888710 	J:64021 	
+MGI:894663	Ext1	exostosin glycosyltransferase 1	15		endoderm development			IMP		J:64021 	
+MGI:99604	Fgf8	fibroblast growth factor 8	19		cell migration involved in mesendoderm migration	happens in embryo mesoderm,results in the movement of mesodermal cell|happens in embryo mesoderm,results in the movement of endodermal cell|happens in definitive endoderm,results in the movement of mesodermal cell|happens in definitive endoderm,results in the movement of endodermal cell		IMP	MGI:2150346 	J:56519 	
+MGI:95566	Fn1	fibronectin 1	1		endodermal cell differentiation			ISO	P02751 	J:164563 	
+MGI:1347476	Foxa2	forkhead box A2	2		mesendoderm development			IMP	MGI:2656539 MGI:5698524 	J:226614 	
+MGI:95664	Gata4	GATA binding protein 4	14		endoderm formation	has the participant epiblast cell		IMP	MGI:2179511 	J:29883 	
+MGI:107516	Gata6	GATA binding protein 6	18		endodermal cell differentiation	happens in embryo		IMP	MGI:2177785 	J:51304 	
+MGI:107516	Gata6	GATA binding protein 6	18		endodermal cell fate determination			IDA		J:159322 	
+MGI:95683	Gdf1	growth differentiation factor 1	8		endoderm development			IGI	MGI:95686 	J:127541 	
+MGI:95686	Gdf3	growth differentiation factor 3	6		endoderm development			IGI	MGI:95683 	J:127541 	
+MGI:95686	Gdf3	growth differentiation factor 3	6		endoderm development			IMP	MGI:3612535 	J:104371 	
+MGI:108086	Hdac1	histone deacetylase 1	4		endoderm development	results in the development of midgut,has the participant gut endothelial cell		IDA		J:89931 	
+MGI:108086	Hdac1	histone deacetylase 1	4		endoderm development	results in the development of midgut,has the participant gut endothelial cell		IMP		J:89931 	
+MGI:96086	Hhex	hematopoietically expressed homeobox	19		endoderm development			IMP	MGI:2177762 	J:119866 	
+MGI:101761	Hmga2	high mobility group AT-hook 2	10		endodermal cell differentiation			ISO	P52926 	J:164563 	
+MGI:98505	Hnf1b	HNF1 homeobox B	11		endoderm development			IMP	MGI:1857856 	J:58079 J:139252 	
+MGI:98505	Hnf1b	HNF1 homeobox B	11		endoderm development			IMP	MGI:2181390 	J:58080 	
+MGI:98505	Hnf1b	HNF1 homeobox B	11		endoderm formation			ISO	A1L1N5 	J:139252 	
+MGI:98505	Hnf1b	HNF1 homeobox B	11		endodermal cell fate specification			IMP	MGI:1857856 	J:139252 	
+MGI:1915446	Hsbp1	heat shock factor binding protein 1	8		endodermal cell differentiation			IMP		J:206878 	
+MGI:96570	Inhba	inhibin beta-A	13		endodermal cell differentiation			ISO	P08476 	J:164563 	
+MGI:96604	Itga5	integrin alpha 5 (fibronectin receptor alpha)	15		endodermal cell differentiation			ISO	P08648 	J:164563 	
+MGI:96608	Itgav	integrin alpha V	2		endodermal cell differentiation			ISO	P06756 	J:164563 	
+MGI:1098240	Kif16b	kinesin family member 16B	2		endoderm development			IMP		J:168572 	
+MGI:894762	Ldb1	LIM domain binding 1	19		mesendoderm development			IMP	MGI:2656539 MGI:5698524 	J:226614 	
+MGI:2685031	Leo1	Leo1, Paf1/RNA polymerase II complex component	9		endodermal cell fate commitment			IMP		J:149841 	
+MGI:99783	Lhx1	LIM homeobox protein 1	11		endoderm development	results in the development of definitive endoderm		IMP	MGI:2656539 MGI:5698524 	J:226614 	
+MGI:99783	Lhx1	LIM homeobox protein 1	11		endoderm formation	results in the formation of definitive endoderm,has the participant endodermal cell		IMP	MGI:1857848 	J:93592 	
+MGI:99783	Lhx1	LIM homeobox protein 1	11		mesendoderm development			IMP	MGI:2656539 MGI:5698524 	J:226614 	
+MGI:1349392	Macroh2a1	macroH2A.1 histone	13		positive regulation of endodermal cell differentiation			ISO	O75367 	J:164563 	
+MGI:1926212	Med12	mediator complex subunit 12	X		endoderm development			IMP	MGI:4839486 	J:166045 	
+MGI:107785	Mesp1	mesoderm posterior 1	7		negative regulation of endodermal cell fate specification			IDA		J:159135 	
+MGI:1351322	Mixl1	Mix1 homeobox-like 1 (Xenopus laevis)	1		endoderm development	results in the development of gut		IMP	MGI:2387828 	J:77443 	
+MGI:1351322	Mixl1	Mix1 homeobox-like 1 (Xenopus laevis)	1		endoderm formation			IBA	PTN000676189 	J:265628 	
+MGI:1351322	Mixl1	Mix1 homeobox-like 1 (Xenopus laevis)	1		endoderm formation	results in the formation of definitive endoderm,has the participant endodermal cell		IMP	MGI:2387829 	J:117059 	
+MGI:1351322	Mixl1	Mix1 homeobox-like 1 (Xenopus laevis)	1		endodermal cell differentiation			IDA		J:190085 	
+MGI:1919200	Nanog	Nanog homeobox	6		endodermal cell fate specification			ISO	Q9H9S0 	J:168146 	
+MGI:1919200	Nanog	Nanog homeobox	6		negative regulation of endodermal cell fate specification			TAS		J:114820 	
+MGI:1355333	Nckap1	NCK-associated protein 1	2		endoderm development	results in the development of embryo endoderm		IMP	MGI:3578145 	J:119028 	
+MGI:108067	Nkx2-1	NK2 homeobox 1	12		endoderm development			IMP	MGI:1857494 	J:30559 J:54641 	
+MGI:97350	Nkx2-5	NK2 homeobox 5	17		endoderm development			TAS		J:48404 	
+MGI:97359	Nodal	nodal	10		endoderm development			IMP	MGI:2158732 	J:73506 	
+MGI:97359	Nodal	nodal	10		endodermal cell differentiation			ISO	Q96S42 	J:164563 	
+MGI:97359	Nodal	nodal	10		mesendoderm development			IMP	MGI:2158732 	J:73506 	
+MGI:97359	Nodal	nodal	10		mesendoderm development			IMP		J:85863 	
+MGI:97359	Nodal	nodal	10		mesendoderm development			ISO	Q96S42 	J:164563 	
+MGI:104327	Nog	noggin	11		endoderm development	happens in extraembryonic endoderm		IDA		J:228122 	
+MGI:104327	Nog	noggin	11		endoderm formation			IDA		J:155850 	
+MGI:97363	Notch1	notch 1	2		endoderm development			IMP	MGI:2684314 	J:86975 	
+MGI:1196423	Onecut1	one cut domain, family member 1	9		endoderm development	results in the development of pancreas		IMP	MGI:2179340 	J:62595 	
+MGI:97451	Otx2	orthodenticle homeobox 2	14		endoderm development	results in the development of extraembryonic visceral endoderm		IGI	MGI:109448 	J:70278 	
+MGI:97451	Otx2	orthodenticle homeobox 2	14		mesendoderm development			IMP	MGI:2656539 MGI:5698524 	J:226614 	
+MGI:1923988	Paf1	Paf1, RNA polymerase II complex component	7		endodermal cell fate commitment			IMP		J:149841 	
+MGI:97493	Pax9	paired box 9	12		endoderm development			IMP	MGI:1857887 	J:76015 	
+MGI:2145154	Pelo	pelota mRNA surveillance and ribosome rescue factor	13		endoderm development	happens in extraembryonic endoderm		IDA		J:228122 	
+MGI:2145154	Pelo	pelota mRNA surveillance and ribosome rescue factor	13		endoderm development	happens in extraembryonic endoderm		IMP	MGI:3764519 MGI:5705245 	J:228122 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		endodermal cell fate commitment	results in a cell's commitment to endodermal cell		IDA		J:61492 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		endodermal cell fate specification			ISO	Q01860 	J:168146 	
+MGI:97800	Pthlh	parathyroid hormone-like peptide	6		endoderm development			IDA		J:51778 	
+MGI:1309480	Rtf1	RTF1, Paf1/RNA polymerase II complex component	2		endodermal cell fate commitment			IMP		J:149841 	
+MGI:1918177	Setd2	SET domain containing 2	9		endodermal cell differentiation			IMP		J:243534 	
+MGI:108051	Smad2	SMAD family member 2	18		endoderm development			IGI	MGI:1201674 	J:106308 	
+MGI:108051	Smad2	SMAD family member 2	18		endoderm formation			IMP		J:176969 	
+MGI:1201674	Smad3	SMAD family member 3	9		endoderm development			IGI	MGI:108051 	J:106308 	
+MGI:894293	Smad4	SMAD family member 4	18		endoderm development			IMP	MGI:1858049 	J:45399 	
+MGI:894293	Smad4	SMAD family member 4	18		endoderm development	results in the development of definitive endoderm		IMP	MGI:2656539 MGI:5698524 	J:226614 	
+MGI:894293	Smad4	SMAD family member 4	18		mesendoderm development			IMP	MGI:2656539 MGI:5698524 	J:226614 	
+MGI:98364	Sox2	SRY (sex determining region Y)-box 2	3		endodermal cell fate specification			ISO	P48431 	J:168146 	
+MGI:98369	Sox7	SRY (sex determining region Y)-box 7	14		endoderm formation			ISO	Q9BT81 	J:164563 	
+MGI:107543	Sox17	SRY (sex determining region Y)-box 17	1		endoderm development			IMP	MGI:2179440 	J:156731 	
+MGI:107543	Sox17	SRY (sex determining region Y)-box 17	1		endoderm development	results in the development of embryo		IMP	MGI:3717121 	J:170416 	
+MGI:107543	Sox17	SRY (sex determining region Y)-box 17	1		endoderm development			IMP		J:75946 	
+MGI:107543	Sox17	SRY (sex determining region Y)-box 17	1		endoderm formation			ISO	Q9H6I2 	J:164563 	
+MGI:107543	Sox17	SRY (sex determining region Y)-box 17	1		endodermal cell fate determination			IDA		J:159322 	
+MGI:107543	Sox17	SRY (sex determining region Y)-box 17	1		endodermal cell fate specification	is a part of cardiogenic plate morphogenesis|is a part of embryonic heart tube morphogenesis|is a part of embryonic foregut morphogenesis|is a part of endodermal digestive tract morphogenesis		IMP		J:170493 	
+MGI:1919725	Ssbp3	single-stranded DNA binding protein 3	4		mesendoderm development			IMP	MGI:2656539 MGI:5698524 	J:226614 	
+MGI:98725	Tgfb1	transforming growth factor, beta 1	7		endoderm development			IDA		J:51778 	
+MGI:2443265	Tnrc6c	trinucleotide repeat containing 6C	11		endoderm development			IMP	MGI:4124681 	J:182447 	
+MGI:2443265	Tnrc6c	trinucleotide repeat containing 6C	11		endoderm formation			IMP	MGI:4124681 	J:182447 	
+MGI:98940	Vtn	vitronectin	11		endodermal cell differentiation			ISO	P04004 	J:164563 	
+MGI:107924	Wnt8a	wingless-type MMTV integration site family, member 8A	18		endoderm development			IMP		J:103272 	
+MGI:107946	Zfp36l1	zinc finger protein 36, C3H type-like 1	12		mesendoderm development			IDA		J:233560 	
+
