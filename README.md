@@ -4,7 +4,7 @@ This is the PyTorch implementation of the paper:
 Peizhuo Wang, Xiao Wen, Peng Lang, Hantao Shu, Lin Gao, Dan Zhao and Jianyang Zeng, 
 [Deciphering Driver Regulators of Cell Fate Decisions by Constructing and Controlling Cell-Lineage-Specific Gene Regulatory Networks](https://) 
 
-![Overview.png](https://github.com/WPZgithub/CEFCON/main/Overview.png)
+![Overview.png](https://github.com/WPZgithub/CEFCON/Overview.png)
 
 CEFCON is a computational tool to characterize gene regulatory dynamics from a perspective of network control theory  and identifies putative regulators that
 drive cell fate decisions. CEFCON takes a prior gene interaction network and expression profiles from scRNA-seq data as inputs and consists of three main components, including cell-lineage-specific GRN construction, driver regulator
