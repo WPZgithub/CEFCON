@@ -24,7 +24,6 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
             adata = sc.read_csv(input_expData, first_column_names=True)
         else:  # h5ad
             adata = sc.read_h5ad(input_expData)
-        adata.var_names = adata.var_names.str.upper()
     elif isinstance(input_expData, sc.AnnData):
         adata = input_expData
     elif isinstance(input_expData, pd.DataFrame):
@@ -32,6 +31,7 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
     else:
         raise Exception("Invalid input! The input format must be '.csv' file or '.h5ad' "
                         "formatted hdf5 file, or an 'AnnData' object!", input_expData)
+    adata.var_names = adata.var_names.str.upper()
     scData_genes = adata.var_names.values
 
     ## Prior network data
