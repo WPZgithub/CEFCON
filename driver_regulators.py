@@ -72,7 +72,7 @@ def MDScontrol(directed_graph, solver='GUROBI'):
 
     ## Graph reduction
     reduced_graph, critical_nodes, redundant_nodes = _MDS_graph_reduction(reduced_graph)
-    print('  {} critical nodes are found.'.format(len(critical_nodes)), end='  ')
+    print('  {} critical nodes are found.'.format(len(critical_nodes)))
 
     ## ILP is used to find an MDS in the reduced graph
     reduced_graph.remove_nodes_from(list(nx.isolates(reduced_graph)))
@@ -80,7 +80,7 @@ def MDScontrol(directed_graph, solver='GUROBI'):
     if reduced_graph.number_of_nodes() == 0:
         print('    {} MDS driver nodes are found.'.format(len(critical_nodes)))
     else:
-        print('  Using Integer Linear Programming to obtain the final results...')
+        print('  Solving the Integer Linear Programming problem on the reduced graph...')
         A = nx.to_numpy_matrix(reduced_graph)
         A = A + np.diag(np.ones(A.shape[0]))
         # Define the optimization variables
@@ -93,7 +93,9 @@ def MDScontrol(directed_graph, solver='GUROBI'):
         prob = cvx.Problem(obj, constraints)
 
         if solver=='GUROBI':
-            # Solve with GUROBI. import gurobipy
+            # Solve with GUROBI.
+            import gurobipy as gp
+            m = gp.Model()
             print('    Solving by GUROBI...(', end='')
             prob.solve(solver=cvx.GUROBI, verbose=False)
             print('optimal value with GUROBI:{},'.format(prob.value), end='  ')
@@ -102,7 +104,7 @@ def MDScontrol(directed_graph, solver='GUROBI'):
         #        print("optimal value with XPRESS:", prob.value)
         else:
             # Solve with ECOS_BB
-            print('    Inaccurate solver is selected. Therefore, solving by SCIP now...(', end='')
+            print('    Inaccurate solver is selected! Now, solving by SCIP...(', end='')
             prob.solve(solver=cvx.SCIP, verbose=False)
             print('optimal value with SCIP:{},'.format(prob.value), end='  ')
         print('status:{})'.format(prob.status))
@@ -244,7 +246,7 @@ def _MFVS_graph_reduction(directed_graph, nodes_importance, S):
     return directed_graph,S
 
 def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
-    print('Solving DFVS problem...')
+    print('Solving MFVS problem...')
     # Source nodes are critical (steering) nodes
     critical_nodes = set()
     source_nodes = _root_variables(directed_graph)
@@ -276,22 +278,22 @@ def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
             reduced_graph.remove_node(node_max)
         else:
             break
-    print('  {} critical nodes are found.'.format(len(critical_nodes)), end='  ')
+    print('  {} critical nodes are found.'.format(len(critical_nodes)))
 
     ## ILP is used to find an MFVS in the reduced graph
     reduced_graph.remove_nodes_from(list(nx.isolates(reduced_graph)))
     print('  {} nodes left after graph reduction operation.'.format(reduced_graph.number_of_nodes()))
     if reduced_graph.number_of_nodes() == 0:
-        print('  {} DFVS driver nodes are found.'.format(len(critical_nodes)))
+        print('  {} MFVS driver nodes are found.'.format(len(critical_nodes)))
     else:
-        print('  Using Integer Linear Programming to obtain the final results...')
+        print('  Solving the Integer Linear Programming problem on the reduced graph...')
         nodes_idx_map = dict(zip(reduced_graph.nodes(), range(len(reduced_graph.nodes()))))
         # Define the optimization variables
         n = reduced_graph.number_of_nodes()
         x = cvx.Variable(n, boolean=True)
         # Define the constraints
         constraints = []
-        w = cvx.Variable(n, integer=True) # w must be integer?
+        w = cvx.Variable(n, integer=True)
         for e in reduced_graph.edges():
             constraints += [w[nodes_idx_map[e[0]]] - w[nodes_idx_map[e[1]]] + n*x[nodes_idx_map[e[0]]] >=1]
         constraints += [0 <= w, w <= (n-1)]
@@ -301,7 +303,9 @@ def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
         prob = cvx.Problem(obj, constraints)
 
         if solver=='GUROBI':
-            # Solve with GUROBI. import gurobipy
+            # Solve with GUROBI.
+            import gurobipy as gp
+            m = gp.Model()
             print('    Solving by GUROBI...(', end='')
             prob.solve(solver=cvx.GUROBI, verbose=False)
             print('optimal value with GUROBI:{},'.format(prob.value), end='  ')
@@ -310,7 +314,7 @@ def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
         #    print("optimal value with XPRESS:", prob.value)
         else:
             # Solve with ECOS_BB
-            print('    Inaccurate solver is selected. Therefore, solving by SCIP now...(', end='')
+            print('    Inaccurate solver is selected. Now, solving by SCIP...(', end='')
             prob.solve(solver=cvx.SCIP, verbose=False)
             print('optimal value with SCIP:{},'.format(prob.value), end='  ')
         print('status:{})'.format(prob.status))

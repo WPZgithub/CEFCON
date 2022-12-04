@@ -14,6 +14,7 @@ def main(args):
         Path.mkdir(p)
 
     ## load data
+    print('Data loading and preprocessing...')
     data = data_preparation(args.input_expData, args.input_priorNet,
                             genes_DE=args.input_genesDE,
                             TF_list=args.TFs,
@@ -22,6 +23,7 @@ def main(args):
     genes_DEscore = data.var_names[data.var['node_score_auxiliary']>1]
 
     ## GRN construction
+    print('Cell-lineage-specific GRN construction.')
     cefcon_GRN_model = cl_GRN(hidden_dim=args.hidden_dim,
                               output_dim=args.output_dim,
                               heads_first=args.heads,
@@ -41,6 +43,7 @@ def main(args):
     gene_influence_scores = cefcon_GRN_model.get_gene_influence_scores()
 
     ## Driver regulators
+    print('Driver regulators identification.')
     critical_genes, out_critical_genes, in_critical_genes = highly_weighted_genes(gene_influence_scores,
                                                                                   topK_drivers=args.topK_drivers)
     cellFate_drivers_set, MDS_driver_set, DFVS_driver_set = driver_regulators(G_predicted,
@@ -57,6 +60,7 @@ def main(args):
     drivers_results.to_csv(fspath(p/'driver_regulators.csv'))
 
     ## RGMs
+    print('Regulon-like gene modules identification.')
     RGMs_results = regulon_activity(data.to_df(), G_predicted,
                                     out_critical_genes.intersection(cellFate_drivers_set),
                                     in_critical_genes.intersection(cellFate_drivers_set),
