@@ -97,7 +97,7 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
         addi_top_edges = addi_top_edges.iloc[0:addi_top_k, 0:2]
     edgelist = pd.concat([edgelist, addi_top_edges.iloc[:, 0:2]], ignore_index=True)
     edgelist = edgelist.drop_duplicates(subset=['from', 'to'], keep='first', inplace=False)
-    print('{} extra edges (Spearman correlation > 0.6) are added into the prior gene interaction network.'.format(len(edgelist) - ori_edgeNum))
+    print('  {} extra edges (Spearman correlation > 0.6) are added into the prior gene interaction network.'.format(len(edgelist) - ori_edgeNum))
     adata.uns['edgelist'] = edgelist
 
     ## Differential expression scores

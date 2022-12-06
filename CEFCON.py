@@ -23,7 +23,7 @@ def main(args):
     genes_DEscore = data.var_names[data.var['node_score_auxiliary']>1]
 
     ## GRN construction
-    print('Cell-lineage-specific GRN construction.')
+    print('Constructing cell-lineage-specific GRN...')
     cefcon_GRN_model = cl_GRN(hidden_dim=args.hidden_dim,
                               output_dim=args.output_dim,
                               heads_first=args.heads,
@@ -43,7 +43,7 @@ def main(args):
     gene_influence_scores = cefcon_GRN_model.get_gene_influence_scores()
 
     ## Driver regulators
-    print('Driver regulators identification.')
+    print('Identifying driver regulators...')
     critical_genes, out_critical_genes, in_critical_genes = highly_weighted_genes(gene_influence_scores,
                                                                                   topK_drivers=args.topK_drivers)
     cellFate_drivers_set, MDS_driver_set, DFVS_driver_set = driver_regulators(G_predicted,
@@ -60,7 +60,7 @@ def main(args):
     drivers_results.to_csv(fspath(p/'driver_regulators.csv'))
 
     ## RGMs
-    print('Regulon-like gene modules identification.')
+    print('Identifying regulon-like gene modules...')
     RGMs_results = regulon_activity(data.to_df(), G_predicted,
                                     out_critical_genes.intersection(cellFate_drivers_set),
                                     in_critical_genes.intersection(cellFate_drivers_set),
@@ -128,4 +128,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     main(args)
-    print('Done.')
+    print('Done. Please check the results in "%s"' % args.out_dir)

@@ -134,7 +134,7 @@ class GraphAttention_layer(MessagePassing):
             alpha = x_auxiliary_j * F.leaky_relu(alpha, 0.2)
         elif self.attention_type == 'COS':
             alpha = x_auxiliary_j * torch.abs((x_norm_i * x_norm_j).sum(dim=-1))
-            T = 0.25
+            T = 0.25 #0.1, 0.25, 0.5, 0.75, 1.0
         else:  # 'SD'
             alpha = x_auxiliary_j * torch.abs((x_i * x_j).sum(dim=-1)) / math.sqrt(self.output_dim)
 
@@ -319,8 +319,6 @@ class cl_GRN:
         att_weights_all = []
         emb_out_avg = 0
         for iter in range(self.repeats):
-            print('Iter: {}'.format(iter + 1))
-
             ## Encoder & Model & Optimizer
             encoder = GRN_Encoder(input_dim, self.hidden_dim, self.output_dim, self.heads_first,
                                   dropout=self.dropout, attention_type=self.attention_type).to(device)
@@ -334,9 +332,10 @@ class cl_GRN:
             best_encoder = encoder
             min_loss = np.inf
             if showProgressBar:
-                with trange(self.epochs) as t:
+                with trange(self.epochs, ncols=100) as t:
                     for epoch in t:
                         loss = self.__train(data, DGI_model, optimizer)
+                        t.set_description('  Iter: {}/{}'.format(iter + 1, self.repeats))
                         if epoch < self.epochs - 1:
                             t.set_postfix(loss=loss)
                         else:
@@ -346,6 +345,7 @@ class cl_GRN:
                             min_loss = loss
                             best_encoder = encoder.state_dict()
             else:
+                print('  Iter: {}/{}'.format(iter + 1, self.repeats))
                 for epoch in range(self.epochs):
                     loss = self.__train(data, DGI_model, optimizer)
                     if min_loss > loss:
@@ -498,7 +498,6 @@ class cl_GRN:
         emb = emb.loc[emb.index.isin(self.G_predicted.nodes), :]
         emb.index = emb.index.astype(str)
 
-        ## Save the predicted network to file
         if isinstance(output_file, str):
             emb.to_csv(output_file, index_label='geneName')
 
@@ -518,7 +517,9 @@ class cl_GRN:
                                     axis=1 - i)
             gene_influence_scores.iloc[:, i] = np.log1p(node_att_score).flatten().tolist()[0]
 
-        gene_influence_scores['Score'] = 0.8 * gene_influence_scores.loc[:, 'out'] +\
-                                         0.2 * gene_influence_scores.loc[:, 'in']
+        lam = 0.8
+        gene_influence_scores['Score'] = lam * gene_influence_scores.loc[:, 'out'] + \
+                                         (1-lam) * gene_influence_scores.loc[:, 'in']
         node_weighted_degree = gene_influence_scores.sort_values(by='Score', ascending=False)
+
         return node_weighted_degree

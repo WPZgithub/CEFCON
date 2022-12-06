@@ -64,7 +64,7 @@ def _MDS_graph_reduction(directed_graph):
     return directed_graph, critical_nodes, redundant_nodes
 
 def MDScontrol(directed_graph, solver='GUROBI'):
-    print('Solving MDS problem...')
+    print('  Solving MDS problem...')
     directed_graph.remove_edges_from(nx.selfloop_edges(directed_graph))
     reduced_graph = nx.DiGraph(directed_graph)
     intermittent_nodes = set()
@@ -72,15 +72,15 @@ def MDScontrol(directed_graph, solver='GUROBI'):
 
     ## Graph reduction
     reduced_graph, critical_nodes, redundant_nodes = _MDS_graph_reduction(reduced_graph)
-    print('  {} critical nodes are found.'.format(len(critical_nodes)))
+    print('    {} critical nodes are found.'.format(len(critical_nodes)))
 
     ## ILP is used to find an MDS in the reduced graph
     reduced_graph.remove_nodes_from(list(nx.isolates(reduced_graph)))
-    print('  {} nodes left after graph reduction operation.'.format(reduced_graph.number_of_nodes()))
+    print('    {} nodes left after graph reduction operation.'.format(reduced_graph.number_of_nodes()))
     if reduced_graph.number_of_nodes() == 0:
-        print('    {} MDS driver nodes are found.'.format(len(critical_nodes)))
+        print('{} MDS driver nodes are found.'.format(len(critical_nodes)))
     else:
-        print('  Solving the Integer Linear Programming problem on the reduced graph...')
+        print('    Solving the Integer Linear Programming problem on the reduced graph...')
         A = nx.to_numpy_matrix(reduced_graph)
         A = A + np.diag(np.ones(A.shape[0]))
         # Define the optimization variables
@@ -96,7 +96,7 @@ def MDScontrol(directed_graph, solver='GUROBI'):
             # Solve with GUROBI.
             import gurobipy as gp
             m = gp.Model()
-            print('    Solving by GUROBI...(', end='')
+            print('      Solving by GUROBI...(', end='')
             prob.solve(solver=cvx.GUROBI, verbose=False)
             print('optimal value with GUROBI:{},'.format(prob.value), end='  ')
         #elif solver == 'XPRESS':
@@ -104,7 +104,7 @@ def MDScontrol(directed_graph, solver='GUROBI'):
         #        print("optimal value with XPRESS:", prob.value)
         else:
             # Solve with ECOS_BB
-            print('    Inaccurate solver is selected! Now, solving by SCIP...(', end='')
+            print('      Inaccurate solver is selected! Now, solving by SCIP...(', end='')
             prob.solve(solver=cvx.SCIP, verbose=False)
             print('optimal value with SCIP:{},'.format(prob.value), end='  ')
         print('status:{})'.format(prob.status))
@@ -114,7 +114,7 @@ def MDScontrol(directed_graph, solver='GUROBI'):
         mds_nodes = set([v for k,v in nodes_idx_map.items() if x.value[k]==1])
         MDS_driver_set = critical_nodes.union(mds_nodes)
         intermittent_nodes = set(reduced_graph.nodes()) - MDS_driver_set
-        print('{} MDS driver nodes are found.'.format(len(MDS_driver_set)))
+        print('  {} MDS driver genes are found.'.format(len(MDS_driver_set)))
 
     return MDS_driver_set, intermittent_nodes
 
@@ -246,7 +246,7 @@ def _MFVS_graph_reduction(directed_graph, nodes_importance, S):
     return directed_graph,S
 
 def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
-    print('Solving MFVS problem...')
+    print('  Solving MFVS problem...')
     # Source nodes are critical (steering) nodes
     critical_nodes = set()
     source_nodes = _root_variables(directed_graph)
@@ -278,15 +278,15 @@ def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
             reduced_graph.remove_node(node_max)
         else:
             break
-    print('  {} critical nodes are found.'.format(len(critical_nodes)))
+    print('    {} critical nodes are found.'.format(len(critical_nodes)))
 
     ## ILP is used to find an MFVS in the reduced graph
     reduced_graph.remove_nodes_from(list(nx.isolates(reduced_graph)))
-    print('  {} nodes left after graph reduction operation.'.format(reduced_graph.number_of_nodes()))
+    print('    {} nodes left after graph reduction operation.'.format(reduced_graph.number_of_nodes()))
     if reduced_graph.number_of_nodes() == 0:
-        print('  {} MFVS driver nodes are found.'.format(len(critical_nodes)))
+        print('{} MFVS driver genes are found.'.format(len(critical_nodes)))
     else:
-        print('  Solving the Integer Linear Programming problem on the reduced graph...')
+        print('    Solving the Integer Linear Programming problem on the reduced graph...')
         nodes_idx_map = dict(zip(reduced_graph.nodes(), range(len(reduced_graph.nodes()))))
         # Define the optimization variables
         n = reduced_graph.number_of_nodes()
@@ -306,7 +306,7 @@ def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
             # Solve with GUROBI.
             import gurobipy as gp
             m = gp.Model()
-            print('    Solving by GUROBI...(', end='')
+            print('      Solving by GUROBI...(', end='')
             prob.solve(solver=cvx.GUROBI, verbose=False)
             print('optimal value with GUROBI:{},'.format(prob.value), end='  ')
         #elif solver=='XPRESS':
@@ -314,7 +314,7 @@ def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
         #    print("optimal value with XPRESS:", prob.value)
         else:
             # Solve with ECOS_BB
-            print('    Inaccurate solver is selected. Now, solving by SCIP...(', end='')
+            print('      Inaccurate solver is selected. Now, solving by SCIP...(', end='')
             prob.solve(solver=cvx.SCIP, verbose=False)
             print('optimal value with SCIP:{},'.format(prob.value), end='  ')
         print('status:{})'.format(prob.status))
@@ -322,7 +322,7 @@ def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
         ## Set remain nodes that belongs to the MDS as critical nodes
         mFVS_remain = set([k for k,v in nodes_idx_map.items() if x.value[v]==1])
         critical_nodes = critical_nodes.union(mFVS_remain)
-        print('{} DFVS driver nodes are found.'.format(len(critical_nodes)))
+        print('  {} MFVS driver nodes are found.'.format(len(critical_nodes)))
 
     return critical_nodes, source_nodes
 
