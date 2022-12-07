@@ -3,12 +3,12 @@ import numpy as np
 import pandas as pd
 import cvxpy as cvx
 
-def _root_variables(directed_graph):
+def _root_nodes(directed_graph):
     return set([n for n in directed_graph.nodes() if (directed_graph.in_degree(n) == 0)
                 or (list(directed_graph.predecessors(n)) == [n])])
 
 
-def _end_variables(directed_graph):
+def _end_nodes(directed_graph):
     return set([n for n in directed_graph.nodes() if (directed_graph.out_degree(n) == 0)
                 or (list(directed_graph.successors(n)) == [n])])
 
@@ -19,7 +19,7 @@ Ref: [1] Dominating scale-free networks with variable scaling exponent: heteroge
      New Journal of Physics, 2012
      [2] Critical controllability analysis of directed biological networks using efficient graph reduction.
      2017, Scientific Reports
-A set S⊆V of nodes in a graph G=(V,E) is a dominating set if every node v∈V is either an element of S 
+A set S \subset V of nodes in a graph G=(V,E) is a dominating set if every node v \in V is either an element of S 
 or adjacent to an element of S.
 Use efficient graph reduction and then solve the ILP problem using gurobi. 
 """
@@ -28,7 +28,7 @@ def _MDS_graph_reduction(directed_graph):
     redundant_nodes = set()
 
     # Critical nodes cond. 1: Source nodes are critical (driver) nodes
-    critical_nodes.update(_root_variables(directed_graph))
+    critical_nodes.update(_root_nodes(directed_graph))
     remain_nodes = set(directed_graph.nodes()) - critical_nodes
 
     noChange = False
@@ -94,8 +94,6 @@ def MDScontrol(directed_graph, solver='GUROBI'):
 
         if solver=='GUROBI':
             # Solve with GUROBI.
-            import gurobipy as gp
-            m = gp.Model()
             print('      Solving by GUROBI...(', end='')
             prob.solve(solver=cvx.GUROBI, verbose=False)
             print('optimal value with GUROBI:{},'.format(prob.value), end='  ')
@@ -247,9 +245,9 @@ def _MFVS_graph_reduction(directed_graph, nodes_importance, S):
 
 def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
     print('  Solving MFVS problem...')
-    # Source nodes are critical (steering) nodes
+    # Source nodes are critical (driver) nodes
     critical_nodes = set()
-    source_nodes = _root_variables(directed_graph)
+    source_nodes = _root_nodes(directed_graph)
     critical_nodes.update(source_nodes)
     reduced_graph = nx.DiGraph(directed_graph)
 
@@ -304,8 +302,6 @@ def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
 
         if solver=='GUROBI':
             # Solve with GUROBI.
-            import gurobipy as gp
-            m = gp.Model()
             print('      Solving by GUROBI...(', end='')
             prob.solve(solver=cvx.GUROBI, verbose=False)
             print('optimal value with GUROBI:{},'.format(prob.value), end='  ')
@@ -313,7 +309,7 @@ def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
         #    prob.solve(solver=cvx.XPRESS, verbose=False)
         #    print("optimal value with XPRESS:", prob.value)
         else:
-            # Solve with ECOS_BB
+            # Solve with SCIP
             print('      Inaccurate solver is selected. Now, solving by SCIP...(', end='')
             prob.solve(solver=cvx.SCIP, verbose=False)
             print('optimal value with SCIP:{},'.format(prob.value), end='  ')
@@ -343,6 +339,10 @@ def highly_weighted_genes(gene_influence_scores, topK_drivers=50):
 def driver_regulators(G, gene_influence_scores,
                       topK_threshold=50, driver_union=True,
                       solver='GUROBI', plot_Venn=False):
+    if solver=='GUROBI':
+        import gurobipy as gp
+        gp.Model()
+
     DFVS_driver_set, source_nodes = MFVScontrol(G, gene_influence_scores.loc[:, 'out'], solver=solver)
     DFVS_driver_set = DFVS_driver_set.union(source_nodes)
     MDS_driver_set, MDS_intermittent_nodes = MDScontrol(G, solver=solver)

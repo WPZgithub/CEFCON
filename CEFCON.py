@@ -19,7 +19,6 @@ def main(args):
                             genes_DE=args.input_genesDE,
                             TF_list=args.TFs,
                             additional_edges_pct=args.additional_edges_pct)
-    TFs = data.var_names[data.var['is_TF']==1]
     genes_DEscore = data.var_names[data.var['node_score_auxiliary']>1]
 
     ## GRN construction
@@ -51,11 +50,13 @@ def main(args):
                                                                               topK_threshold=args.topK_drivers,
                                                                               driver_union=True,
                                                                               plot_Venn=False)
-    # Steering genes ranking save to file
+    # Driver genes ranking save to file
     drivers_results = gene_influence_scores.loc[gene_influence_scores.index.isin(list(cellFate_drivers_set)), :].copy()
-    drivers_results['is_TF'] = np.isin(drivers_results.index, TFs.values)
     drivers_results['is_MDS'] = np.isin(drivers_results.index, list(MDS_driver_set))
     drivers_results['is_MFVS'] = np.isin(drivers_results.index, list(DFVS_driver_set))
+    if args.TFs is not None:
+        TFs = data.var_names[data.var['is_TF'] == 1]
+        drivers_results['is_TF'] = np.isin(drivers_results.index, TFs.values)
     drivers_results = drivers_results.sort_values(by='Score', ascending=False)
     drivers_results.to_csv(fspath(p/'driver_regulators.csv'))
 
@@ -79,7 +80,7 @@ def add_main_args(parser: argparse.ArgumentParser):
                               help='input prior network file')
     input_parser.add_argument('--input_genesDE', type=str, default=None, metavar='PATH',
                               help='input differential expression score file')
-    input_parser.add_argument('--TFs', type=str, default='./prior_data/hs_hgnc_tfs_lambert2018.txt', metavar='PATH',
+    input_parser.add_argument('--TFs', type=str, default=None, metavar='PATH',
                               help='input transcriptional factors list')
     input_parser.add_argument('--additional_edges_pct', type=float, default=0.01,
                               help='percentage of additional interactions with highly co-expressions')
@@ -112,7 +113,7 @@ def add_main_args(parser: argparse.ArgumentParser):
                             help="remove self loops")
 
     # Driver regulators
-    driver_parser = parser.add_argument_group(title='Driver regulators identification options')
+    driver_parser = parser.add_argument_group(title='Driver regulator identification options')
     driver_parser.add_argument('--topK_drivers', type=int, default=50,
                                help="number of candidate drivers genes according to the influence score")
 
