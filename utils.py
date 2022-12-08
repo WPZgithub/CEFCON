@@ -113,18 +113,21 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
         adata.var['node_score_auxiliary'] = node_score_auxiliary
 
     ## TF list
-    is_TF = np.ones(len(priori_network_nodes), dtype=int)
     if TF_list is not None:
+        is_TF = np.ones(len(priori_network_nodes), dtype=int)
         if isinstance(TF_list, str):
             TF_list = pd.read_csv(TF_list, header=None)
         TF_list = pd.DataFrame(TF_list).iloc[:, 0].str.upper()
         is_TF[~np.isin(priori_network_nodes, TF_list)] = 0
-    adata.var['is_TF'] = is_TF
+        adata.var['is_TF'] = is_TF
 
     return adata
 
 
-def gene_clusters(gene_embeddings: pd.DataFrame, resolution: float=1, vis: bool=False, info=None):
+def gene_clusters(gene_embeddings: pd.DataFrame,
+                  resolution: float=1,
+                  vis: bool=False,
+                  info=None):
     '''
     Clustering genes with provided embeddings using the Leiden community detection
     algorithm in low-dimensional UMAP space.
@@ -145,9 +148,13 @@ def gene_clusters(gene_embeddings: pd.DataFrame, resolution: float=1, vis: bool=
     return gene_labels, pos, adata_gene
 
 
-def regulon_activity(ex_matrix: pd.DataFrame, G: nx.DiGraph,
-                     out_hub_nodes: Union[set, list], in_hub_nodes:  Union[set, list],
-                     DEgenes=None, cell_label=None, num_workers=8):
+def regulon_activity(ex_matrix: pd.DataFrame,
+                     G: nx.DiGraph,
+                     out_hub_nodes: Union[set, list],
+                     in_hub_nodes:  Union[set, list],
+                     DEgenes=None,
+                     cell_label=None,
+                     num_workers=8):
     '''
     Select top regulons and calculate activity in each cell.
     '''
