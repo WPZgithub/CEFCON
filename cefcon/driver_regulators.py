@@ -78,7 +78,7 @@ def MDScontrol(directed_graph, solver='GUROBI'):
     reduced_graph.remove_nodes_from(list(nx.isolates(reduced_graph)))
     print('    {} nodes left after graph reduction operation.'.format(reduced_graph.number_of_nodes()))
     if reduced_graph.number_of_nodes() == 0:
-        print('{} MDS driver nodes are found.'.format(len(critical_nodes)))
+        print('  {} MDS driver nodes are found.'.format(len(critical_nodes)))
     else:
         print('    Solving the Integer Linear Programming problem on the reduced graph...')
         A = nx.to_numpy_matrix(reduced_graph)
@@ -282,7 +282,7 @@ def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
     reduced_graph.remove_nodes_from(list(nx.isolates(reduced_graph)))
     print('    {} nodes left after graph reduction operation.'.format(reduced_graph.number_of_nodes()))
     if reduced_graph.number_of_nodes() == 0:
-        print('{} MFVS driver genes are found.'.format(len(critical_nodes)))
+        print('  {} MFVS driver genes are found.'.format(len(critical_nodes)))
     else:
         print('    Solving the Integer Linear Programming problem on the reduced graph...')
         nodes_idx_map = dict(zip(reduced_graph.nodes(), range(len(reduced_graph.nodes()))))
@@ -323,22 +323,25 @@ def MFVScontrol(directed_graph, nodes_importance, solver='GUROBI'):
     return critical_nodes, source_nodes
 
 
-def highly_weighted_genes(gene_influence_scores, topK_drivers=50):
+def highly_weighted_genes(gene_influence_scores, topK=50):
     v_out =  gene_influence_scores.sort_values(by='out', ascending=False)
-    v_out = v_out.iloc[0:topK_drivers,[0]]
+    v_out = v_out.iloc[0:topK,[0]]
     out_critical_genes = set(v_out[v_out>0].index)
 
     v_in = gene_influence_scores.sort_values(by='in', ascending=False)
-    v_in = v_in.iloc[0:topK_drivers,[1]]
+    v_in = v_in.iloc[0:topK,[1]]
     in_critical_genes = set(v_in[v_in>0].index)
 
     critical_genes = out_critical_genes.union(in_critical_genes)
     return critical_genes, out_critical_genes, in_critical_genes
 
 
-def driver_regulators(G, gene_influence_scores,
-                      topK_threshold=50, driver_union=True,
-                      solver='GUROBI', plot_Venn=False):
+def driver_regulators(G,
+                      gene_influence_scores,
+                      topK=50,
+                      driver_union=True,
+                      solver='GUROBI',
+                      plot_Venn=False):
     if solver=='GUROBI':
         import gurobipy as gp
         gp.Model()
@@ -351,7 +354,7 @@ def driver_regulators(G, gene_influence_scores,
     else:
         driver_set = MDS_driver_set.intersection(DFVS_driver_set)
 
-    critical_genes, _, _ = highly_weighted_genes(gene_influence_scores, topK_threshold)
+    critical_genes, _, _ = highly_weighted_genes(gene_influence_scores, topK)
     CEFCON_drivers = driver_set.intersection(critical_genes)
 
     # Plot Venn figure

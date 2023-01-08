@@ -63,15 +63,11 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
     else:
         node_feature = pd.DataFrame(adata.X.T, index=priori_network_nodes)
 
-    # in_degree, out_degree and eigenvector (centrality: [0,1])
+    # in_degree, out_degree (centrality)
     in_degree = pd.DataFrame.from_dict(nx.in_degree_centrality(priori_network),
                                        orient='index', columns=['in_degree'])
     out_degree = pd.DataFrame.from_dict(nx.out_degree_centrality(priori_network),
                                         orient='index', columns=['out_degree'])
-    # in_eigenvector = pd.DataFrame.from_dict(nx.eigenvector_centrality(priori_network),
-    #                                         orient='index', columns=['in_eigenvector'])
-    # out_eigenvector = pd.DataFrame.from_dict(nx.eigenvector_centrality(priori_network.reverse()),
-    #                                         orient='index', columns=['out_eigenvector'])
     centrality = pd.concat([in_degree, out_degree], axis=1)
     centrality = np.array(centrality.loc[priori_network_nodes, :])
     adata.varm['centrality'] = centrality
@@ -235,7 +231,7 @@ def regulon_activity(ex_matrix: pd.DataFrame,
             g.ax_col_dendrogram.bar(0, 0, color=network_lut[label], label=label, linewidth=0)
         g.ax_col_dendrogram.legend(title='Cell types', loc="upper left", ncol=1,
                                    bbox_to_anchor=(1.04, 0.90), facecolor='white')
-        if isinstance(cell_label,pd.DataFrame):
+        if isinstance(cell_label, pd.DataFrame):
             if cell_label.shape[1]==2:
                 xx = []
                 for label in network_lable_2.unique():

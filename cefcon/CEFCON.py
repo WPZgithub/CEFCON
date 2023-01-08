@@ -19,7 +19,10 @@ def main(args):
                             genes_DE=args.input_genesDE,
                             TF_list=args.TFs,
                             additional_edges_pct=args.additional_edges_pct)
-    genes_DEscore = data.var_names[data.var['node_score_auxiliary']>1]
+    if args.input_genesDE is not None:
+        genes_DEscore = data.var_names[data.var['node_score_auxiliary']>1]
+    else:
+        genes_DEscore = None
 
     ## GRN construction
     print('Constructing cell-lineage-specific GRN...')
@@ -44,16 +47,16 @@ def main(args):
     ## Driver regulators
     print('Identifying driver regulators...')
     critical_genes, out_critical_genes, in_critical_genes = highly_weighted_genes(gene_influence_scores,
-                                                                                  topK_drivers=args.topK_drivers)
-    cellFate_drivers_set, MDS_driver_set, DFVS_driver_set = driver_regulators(G_predicted,
+                                                                                  topK=args.topK_drivers)
+    cellFate_drivers_set, MDS_driver_set, MFVS_driver_set = driver_regulators(G_predicted,
                                                                               gene_influence_scores,
-                                                                              topK_threshold=args.topK_drivers,
+                                                                              topK=args.topK_drivers,
                                                                               driver_union=True,
                                                                               plot_Venn=False)
     # Driver genes ranking save to file
     drivers_results = gene_influence_scores.loc[gene_influence_scores.index.isin(list(cellFate_drivers_set)), :].copy()
     drivers_results['is_MDS'] = np.isin(drivers_results.index, list(MDS_driver_set))
-    drivers_results['is_MFVS'] = np.isin(drivers_results.index, list(DFVS_driver_set))
+    drivers_results['is_MFVS'] = np.isin(drivers_results.index, list(MFVS_driver_set))
     if args.TFs is not None:
         TFs = data.var_names[data.var['is_TF'] == 1]
         drivers_results['is_TF'] = np.isin(drivers_results.index, TFs.values)

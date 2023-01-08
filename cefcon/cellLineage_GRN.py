@@ -49,7 +49,7 @@ class GraphAttention_layer(MessagePassing):
         self.attention_type = attention_type
         self.to_undirected = to_undirected
 
-        # AD: Additive; SD: abs(scaled-dot product); COS: abs(cosine)
+        # AD: Additive (GAT); SD: abs(scaled-dot product); COS: abs(cosine)
         assert attention_type in ['SD', 'COS', 'AD']
         self.lin_l = Linear(input_dim, heads * output_dim, bias=False,
                             weight_initializer='glorot')
@@ -128,17 +128,17 @@ class GraphAttention_layer(MessagePassing):
     def message(self, edge_index_i: Tensor, x_i: Tensor, x_j: Tensor,
                 x_norm_i: Optional[Tensor], x_norm_j: Optional[Tensor],
                 x_auxiliary_j: Tensor, size_i: Optional[int]):
-        T = 1.0
+        Tau = 1.0
         if self.attention_type == 'AD':
             alpha = (x_j * self.att_l).sum(-1) + (x_i * self.att_r).sum(-1)
             alpha = x_auxiliary_j * F.leaky_relu(alpha, 0.2)
         elif self.attention_type == 'COS':
             alpha = x_auxiliary_j * torch.abs((x_norm_i * x_norm_j).sum(dim=-1))
-            T = 0.25 #0.1, 0.25, 0.5, 0.75, 1.0
+            Tau = 0.25
         else:  # 'SD'
             alpha = x_auxiliary_j * torch.abs((x_i * x_j).sum(dim=-1)) / math.sqrt(self.output_dim)
 
-        alpha = softmax(alpha / T, edge_index_i, num_nodes=size_i) # with Temperature hyperparameter
+        alpha = softmax(alpha / Tau, edge_index_i, num_nodes=size_i) # with Temperature hyperparameter
         self._alpha = alpha
         alpha = F.dropout(alpha, p=self.dropout, training=self.training)
         return x_j * alpha.view(-1, self.heads, 1)
@@ -200,7 +200,10 @@ class GRN_Encoder(nn.Module):
 
     def forward(self, data: dict):
         x, edge_index = data['x'], data['edge_index']
-        x_auxiliary = torch.sigmoid(self.c * data['node_score_auxiliary'] - self.d)
+        if 'node_score_auxiliary' in data:
+            x_auxiliary = torch.sigmoid(self.c * data['node_score_auxiliary'] - self.d)
+        else:
+            x_auxiliary = torch.ones(x.size(0), dtype=torch.float32, device=x.device).view(-1, 1)
 
         x = self.x_input(x)
 
@@ -269,17 +272,19 @@ class cl_GRN:
             pyg_data.node_score_auxiliary = torch.tensor(adata.var['node_score_auxiliary'].to_numpy(),
                                                          dtype=torch.float32).view(-1, 1)
         else:
-            print('Warning: Auxiliary gene scores (e.g., differential expression level) are not considered!')
-            pyg_data.node_score_auxiliary = torch.ones(x.size(0), dtype=torch.float32).view(-1, 1)
+            print('  Warning: Auxiliary gene scores (e.g., differential expression level) are not considered!')
+            #pyg_data.node_score_auxiliary = torch.ones(x.size(0), dtype=torch.float32).view(-1, 1)
 
         self.idx_GeneName_map = adata.varm['idx_GeneName_map']
 
         return pyg_data
 
     def __corruption(self, data: Data):
-        x, edge_index, node_score_auxiliary = data['x'], data['edge_index'], data['node_score_auxiliary']
+        x, edge_index  = data['x'], data['edge_index']
         data_neg = Data(x=x[torch.randperm(x.size(0))], edge_index=edge_index)
-        data_neg.node_score_auxiliary = node_score_auxiliary[torch.randperm(node_score_auxiliary.size(0))]
+        if 'node_score_auxiliary' in data:
+            node_score_auxiliary = data['node_score_auxiliary']
+            data_neg.node_score_auxiliary = node_score_auxiliary[torch.randperm(node_score_auxiliary.size(0))]
         return data_neg
 
     def __summary(self, z, *args, **kwargs):
@@ -305,7 +310,6 @@ class cl_GRN:
         return model.x_embs, model.att_weights_first, model.att_weights_second, emb_last
 
     def run(self, adata: AnnData, showProgressBar: bool=True):
-        #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         if self.cuda == -1:
             device = "cpu"
         else:
@@ -345,13 +349,13 @@ class cl_GRN:
                             min_loss = loss
                             best_encoder = encoder.state_dict()
             else:
-                print('  Iter: {}/{}'.format(iter + 1, self.repeats))
+                print('  Iter: {}/{}'.format(iter + 1, self.repeats), end='... ')
                 for epoch in range(self.epochs):
                     loss = self.__train(data, DGI_model, optimizer)
                     if min_loss > loss:
                         min_loss = loss
                         best_encoder = encoder.state_dict()
-                print('  Min_Train_loss: {}'.format(min_loss))
+                print('Min_train_loss: {}'.format(min_loss))
 
             ## Get the result of the best model
             encoder.load_state_dict(best_encoder)
@@ -430,7 +434,7 @@ class cl_GRN:
             # All edge weights without cutoff (num_edge_index, num_repeats)
             scaled_att_coefficient = scaled_att_coefficient + [att_weights_i.clone()]
 
-        ## Output the all edge coefficient of the priori network: 0: incoming; 1: outgoing
+        ## All edge coefficients of the priori network: 0: incoming; 1: outgoing
         att_weights_combined = (scaled_att_coefficient[0] * 0.5) + (scaled_att_coefficient[1] * 0.5)
         scaled_att_coef_all = pd.DataFrame({'from': edge_index[0].numpy().astype(int),
                                             'to': edge_index[1].numpy().astype(int),
