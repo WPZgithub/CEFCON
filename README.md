@@ -5,7 +5,7 @@ CEFCON takes a prior gene interaction network and expression profiles from scRNA
 and consists of three main components, including cell-lineage-specific gene regulatory network (GRN) construction, 
 driver regulator identification and regulon-like gene module (RGM) identification.
 
-![figs/Overview.png](https://github.com/WPZ/CEFCON/main/Overview.png)
+![Overview.png](https://github.com/WPZ/CEFCON/main/Overview.png)
 
 ## Installation
 ### Requirements
