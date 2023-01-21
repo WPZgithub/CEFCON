@@ -49,6 +49,7 @@ The pre-processed data in the paper can be downloaded from [here]().
 &emsp;&emsp; We provide prior gene interaction networks for human and mouse respectively, located in `/prior_data`.
 - `scRNA-seq data`: a '.csv' file in which rows represent cells and columns represent genes, or a '.h5ad' formatted file with AnnData objects. 
 - `Differential expression level`: a 'csv' file contains the log fold change of each gene.\
+
 Examples of input data are located in `/example_data`
 
 ## Usage example
