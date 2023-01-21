@@ -29,8 +29,9 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
     elif isinstance(input_expData, pd.DataFrame):
         adata = sc.AnnData(X=input_expData)
     else:
-        raise Exception("Invalid input! The input format must be '.csv' file or '.h5ad' "
-                        "formatted hdf5 file, or an 'AnnData' object!", input_expData)
+        raise Exception("Invalid input! The input format must be a '.csv' file or '.h5ad' "
+                        "formatted file, or an 'AnnData' object!", input_expData)
+    # Gene symbols are uniformly handled in uppercase
     adata.var_names = adata.var_names.str.upper()
     scData_genes = adata.var_names.values
 
