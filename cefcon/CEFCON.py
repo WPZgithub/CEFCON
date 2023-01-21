@@ -2,9 +2,9 @@ import argparse
 from os import fspath
 from pathlib import Path
 
-from cellLineage_GRN import cl_GRN
-from driver_regulators import driver_regulators, highly_weighted_genes
-from utils import *
+from .cellLineage_GRN import cl_GRN
+from .driver_regulators import driver_regulators, highly_weighted_genes
+from .utils import *
 
 
 def main(args):
