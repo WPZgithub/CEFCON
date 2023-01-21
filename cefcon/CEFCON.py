@@ -8,6 +8,10 @@ from .utils import *
 
 
 def main(args):
+    parser = argparse.ArgumentParser(prog='CEFCON', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser = add_main_args(parser)
+    args = parser.parse_args()
+    
     ## output dir
     p = Path(args.out_dir)
     if not p.exists():
@@ -72,6 +76,8 @@ def main(args):
                                     cell_label=None)
     RGMs = pd.DataFrame([{'Driver_Regulator':r.name, 'Members': list(r.gene2weight.keys())} for r in RGMs_results['regulons']])
     RGMs.to_csv(fspath(p/'RGMs.csv'))
+    
+    print('Done. Please check the results in "%s"' % args.out_dir)
 
 
 def add_main_args(parser: argparse.ArgumentParser):
@@ -127,9 +133,4 @@ def add_main_args(parser: argparse.ArgumentParser):
     return parser
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog='CEFCON', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser = add_main_args(parser)
-    args = parser.parse_args()
-
-    main(args)
-    print('Done. Please check the results in "%s"' % args.out_dir)
+    main()
