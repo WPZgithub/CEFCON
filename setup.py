@@ -1,13 +1,20 @@
-from setuptools import setup, find_namespace_packages
+from setuptools import setup, find_packages
+
+def readme():
+    with open('README.md', encoding='utf-8') as f:
+        content = f.read()
+    return content
 
 setup(
     name='cefcon',
     version='0.1.0',
     description='Deciphering cell fate control from single-cell RNA-seq data',
+    long_description=readme(),
+    long_description_content_type='text/markdown',
     author='Peizhuo Wang',
     author_email='wangpeizhuo_37@163.com',
     url='https://github.com/WPZgithub/CEFCON',
-    packages = find_namespace_packages('cefcon'),
+    packages = find_packages('.'),
     entry_points={
         "console_scripts": ['cefcon = cefcon.CEFCON:main()']
     },
@@ -26,7 +33,7 @@ setup(
         'gurobipy>=9.5.0',
         'pyscenic>=0.12.0',
         'matplotlib',
-        'matplotlib-venn'
+        'matplotlib-venn',
         'seaborn',
     ],
     license='MIT',
