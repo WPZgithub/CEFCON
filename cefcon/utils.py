@@ -8,6 +8,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import gcf
+import matplotlib.ticker as ticker
 import seaborn as sns
 
 
@@ -29,7 +30,7 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
     elif isinstance(input_expData, pd.DataFrame):
         adata = sc.AnnData(X=input_expData)
     else:
-        raise Exception("Invalid input! The input format must be a '.csv' file or '.h5ad' "
+        raise Exception("Invalid input! The input format must be '.csv' file or '.h5ad' "
                         "formatted file, or an 'AnnData' object!", input_expData)
     # Gene symbols are uniformly handled in uppercase
     adata.var_names = adata.var_names.str.upper()
@@ -94,7 +95,8 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
         addi_top_edges = addi_top_edges.iloc[0:addi_top_k, 0:2]
     edgelist = pd.concat([edgelist, addi_top_edges.iloc[:, 0:2]], ignore_index=True)
     edgelist = edgelist.drop_duplicates(subset=['from', 'to'], keep='first', inplace=False)
-    print('  {} extra edges (Spearman correlation > 0.6) are added into the prior gene interaction network.'.format(len(edgelist) - ori_edgeNum))
+    print('  {} extra edges (Spearman correlation > 0.6) are added into the prior gene interaction network.'
+          ' Total number of edges: {}.'.format((len(edgelist) - ori_edgeNum), len(edgelist)))
     adata.uns['edgelist'] = edgelist
 
     ## Differential expression scores
@@ -117,6 +119,8 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
         TF_list = pd.DataFrame(TF_list).iloc[:, 0].str.upper()
         is_TF[~np.isin(priori_network_nodes, TF_list)] = 0
         adata.var['is_TF'] = is_TF
+
+    print('  Considering the input data with #genes × #cells = {} × {}'.format(adata.n_obs, adata.n_vars))
 
     return adata
 
@@ -178,23 +182,23 @@ def regulon_activity(ex_matrix: pd.DataFrame,
     in_regulons = [GeneSignature(name=k, gene2weight=v) for k, v in in_regulons.items()]
     regulons = out_regulons + in_regulons
     if len(out_regulons)>0:
-        auc_mtx_out = aucell(ex_matrix, out_regulons, num_workers=num_workers, auc_threshold=0.25)
+        auc_mtx_out = aucell(ex_matrix, out_regulons, num_workers=num_workers, auc_threshold=0.25, normalize=False)
         # Generate a Z-score for each regulon to enable comparison between regulons
-        auc_mtx_out_Z = pd.DataFrame(index=auc_mtx_out.index)
+        auc_mtx_out_Z = pd.DataFrame(index=auc_mtx_out.index, columns=list(auc_mtx_out.columns), dtype=float)
         for col in list(auc_mtx_out.columns):
             auc_mtx_out_Z[col] = (auc_mtx_out[col] - auc_mtx_out[col].mean()) / auc_mtx_out[col].std(ddof=0)
 
     if len(in_regulons) > 0:
         auc_mtx_in = aucell(ex_matrix, in_regulons, num_workers=num_workers, auc_threshold=0.25, normalize=False)
         # Generate a Z-score for each regulon to enable comparison between regulons
-        auc_mtx_in_Z = pd.DataFrame(index=auc_mtx_in.index)
+        auc_mtx_in_Z = pd.DataFrame(index=auc_mtx_in.index, columns=list(auc_mtx_out.columns), dtype=float)
         for col in list(auc_mtx_in.columns):
             auc_mtx_in_Z[col] = (auc_mtx_in[col] - auc_mtx_in[col].mean()) / auc_mtx_in[col].std(ddof=0)
 
     if (len(out_regulons) > 0) & (len(in_regulons) > 0):
         auc_mtx = pd.merge(auc_mtx_out, auc_mtx_in, how='inner', left_index=True, right_index=True)
         # Generate a Z-score for each regulon to enable comparison between regulons
-        auc_mtx_Z = pd.DataFrame(index=auc_mtx.index)
+        auc_mtx_Z = pd.DataFrame(index=auc_mtx.index, columns=list(auc_mtx.columns), dtype=float)
         for col in list(auc_mtx.columns):
            auc_mtx_Z[col] = (auc_mtx[col] - auc_mtx[col].mean()) / auc_mtx[col].std(ddof=0)
 
@@ -223,15 +227,16 @@ def regulon_activity(ex_matrix: pd.DataFrame,
         plt.figure(figsize=(9, 21), dpi=300)
         sns.set_theme(font_scale=1.5)
         g = sns.clustermap(auc_mtx.T, method='ward', square=False, linecolor='black', z_score=0, vmin=-2.5, vmax=2.5,
-                           col_cluster=False, col_colors=network_colors, cmap="YlGnBu", figsize=(9, 21),
-                           xticklabels=False, yticklabels=True) #cmap="YlGnBu"
+                           col_cluster=False, col_colors=network_colors, cmap="RdBu_r", figsize=(6, 16),
+                           xticklabels=False, yticklabels=True, dendrogram_ratio=0.145, cbar_pos=(0.83, 0.82, 0.05, 0.15))
         g.cax.set_visible(True)
         g.ax_heatmap.set_ylabel('Regulon-like gene modules')
         g.ax_heatmap.set_xlabel('Cells')
+        g.ax_heatmap.yaxis.set_minor_locator(ticker.NullLocator())
         for label in network_lable.unique():
             g.ax_col_dendrogram.bar(0, 0, color=network_lut[label], label=label, linewidth=0)
         g.ax_col_dendrogram.legend(title='Cell types', loc="upper left", ncol=1,
-                                   bbox_to_anchor=(1.04, 0.90), facecolor='white')
+                                   bbox_to_anchor=(1.10, 0.90), facecolor='white')
         if isinstance(cell_label, pd.DataFrame):
             if cell_label.shape[1]==2:
                 xx = []
@@ -249,11 +254,13 @@ def regulon_activity(ex_matrix: pd.DataFrame,
         plt.figure(figsize=(9, 16), dpi=300)
         sns.set_theme(font_scale=1.5)
         g1 = sns.clustermap(auc_mtx_out.T, method='ward', square=False, linecolor='black', z_score=0, vmin=-2.5, vmax=2.5,
-                            row_cluster=True, col_colors=network_colors, cmap="RdBu_r", figsize=(9, 16),
-                            xticklabels=False, yticklabels=True, col_cluster=False) #cmap="YlGnBu"
+                            row_cluster=True, col_colors=network_colors, cmap="RdBu_r", figsize=(6, 16),
+                            xticklabels=False, yticklabels=True, col_cluster=False, dendrogram_ratio=0.145,
+                            cbar_pos=(0.83, 0.82, 0.05, 0.15)) #cmap="YlGnBu"
         g1.cax.set_visible(True)
         g1.ax_heatmap.set_ylabel('Regulon-like gene modules')
         g1.ax_heatmap.set_xlabel('Cells')
+        g1.ax_heatmap.yaxis.set_minor_locator(ticker.NullLocator())
         for label in network_lable.unique():
             g1.ax_col_dendrogram.bar(0, 0, color=network_lut[label], label=label, linewidth=0)
         g1.ax_col_dendrogram.legend(title='Cell types', loc="upper left", ncol=1,
@@ -275,11 +282,13 @@ def regulon_activity(ex_matrix: pd.DataFrame,
         plt.figure(figsize=(9, 16), dpi=300)
         sns.set_theme(font_scale=1.5)
         g2 = sns.clustermap(auc_mtx_in.T, method='ward', square=False, linecolor='black', z_score=0, vmin=-2.5, vmax=2.5,
-                            row_cluster=True, col_colors=network_colors, cmap="RdBu_r", figsize=(9, 16),
-                            xticklabels=False, yticklabels=True, col_cluster=False) #cmap="YlGnBu"
+                            row_cluster=True, col_colors=network_colors, cmap="RdBu_r", figsize=(6, 16),
+                            xticklabels=False, yticklabels=True, col_cluster=False, dendrogram_ratio=0.145,
+                            cbar_pos=(0.83, 0.82, 0.05, 0.15)) #cmap="YlGnBu"
         g2.cax.set_visible(True)
         g2.ax_heatmap.set_ylabel('Regulon-like gene modules')
         g2.ax_heatmap.set_xlabel('Cells')
+        g2.ax_heatmap.yaxis.set_minor_locator(ticker.NullLocator())
         for label in network_lable.unique():
             g2.ax_col_dendrogram.bar(0, 0, color=network_lut[label], label=label, linewidth=0)
         g2.ax_col_dendrogram.legend(title='Cell types', loc="upper left", ncol=1,
