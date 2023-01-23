@@ -75,6 +75,7 @@ def main():
                                     cell_label=None)
     RGMs = pd.DataFrame([{'Driver_Regulator':r.name, 'Members': list(r.gene2weight.keys())} for r in RGMs_results['regulons']])
     RGMs.to_csv(fspath(p/'RGMs.csv'))
+    RGMs_results['aucell'].to_csv(fspath(p/'AUCell_mtx.csv'))
 
     print('Done. Please check the results in "%s"' % args.out_dir)
 
