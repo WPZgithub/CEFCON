@@ -120,7 +120,7 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
         is_TF[~np.isin(priori_network_nodes, TF_list)] = 0
         adata.var['is_TF'] = is_TF
 
-    print('  Considering the input data with #genes × #cells = {} × {}'.format(adata.n_obs, adata.n_vars))
+    print('  Considering the input data with #genes × #cells = {} × {}'.format(adata.n_vars, adata.n_obs))
 
     return adata
 
