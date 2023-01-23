@@ -346,13 +346,13 @@ def driver_regulators(G,
         import gurobipy as gp
         gp.Model()
 
-    DFVS_driver_set, source_nodes = MFVScontrol(G, gene_influence_scores.loc[:, 'out'], solver=solver)
-    DFVS_driver_set = DFVS_driver_set.union(source_nodes)
+    MFVS_driver_set, source_nodes = MFVScontrol(G, gene_influence_scores.loc[:, 'out'], solver=solver)
+    MFVS_driver_set = MFVS_driver_set.union(source_nodes)
     MDS_driver_set, MDS_intermittent_nodes = MDScontrol(G, solver=solver)
     if driver_union:
-        driver_set = MDS_driver_set.union(DFVS_driver_set)
+        driver_set = MDS_driver_set.union(MFVS_driver_set)
     else:
-        driver_set = MDS_driver_set.intersection(DFVS_driver_set)
+        driver_set = MDS_driver_set.intersection(MFVS_driver_set)
 
     critical_genes, _, _ = highly_weighted_genes(gene_influence_scores, topK)
     CEFCON_drivers = driver_set.intersection(critical_genes)
@@ -362,9 +362,9 @@ def driver_regulators(G,
         from matplotlib import pyplot as plt
         from matplotlib_venn import venn3
         plt.subplots(figsize=(12, 9), dpi=300)
-        out = venn3(subsets=[MDS_driver_set, DFVS_driver_set, critical_genes],
+        out = venn3(subsets=[MDS_driver_set, MFVS_driver_set, critical_genes],
                     set_labels=('MDS driver genes({})'.format(len(MDS_driver_set)),
-                                'MFVS driver genes({})'.format(len(DFVS_driver_set)),
+                                'MFVS driver genes({})'.format(len(MFVS_driver_set)),
                                 'Top ranked genes({})'.format(len(critical_genes))),
                      set_colors=('#0076FF','#D74715','#009000'),
                      alpha=0.45)
@@ -378,4 +378,4 @@ def driver_regulators(G,
         #plt.savefig(Venn_fig_file+'.svg', dpi=600, format='svg', bbox_inches='tight')
         plt.show()
 
-    return CEFCON_drivers, MDS_driver_set, DFVS_driver_set
+    return CEFCON_drivers, MDS_driver_set, MFVS_driver_set
