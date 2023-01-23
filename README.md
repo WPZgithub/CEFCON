@@ -1,9 +1,9 @@
 # CEFCON
 
 CEFCON is a computational tool for deciphering driver regulators of cell fate decisions from single-cell RNA-seq data.
-CEFCON takes a prior gene interaction network and expression profiles from scRNA-seq data as inputs, 
-and consists of three main components, including cell-lineage-specific gene regulatory network (GRN) construction, 
-driver regulator identification and regulon-like gene module (RGM) identification.
+CEFCON takes a prior gene interaction network and expression profiles from scRNA-seq data associated with a given 
+developmental trajectory as inputs, and consists of three main components, including cell-lineage-specific gene 
+regulatory network (GRN) construction, driver regulator identification and regulon-like gene module (RGM) identification.
 
 ![Overview.png](https://github.com/WPZgithub/CEFCON/blob/main/Overview.png)
 
@@ -44,13 +44,14 @@ If you have difficulty using GUROBI, a non-commercial solver, [SCIP](https://www
 We recommend using GPU. If so, you will need to install the GPU version of PyTorch.
 
 ## Input data
-The pre-processed data in the paper can be downloaded from [here](). 
+
 - `Prior gene interaction network`: an edgelist formatted network file.\
 &emsp;&emsp; We provide prior gene interaction networks for human and mouse respectively, located in `/prior_data`.
 - `scRNA-seq data`: a '.csv' file in which rows represent cells and columns represent genes, or a '.h5ad' formatted file with AnnData objects. 
 - `Differential expression level`: a 'csv' file contains the log fold change of each gene.
 
 Examples of input data are located in `/example_data`
+The pre-processed data in the paper can be downloaded from [here](). 
 
 ## Usage example
 ### Command line usage
@@ -63,10 +64,11 @@ Please use `python CEFCON.py -h` to view parameters information. \
 You can run the `run_CEFCON.sh` bash file for a usage example.
 
 - Output (in the output folder `${OUT_DIR}/`):
-    - A cell-lineage-specific GRN with default name "cl_GRN.csv"
-    - Gene embeddings with default name "gene_embs.csv"
-    - A list of driver regulators with default name "driver_regulators.csv"
-    - A list of RGMs with default name "RGMs.csv"
+    - The constructed cell-lineage-specific GRN with default name "cl_GRN.csv";
+    - The obtained gene embeddings with default name "gene_embs.csv";
+    - A list of identified driver regulators with default name "driver_regulators.csv";
+    - A list of obtained RGMs with default name "RGMs.csv";
+    - The AUCell activity matrix of the obtained RGMs with default name "AUCell_mtx.csv".
 
 ## Citation
 Please cite the following paper, if you find the repository or the paper useful.
