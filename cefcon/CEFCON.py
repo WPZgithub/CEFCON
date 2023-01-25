@@ -2,9 +2,9 @@ import argparse
 from os import fspath
 from pathlib import Path
 
-from cellLineage_GRN import cl_GRN
-from driver_regulators import driver_regulators, highly_weighted_genes
-from utils import *
+from .cellLineage_GRN import cl_GRN
+from .driver_regulators import driver_regulators, highly_weighted_genes
+from .utils import *
 
 def main():
     parser = argparse.ArgumentParser(prog='CEFCON', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -51,11 +51,12 @@ def main():
     print('Identifying driver regulators...')
     critical_genes, out_critical_genes, in_critical_genes = highly_weighted_genes(gene_influence_scores,
                                                                                   topK=args.topK_drivers)
-    cellFate_drivers_set, MDS_driver_set, MFVS_driver_set = driver_regulators(G_predicted,
-                                                                              gene_influence_scores,
-                                                                              topK=args.topK_drivers,
-                                                                              driver_union=True,
-                                                                              plot_Venn=False)
+    cellFate_drivers_set, MDS_driver_set, MFVS_driver_set, _ = driver_regulators(G_predicted,
+                                                                                 gene_influence_scores,
+                                                                                 topK=args.topK_drivers,
+                                                                                 driver_union=True,
+                                                                                 plot_Venn=False)
+
     # Driver genes ranking save to file
     drivers_results = gene_influence_scores.loc[gene_influence_scores.index.isin(list(cellFate_drivers_set)), :].copy()
     drivers_results['is_MDS'] = np.isin(drivers_results.index, list(MDS_driver_set))
@@ -77,7 +78,7 @@ def main():
     RGMs.to_csv(fspath(p/'RGMs.csv'))
     RGMs_results['aucell'].to_csv(fspath(p/'AUCell_mtx.csv'))
 
-    print('Done. Please check the results in "%s"' % args.out_dir)
+    print('Done! Please check the results in "%s/"' % args.out_dir)
 
 
 def add_main_args(parser: argparse.ArgumentParser):

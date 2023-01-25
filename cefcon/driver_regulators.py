@@ -378,4 +378,4 @@ def driver_regulators(G,
         #plt.savefig(Venn_fig_file+'.svg', dpi=600, format='svg', bbox_inches='tight')
         plt.show()
 
-    return CEFCON_drivers, MDS_driver_set, MFVS_driver_set
+    return CEFCON_drivers, MDS_driver_set, MFVS_driver_set, critical_genes
