@@ -7,7 +7,7 @@ from .driver_regulators import driver_regulators, highly_weighted_genes
 from .utils import *
 
 def main():
-    parser = argparse.ArgumentParser(prog='CEFCON', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser = argparse.ArgumentParser(prog='cefcon', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser = add_main_args(parser)
     args = parser.parse_args()
 
