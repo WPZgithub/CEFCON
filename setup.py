@@ -16,7 +16,7 @@ setup(
     url='https://github.com/WPZgithub/CEFCON',
     packages = find_packages('.'),
     entry_points={
-        "console_scripts": ['cefcon = cefcon.CEFCON:main()']
+        "console_scripts": ['cefcon = cefcon.CEFCON:main']
     },
     python_requires=">=3.8",
     install_requires=[
