@@ -56,11 +56,9 @@ The pre-processed data in the paper can be downloaded from [here](https://zenodo
 ## Usage example
 ### Command line usage
 ```
-python CEFCON.py [-h] --input_expData PATH --input_priorNet PATH [--input_genesDE PATH] [--TFs PATH] [--additional_edges_pct ADDITIONAL_EDGES_PCT] [--cuda CUDA] [--seed SEED] [--hidden_dim HIDDEN_DIM]
-                 [--output_dim OUTPUT_DIM] [--heads HEADS] [--attention {COS,AD,SD}] [--miu MIU] [--epochs EPOCHS] [--repeats REPEATS] [--edge_threshold_param EDGE_THRESHOLD_PARAM] [--remove_self_loops]
-                 [--topK_drivers TOPK_DRIVERS] --out_dir OUT_DIR
+cefcon [-h] --input_expData PATH --input_priorNet PATH [--input_genesDE PATH] [--TFs PATH] [--additional_edges_pct ADDITIONAL_EDGES_PCT] [--cuda CUDA] [--seed SEED] [--hidden_dim HIDDEN_DIM] [--output_dim OUTPUT_DIM] [--heads HEADS] [--attention {COS,AD,SD}] [--miu MIU] [--epochs EPOCHS] [--repeats REPEATS] [--edge_threshold_param EDGE_THRESHOLD_PARAM] [--remove_self_loops] [--topK_drivers TOPK_DRIVERS] --out_dir OUT_DIR
 ```
-Please use `python CEFCON.py -h` to view parameters information. \
+Please use `cefcon -h` to view parameters information. \
 You can run the `run_CEFCON.sh` bash file for a usage example.
 
 - Output (in the output folder `${OUT_DIR}/`):
