@@ -1,0 +1,234 @@
+MGI Gene/Marker ID	Symbol	Name	Chr	Qualifier	Annotated Term	Context	Proteoform	Evidence	Inferred From	Reference(s)
+MGI:88039	Apc	APC, WNT signaling pathway regulator	18		somatic stem cell population maintenance	happens in intestine,affects a population of somatic stem cell		IGI	MGI:104642 	J:1879 	
+MGI:88039	Apc	APC, WNT signaling pathway regulator	18		somatic stem cell population maintenance	happens in intestine,affects a population of somatic stem cell		IMP	MGI:1856318 	J:1879 	
+MGI:88039	Apc	APC, WNT signaling pathway regulator	18		stem cell population maintenance	happens in bone marrow,affects a population of hematopoietic stem cell|happens in bone marrow,affects a population of myeloid lineage restricted progenitor cell		IMP	MGI:1857966 	J:138809 	
+MGI:1935147	Arid1a	AT rich interactive domain 1A (SWI-like)	4		stem cell population maintenance			IMP	MGI:3796520 	J:134633 	
+MGI:96920	Ascl2	achaete-scute family bHLH transcription factor 2	7		somatic stem cell population maintenance	happens in small intestine crypt of lieberkuhn,affects a population of somatic stem cell		IMP	MGI:3846671 	J:148715 	
+MGI:1334448	Aspm	abnormal spindle microtubule assembly	1		neuronal stem cell population maintenance			IMP		J:154024 	
+MGI:1924828	Bcl9	B cell CLL/lymphoma 9	3		somatic stem cell population maintenance	happens in intestine epithelium,affects a population of somatic stem cell		IGI	MGI:1933114 	J:162762 	
+MGI:1933114	Bcl9l	B cell CLL/lymphoma 9-like	9		somatic stem cell population maintenance	happens in intestine epithelium,affects a population of somatic stem cell		IGI	MGI:1924828 	J:162762 	
+MGI:103302	Bmp7	bone morphogenetic protein 7	2		negative regulation of mesenchymal cell apoptotic process involved in nephron morphogenesis	regulates a function/process that happens in metanephros,regulates a function/process that happens in nephrogenic mesenchyme stem cell		IMP	MGI:1857654 	J:39018 	
+MGI:1338938	Bmpr1a	bone morphogenetic protein receptor, type 1A	14		stem cell population maintenance	affects a population of epiblast cell		IMP	MGI:2158342 	J:124681 	
+MGI:88190	Braf	Braf transforming gene	6		somatic stem cell population maintenance	affects a population of epithelial fate stem cell		IGI	MGI:97847 	J:196225 	
+MGI:2384876	Cdc73	cell division cycle 73, Paf1/RNA polymerase II complex component	1		stem cell population maintenance			IMP		J:149841 	
+MGI:88355	Cdh2	cadherin 2	18		neuronal stem cell population maintenance			IDA		J:213556 	
+MGI:104738	Cdkn2a	cyclin dependent kinase inhibitor 2A	4		somatic stem cell population maintenance	happens in telencephalon,affects a population of neuronal stem cell		IGI	MGI:101761 	J:144068 	
+MGI:88361	Cdx2	caudal type homeobox 2	5		somatic stem cell population maintenance	happens in trophectoderm,affects a population of trophoblast cell|happens in trophectoderm,affects a population of multi fate stem cell		IMP	MGI:1857928 	J:162675 	
+MGI:88361	Cdx2	caudal type homeobox 2	5		somatic stem cell population maintenance	affects a population of trophoblast cell|affects a population of somatic stem cell		IMP		J:104800 	
+MGI:2442402	Cnot1	CCR4-NOT transcription complex, subunit 1	8		regulation of stem cell population maintenance			IMP		J:196241 	
+MGI:2442402	Cnot1	CCR4-NOT transcription complex, subunit 1	8		regulation of stem cell population maintenance			ISO	A5YKK6 	J:164563 	
+MGI:1919318	Cnot2	CCR4-NOT transcription complex, subunit 2	10		regulation of stem cell population maintenance			IBA	PTN000595688 	J:265628 	
+MGI:1919318	Cnot2	CCR4-NOT transcription complex, subunit 2	10		regulation of stem cell population maintenance			IMP		J:196241 	
+MGI:1919318	Cnot2	CCR4-NOT transcription complex, subunit 2	10		regulation of stem cell population maintenance			ISO	Q9NZN8 	J:164563 	
+MGI:2385261	Cnot3	CCR4-NOT transcription complex, subunit 3	7		regulation of stem cell population maintenance			IBA	PTN000595760 	J:265628 	
+MGI:2385261	Cnot3	CCR4-NOT transcription complex, subunit 3	7		regulation of stem cell population maintenance			IMP		J:196241 	
+MGI:2385261	Cnot3	CCR4-NOT transcription complex, subunit 3	7		regulation of stem cell population maintenance			ISO	O75175 	J:164563 	
+MGI:1098280	Crebbp	CREB binding protein	16		germ-line stem cell population maintenance			IMP	MGI:2177588 MGI:3618462 	J:127542 	
+MGI:109345	Ctr9	CTR9 homolog, Paf1/RNA polymerase II complex component	7		stem cell population maintenance			IMP		J:149841 	
+MGI:109345	Ctr9	CTR9 homolog, Paf1/RNA polymerase II complex component	7		stem cell population maintenance			ISO	Q6PD62 	J:164563 	
+MGI:1914487	Cul4a	cullin 4A	8		somatic stem cell population maintenance			IMP	MGI:2183544 	J:147012 	
+MGI:104976	Ddx6	DEAD (Asp-Glu-Ala-Asp) box polypeptide 6	9		stem cell population maintenance	happens in EMAPA:17544		IMP		J:217461 	
+MGI:2177178	Dicer1	dicer 1, ribonuclease type III	12		stem cell population maintenance	happens in embryo,affects a population of stem cell		IMP	MGI:2681012 	J:86391 	
+MGI:2442555	Dis3l2	DIS3 like 3'-5' exoribonuclease 2	1		stem cell population maintenance			IMP		J:197683 	
+MGI:104659	Dll1	delta like canonical Notch ligand 1	17		neuronal stem cell population maintenance			IMP		J:224724 	
+MGI:2157523	Dppa2	developmental pluripotency associated 2	16		stem cell population maintenance			IMP		J:168186 	
+MGI:95305	Eif4e	eukaryotic translation initiation factor 4E	3		stem cell population maintenance			IGI	MGI:1921453 	J:217461 	
+MGI:95305	Eif4e	eukaryotic translation initiation factor 4E	3		stem cell population maintenance	affects a population of radial glial cell		IMP		J:217461 	
+MGI:1921453	Eif4enif1	eukaryotic translation initiation factor 4E nuclear import factor 1	11		stem cell population maintenance	happens in EMAPA:17544		IGI	MGI:95305 	J:217461 	
+MGI:1100851	Elavl1	ELAV (embryonic lethal, abnormal vision)-like 1 (Hu antigen R)	8		regulation of stem cell population maintenance			IMP		J:207885 	
+MGI:1335079	Elf5	E74-like factor 5	2		somatic stem cell population maintenance	happens in trophectoderm		IMP		J:214999 	
+MGI:1201683	Eomes	eomesodermin	9		stem cell population maintenance	affects a population of trophoblast cell		IMP		J:160495 	
+MGI:2384747	Erdr1	erythroid differentiation regulator 1	XY		somatic stem cell population maintenance	affects a population of hematopoietic stem cell		IDA		J:150463 	
+MGI:1346832	Esrrb	estrogen related receptor, beta	12		positive regulation of stem cell population maintenance			IDA		J:193651 J:240260 	
+MGI:1346832	Esrrb	estrogen related receptor, beta	12		positive regulation of stem cell population maintenance			IMP		J:188268 J:240583 	
+MGI:1346832	Esrrb	estrogen related receptor, beta	12		stem cell population maintenance			IDA		J:240273 	
+MGI:1346832	Esrrb	estrogen related receptor, beta	12		stem cell population maintenance	affects a population of epiblast cell		IMP		J:107560 J:111554 J:164442 	
+MGI:1346832	Esrrb	estrogen related receptor, beta	12		stem cell population maintenance			IMP		J:240259 	
+MGI:1346832	Esrrb	estrogen related receptor, beta	12		stem cell population maintenance			ISO	O95718 	J:164563 	
+MGI:95480	Fancc	Fanconi anemia, complementation group C	13		neuronal stem cell population maintenance	happens in brain ventricular layer|happens in brain subventricular zone		IGI	MGI:1890081 	J:226736 	
+MGI:2448480	Fancd2	Fanconi anemia, complementation group D2	6		neuronal stem cell population maintenance	happens in brain ventricular layer|happens in brain subventricular zone		IGI	MGI:1890081 	J:226736 	
+MGI:95518	Fgf4	fibroblast growth factor 4	7		stem cell population maintenance	has the participant mural trophectoderm,affects a population of trophoblast cell|has the participant mural trophectoderm,affects a population of single fate stem cell		IGI	MGI:97359 	J:92446 	
+MGI:1099809	Fgf10	fibroblast growth factor 10	13		somatic stem cell population maintenance	happens in lower jaw incisor enamel organ		IMP	MGI:1859647 	J:74912 	
+MGI:95522	Fgfr1	fibroblast growth factor receptor 1	8		stem cell population maintenance			ISO	RGD:620713 	J:155856 	
+MGI:95524	Fgfr3	fibroblast growth factor receptor 3	5		somatic stem cell population maintenance	happens in small intestine crypt of lieberkuhn,affects a population of somatic stem cell		IMP	MGI:1931521 	J:151194 	
+MGI:1890077	Foxo1	forkhead box O1	3		neuronal stem cell population maintenance	happens in brain subventricular zone		IGI	MGI:1890081 	J:154024 	
+MGI:1890081	Foxo3	forkhead box O3	10		neuronal stem cell population maintenance	happens in brain subventricular zone		IGI	MGI:1890077 	J:154024 	
+MGI:1890081	Foxo3	forkhead box O3	10		neuronal stem cell population maintenance	happens in brain ventricular layer|happens in brain subventricular zone		IGI	MGI:2448480 MGI:95480 	J:226736 	
+MGI:2384748	Fut10	fucosyltransferase 10	8		neuronal stem cell population maintenance			IMP		J:204554 	
+MGI:108570	Fzd7	frizzled class receptor 7	1		stem cell population maintenance			ISO	O75084 	J:164563 	
+MGI:95662	Gata2	GATA binding protein 2	6		somatic stem cell population maintenance	affects a population of brown preadipocyte		IMP		J:100710 	
+MGI:1353651	Gnl3	guanine nucleotide binding protein-like 3 (nucleolar)	14		stem cell population maintenance			ISO	Q9BVP2 	J:164563 	
+MGI:3044668	Gsdma3	gasdermin A3	11		somatic stem cell population maintenance	happens in hair follicle,affects a population of keratinocyte stem cell		IMP	MGI:4849547 	J:180149 	
+MGI:104853	Hes1	hes family bHLH transcription factor 1	16		neuronal stem cell population maintenance			IMP		J:175113 	
+MGI:104853	Hes1	hes family bHLH transcription factor 1	16		neuronal stem cell population maintenance			ISO	RGD:62081 	J:155856 	
+MGI:104853	Hes1	hes family bHLH transcription factor 1	16		somatic stem cell population maintenance	happens in pancreas primordium dorsal bud,affects a population of pancreatic A cell		IMP	MGI:2149672 	J:59312 	
+MGI:104876	Hes5	hes family bHLH transcription factor 5	4		neuronal stem cell population maintenance			IMP		J:175113 	
+MGI:104876	Hes5	hes family bHLH transcription factor 5	4		neuronal stem cell population maintenance			ISO	RGD:621340 	J:155856 	
+MGI:96071	Hesx1	homeobox gene expressed in ES cells	14		stem cell population maintenance	is a part of signal transduction		IMP		J:297356 	
+MGI:101761	Hmga2	high mobility group AT-hook 2	10		regulation of stem cell population maintenance			ISO	P52926 	J:164563 	
+MGI:101761	Hmga2	high mobility group AT-hook 2	10		somatic stem cell population maintenance	happens in telencephalon,affects a population of neuronal stem cell		IGI	MGI:104738 	J:144068 	
+MGI:101761	Hmga2	high mobility group AT-hook 2	10		somatic stem cell population maintenance	happens in telencephalon,affects a population of neuronal stem cell|happens in gut,affects a population of neuronal stem cell		IMP	MGI:2386412 	J:144068 	
+MGI:98505	Hnf1b	HNF1 homeobox B	11		negative regulation of mesenchymal cell apoptotic process involved in mesonephric nephron morphogenesis			IMP	MGI:1857856 	J:157251 	
+MGI:2443554	Hook3	hook microtubule tethering protein 3	8		neuronal stem cell population maintenance	happens in extraembryonic component		IMP		J:161175 	
+MGI:1890357	Igf2bp1	insulin-like growth factor 2 mRNA binding protein 1	11		neuronal stem cell population maintenance			IMP	MGI:3043746 	J:207231 	
+MGI:1918614	Jmjd1c	jumonji domain containing 1C	10		male germ-line stem cell population maintenance			IMP	MGI:5544070 	J:203917 	
+MGI:1343101	Kat2a	K(lysine) acetyltransferase 2A	11		regulation of stem cell population maintenance			IMP		J:281186 	
+MGI:2442415	Kat6a	K(lysine) acetyltransferase 6A	8		somatic stem cell population maintenance	affects a population of hematopoietic stem cell		IMP	MGI:3626344 	J:108453 	
+MGI:2442415	Kat6a	K(lysine) acetyltransferase 6A	8		somatic stem cell population maintenance	happens in liver,affects a population of hematopoietic stem cell		IMP		J:108699 	
+MGI:1354737	Kdm2b	lysine (K)-specific demethylase 2B	5		positive regulation of stem cell population maintenance			IDA		J:186946 	
+MGI:98847	Kdm3a	lysine (K)-specific demethylase 3A	6		regulation of stem cell population maintenance			IGI	MGI:1097166 	J:125698 	
+MGI:1924054	Kdm4c	lysine (K)-specific demethylase 4C	4		stem cell population maintenance			IGI	MGI:1919200 	J:125698 	
+MGI:96677	Kit	KIT proto-oncogene receptor tyrosine kinase	5		somatic stem cell population maintenance			ISO	RGD:620568 	J:155856 	
+MGI:1342287	Klf4	Kruppel-like factor 4 (gut)	4		stem cell population maintenance	happens in inner cell mass,affects a population of epiblast cell		IDA		J:96515 	
+MGI:1342287	Klf4	Kruppel-like factor 4 (gut)	4		stem cell population maintenance			IDA		J:168284 	
+MGI:1101353	Klf10	Kruppel-like factor 10	15		somatic stem cell population maintenance	affects a population of hematopoietic stem cell		IDA		J:150463 	
+MGI:1925139	Lbh	limb-bud and heart	17		positive regulation of somatic stem cell population maintenance			IMP		J:220326 	
+MGI:894762	Ldb1	LIM domain binding 1	19		somatic stem cell population maintenance	happens in coat hair follicle		IGI	MGI:109360 	J:129101 	
+MGI:894670	Ldb2	LIM domain binding 2	5		somatic stem cell population maintenance	happens in coat hair follicle		IGI	MGI:894762 	J:129101 	
+MGI:2685031	Leo1	Leo1, Paf1/RNA polymerase II complex component	9		stem cell population maintenance			IMP		J:149841 	
+MGI:2685031	Leo1	Leo1, Paf1/RNA polymerase II complex component	9		stem cell population maintenance			ISO	Q8WVC0 	J:164563 	
+MGI:96787	Lif	leukemia inhibitory factor	11		stem cell population maintenance	happens in inner cell mass,affects a population of epiblast cell		IDA		J:96515 	
+MGI:96787	Lif	leukemia inhibitory factor	11		stem cell population maintenance	happens in inner cell mass,affects a population of epiblast cell		IGI	MGI:1201791 MGI:1342287 	J:96515 	
+MGI:1335098	Lig4	ligase IV, DNA, ATP-dependent	8		somatic stem cell population maintenance	affects a population of hematopoietic stem cell		IMP	MGI:3714783 	J:122725 	
+MGI:1890546	Lin28a	lin-28 homolog A	4		stem cell population maintenance			ISO	Q9H9Z2 	J:164563 	
+MGI:2137913	Loxl2	lysyl oxidase-like 2	14		negative regulation of stem cell population maintenance			IDA		J:251996 	
+MGI:1278315	Lrp5	low density lipoprotein receptor-related protein 5	19		somatic stem cell population maintenance	happens in mammary gland epithelium		IMP	MGI:3663738 	J:152469 	
+MGI:1914457	Lsm1	LSM1 homolog, mRNA degradation associated	8		stem cell population maintenance	happens in EMAPA:17544		IMP		J:217461 	
+MGI:1346861	Mapk8	mitogen-activated protein kinase 8	14		neuronal stem cell population maintenance			ISO	P49185 	J:73065 	
+MGI:2443308	Mcph1	microcephaly, primary autosomal recessive 1	8		neuronal stem cell population maintenance	happens in brain,affects a population of neuronal stem cell		IMP	MGI:5308745 	J:180706 	
+MGI:1917042	Med6	mediator complex subunit 6	12		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1913463	Med7	mediator complex subunit 7	11		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:106331	Med10	mediator complex subunit 10	13		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1926212	Med12	mediator complex subunit 12	X		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1349442	Med14	mediator complex subunit 14	X		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:2137379	Med15	mediator complex subunit 15	16		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:2182585	Med17	mediator complex subunit 17	9		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1347064	Med21	mediator complex subunit 21	6		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1344385	Med24	mediator complex subunit 24	11		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1916225	Med27	mediator complex subunit 27	2		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1914249	Med28	mediator complex subunit 28	5		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1917040	Med30	mediator complex subunit 30	15		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1927165	Mettl3	methyltransferase like 3	14		stem cell population maintenance			IMP		J:207885 J:219587 J:219614 	
+MGI:2442926	Mettl14	methyltransferase like 14	3		stem cell population maintenance			IMP		J:207885 	
+MGI:2444886	Miat	myocardial infarction associated transcript (non-protein coding)	5		stem cell population maintenance			IMP		J:219771 	
+MGI:3711327	Mir294	microRNA 294	7		regulation of stem cell population maintenance			IDA		J:167546 	
+MGI:1341867	Mmp24	matrix metallopeptidase 24	2		neuronal stem cell population maintenance			IDA		J:213556 	
+MGI:105050	Mtf2	metal response element binding transcription factor 2	5		stem cell population maintenance			IMP		J:157068 	
+MGI:97250	Myc	myelocytomatosis oncogene	15		regulation of somatic stem cell population maintenance			IDA		J:278440 	
+MGI:1919200	Nanog	Nanog homeobox	6		stem cell population maintenance	affects a population of epiblast cell		IDA		J:111703 	
+MGI:1919200	Nanog	Nanog homeobox	6		stem cell population maintenance			IGI	MGI:1924054 	J:125698 	
+MGI:1919200	Nanog	Nanog homeobox	6		stem cell population maintenance	affects a population of epiblast cell		IMP	MGI:2664492 	J:83420 	
+MGI:1919200	Nanog	Nanog homeobox	6		stem cell population maintenance	affects a population of epiblast cell		IMP		J:111554 J:164442 	
+MGI:1919200	Nanog	Nanog homeobox	6		stem cell population maintenance			IMP		J:242442 	
+MGI:2676627	Nanos2	nanos C2HC-type zinc finger 2	7		germ-line stem cell population maintenance			IMP		J:132711 J:152220 	
+MGI:1276535	Ncoa3	nuclear receptor coactivator 3	2		positive regulation of stem cell population maintenance			IMP		J:188268 	
+MGI:1276535	Ncoa3	nuclear receptor coactivator 3	2		regulation of stem cell population maintenance			IMP		J:192962 	
+MGI:97316	Nfya	nuclear transcription factor-Y alpha	17		regulation of stem cell population maintenance	regulates the proliferation of embryonic stem cell	PR:P23708-2	IDA		J:194643 	
+MGI:1913976	Nipbl	NIPBL cohesin loading factor	15		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1914300	Nkap	NFKB activating protein	X		stem cell population maintenance	affects a population of hematopoietic stem cell		IMP	MGI:3765313 MGI:4839023 	J:165872 	
+MGI:97359	Nodal	nodal	10		stem cell population maintenance	happens in mural trophectoderm,affects a population of trophoblast cell|happens in mural trophectoderm,affects a population of single fate stem cell		IGI	MGI:95518 	J:93446 	
+MGI:97359	Nodal	nodal	10		stem cell population maintenance	happens in embryo,affects a population of epiblast cell		IMP	MGI:2180793 	J:110605 	
+MGI:104327	Nog	noggin	11		somatic stem cell population maintenance			ISO	Q13253 	J:164563 	
+MGI:1100526	Nr2e1	nuclear receptor subfamily 2, group E, member 1	10		somatic stem cell population maintenance	happens in prosencephalon,affects a population of neuronal stem cell|happens in cerebral cortex,affects a population of neuronal stem cell		IMP	MGI:2151350 	J:95734 	
+MGI:1100526	Nr2e1	nuclear receptor subfamily 2, group E, member 1	10		somatic stem cell population maintenance	happens in brain,affects a population of neuronal stem cell		IMP	MGI:2176560 	J:87401 	
+MGI:1100526	Nr2e1	nuclear receptor subfamily 2, group E, member 1	10		somatic stem cell population maintenance	happens in brain subventricular zone,affects a population of neuronal stem cell		IMP	MGI:3764730 MGI:3807544 	J:138765 	
+MGI:1338898	Padi4	peptidyl arginine deiminase, type IV	4		stem cell population maintenance			IMP		J:205556 	
+MGI:1923988	Paf1	Paf1, RNA polymerase II complex component	7		stem cell population maintenance			IMP		J:149841 	
+MGI:3643517	Panct2	pluripotency-associated noncoding transcript 2	1		stem cell population maintenance	affects a population of epiblast cell		IMP		J:201193 	
+MGI:97486	Pax2	paired box 2	19		negative regulation of mesenchymal cell apoptotic process involved in metanephric nephron morphogenesis			IMP		J:120229 	
+MGI:97492	Pax8	paired box 8	2		negative regulation of mesenchymal cell apoptotic process involved in metanephric nephron morphogenesis			IMP		J:120229 	
+MGI:1277958	Pcm1	pericentriolar material 1	8		neuronal stem cell population maintenance	happens in extraembryonic component		IMP		J:161175 	
+MGI:2145154	Pelo	pelota mRNA surveillance and ribosome rescue factor	13		stem cell population maintenance	happens in extraembryonic endoderm		IMP	MGI:2450933 	J:228122 	
+MGI:1921266	Phf19	PHD finger protein 19	2		stem cell population maintenance			IMP		J:183475 	
+MGI:1930036	Piwil2	piwi-like RNA-mediated gene silencing 2	14		germ-line stem cell population maintenance			IMP		J:147897 	
+MGI:104642	Pla2g2a	phospholipase A2, group IIA (platelets, synovial fluid)	4		somatic stem cell population maintenance	happens in intestine,affects a population of somatic stem cell		IGI	MGI:88039 	J:1879 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		germ-line stem cell population maintenance	affects a population of germ line stem cell (sensu Vertebrata)		IMP	MGI:2177588 MGI:3578312 	J:95317 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		stem cell population maintenance	happens in epiblast,affects a population of epiblast cell		IMP	MGI:1933381 	J:51139 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		stem cell population maintenance	affects a population of epiblast cell		IMP		J:86143 J:111554 J:164442 	
+MGI:101893	Pou5f1	POU domain, class 5, transcription factor 1	17		stem cell population maintenance			IMP		J:195215 	
+MGI:2156391	Pramel7	PRAME like 7	2		stem cell population maintenance	affects a population of epiblast cell		IDA		J:190212 	
+MGI:2156391	Pramel7	PRAME like 7	2		stem cell population maintenance			IDA		J:243489 	
+MGI:3588194	Prdm14	PR domain containing 14	1		germ-line stem cell population maintenance			IMP	MGI:4441771 	J:200019 	
+MGI:3588194	Prdm14	PR domain containing 14	1		positive regulation of stem cell population maintenance			IMP		J:233634 J:233954 	
+MGI:3588194	Prdm14	PR domain containing 14	1		stem cell population maintenance			IMP	MGI:3805889 	J:206154 	
+MGI:1917923	Prdm16	PR domain containing 16	4		somatic stem cell population maintenance	affects a population of hematopoietic stem cell		IDA		J:150463 	
+MGI:1917923	Prdm16	PR domain containing 16	4		stem cell population maintenance	happens in brown fat cell,happens in brown fat		IGI	MGI:95457 	J:213153 	
+MGI:1917923	Prdm16	PR domain containing 16	4		stem cell population maintenance	happens in brown fat cell,happens in brown fat		IMP	MGI:2135565 MGI:5564782 	J:213153 	
+MGI:97772	Prox1	prospero homeobox 1	1		neuronal stem cell population maintenance			IMP		J:166777 	
+MGI:97712	Prrx1	paired related homeobox 1	1		neuronal stem cell population maintenance			IDA		J:196061 	
+MGI:97804	Ptn	pleiotrophin	6		regulation of stem cell population maintenance			IMP		J:177072 	
+MGI:97847	Raf1	v-raf-leukemia viral oncogene 1	6		somatic stem cell population maintenance	affects a population of epithelial fate stem cell		IGI	MGI:88190 	J:196225 	
+MGI:96522	Rbpj	recombination signal binding protein for immunoglobulin kappa J region	5		somatic stem cell population maintenance	happens in stomach		IMP	MGI:3583755 	J:176833 	
+MGI:104897	Rest	RE1-silencing transcription factor	5		neuronal stem cell population maintenance			IMP		J:242726 	
+MGI:104897	Rest	RE1-silencing transcription factor	5		positive regulation of stem cell population maintenance			ISO	Q13127 	J:164563 	
+MGI:104897	Rest	RE1-silencing transcription factor	5		somatic stem cell population maintenance			IMP		J:242726 	
+MGI:1098622	Rif1	replication timing regulatory factor 1	2		stem cell population maintenance	affects a population of epiblast cell		IMP		J:107560 	
+MGI:1309480	Rtf1	RTF1, Paf1/RNA polymerase II complex component	2		stem cell population maintenance			IMP		J:149841 	
+MGI:1309480	Rtf1	RTF1, Paf1/RNA polymerase II complex component	2		stem cell population maintenance			ISO	Q92541 	J:164563 	
+MGI:1889585	Sall1	spalt like transcription factor 1	8		mesenchymal stem cell maintenance involved in metanephric nephron morphogenesis	affects a population of multi fate stem cell,happens in nephrogenic zone		IMP	MGI:3603818 	J:208419 	
+MGI:2139360	Sall4	spalt like transcription factor 4	2		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1927144	Sav1	salvador family WW domain containing 1	12		regulation of stem cell population maintenance	happens in skin		IMP	MGI:3790763 	J:134270 	
+MGI:99466	Sct	secretin	7		neuronal stem cell population maintenance	affects a population of neuronal stem cell		IMP	MGI:3815315 	J:169029 	
+MGI:2446244	Setd1a	SET domain containing 1A	7		stem cell population maintenance			IMP	MGI:5568941 	J:208420 	
+MGI:1913333	Setd6	SET domain containing 6	8		stem cell population maintenance			IDA		J:224806 	
+MGI:892014	Sfrp1	secreted frizzled-related protein 1	8		somatic stem cell population maintenance	affects a population of hematopoietic stem cell		IMP	MGI:3621116 	J:152080 	
+MGI:102778	Six2	sine oculis-related homeobox 2	17		mesenchymal stem cell maintenance involved in nephron morphogenesis			IDA		J:188777 J:208647 	
+MGI:102778	Six2	sine oculis-related homeobox 2	17		mesenchymal stem cell maintenance involved in nephron morphogenesis			IMP		J:148455 J:171512 	
+MGI:98310	Ski	ski sarcoma viral oncogene homolog (avian)	4		somatic stem cell population maintenance	affects a population of hematopoietic stem cell		IDA		J:150463 	
+MGI:88192	Smarca4	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a, member 4	9		stem cell population maintenance	affects a population of trophoblast cell		IMP		J:160495 	
+MGI:1344345	Smc1a	structural maintenance of chromosomes 1A	X		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1339795	Smc3	structural maintenance of chromosomes 3	19		stem cell population maintenance	affects a population of embryonic stem cell		IMP		J:164442 	
+MGI:2385088	Smc5	structural maintenance of chromosomes 5	19		stem cell population maintenance	happens in embryonic stem cell		IMP	MGI:5882566 	J:240155 	
+MGI:108075	Smo	smoothened, frizzled class receptor	6		regulation of stem cell population maintenance	happens in hair follicle,regulates the proliferation of somatic stem cell		IMP	MGI:1934268 MGI:2445832 	J:117334 	
+MGI:98364	Sox2	SRY (sex determining region Y)-box 2	3		neuronal stem cell population maintenance			IGI		J:180508 	
+MGI:98364	Sox2	SRY (sex determining region Y)-box 2	3		somatic stem cell population maintenance			ISO	P48431 	J:164563 	
+MGI:98364	Sox2	SRY (sex determining region Y)-box 2	3		stem cell population maintenance	affects a population of epiblast cell		IMP		J:111554 J:164442 	
+MGI:98364	Sox2	SRY (sex determining region Y)-box 2	3		stem cell population maintenance			IMP		J:240259 	
+MGI:98366	Sox4	SRY (sex determining region Y)-box 4	13		somatic stem cell population maintenance	affects a population of hematopoietic stem cell		IDA		J:150463 	
+MGI:98371	Sox9	SRY (sex determining region Y)-box 9	11		somatic stem cell population maintenance	happens in central nervous system,affects a population of neuroblast (sensu Vertebrata)		IMP	MGI:2176173 MGI:2429649 	J:165253 	
+MGI:98282	Spi1	spleen focus forming virus (SFFV) proviral integration oncogene	2		somatic stem cell population maintenance	affects a population of hematopoietic stem cell		IDA		J:150463 	
+MGI:1933527	Srrt	serrate RNA effector molecule homolog (Arabidopsis)	5		neuronal stem cell population maintenance			IMP		J:180508 	
+MGI:107708	Ss18	SS18, nBAF chromatin remodeling complex subunit	18		neuronal stem cell population maintenance			IMP		J:199644 	
+MGI:1098583	Stag2	stromal antigen 2	X		stem cell population maintenance			IMP		J:164442 	
+MGI:103038	Stat3	signal transducer and activator of transcription 3	11		stem cell population maintenance	affects a population of epiblast cell		IMP		J:164442 	
+MGI:1919039	Taf5l	TATA-box binding protein associated factor 5 like	8		regulation of somatic stem cell population maintenance			IDA		J:278440 	
+MGI:2444957	Taf6l	TATA-box binding protein associated factor 6 like	19		regulation of somatic stem cell population maintenance			IDA		J:278440 	
+MGI:98480	Tal1	T cell acute lymphocytic leukemia 1	4		regulation of stem cell population maintenance	regulates the proliferation of long term hematopoietic stem cell		IMP	MGI:1858004 	J:156838 	
+MGI:98495	Tbx3	T-box 3	5		stem cell population maintenance	happens in liver,affects a population of hepatic stem cell		IMP	MGI:3769504 	J:134487 	
+MGI:1202876	Tcf7l1	transcription factor 7 like 1 (T cell specific, HMG box)	6		regulation of stem cell population maintenance	regulates the proliferation of epiblast cell		IMP		J:138113 	
+MGI:1202876	Tcf7l1	transcription factor 7 like 1 (T cell specific, HMG box)	6		regulation of stem cell population maintenance	regulates the proliferation of embryonic stem cell		IMP		J:132981 	
+MGI:1202876	Tcf7l1	transcription factor 7 like 1 (T cell specific, HMG box)	6		somatic stem cell population maintenance	happens in skin,affects a population of somatic stem cell		IGI	MGI:1202879 	J:155012 	
+MGI:1202879	Tcf7l2	transcription factor 7 like 2, T cell specific, HMG box	19		somatic stem cell population maintenance	happens in skin,affects a population of somatic stem cell		IGI	MGI:1202876 	J:155012 	
+MGI:1202879	Tcf7l2	transcription factor 7 like 2, T cell specific, HMG box	19		somatic stem cell population maintenance	happens in crypt of lieberkuhn,affects a population of epithelial fate stem cell		IMP	MGI:1926344 	J:52818 	
+MGI:1202879	Tcf7l2	transcription factor 7 like 2, T cell specific, HMG box	19		somatic stem cell population maintenance	happens in small intestine crypt of lieberkuhn,affects a population of epithelial cell of small intestine		IMP	MGI:1926344 	J:147579 	
+MGI:1202879	Tcf7l2	transcription factor 7 like 2, T cell specific, HMG box	19		somatic stem cell population maintenance	happens in small intestine crypt of lieberkuhn		IMP	MGI:1926344 	J:48968 	
+MGI:104664	Tcf15	transcription factor 15	2		stem cell population maintenance			IDA		J:297822 	
+MGI:1097166	Tcl1	T cell lymphoma breakpoint 1	12		regulation of stem cell population maintenance			IGI	MGI:2446210 	J:125698 	
+MGI:1097166	Tcl1	T cell lymphoma breakpoint 1	12		stem cell population maintenance	affects a population of epiblast cell		IMP		J:111554 	
+MGI:101876	Tead1	TEA domain family member 1	7		positive regulation of stem cell population maintenance			IGI	MGI:106907 MGI:109241 	J:160813 	
+MGI:109241	Tead3	TEA domain family member 3	17		positive regulation of stem cell population maintenance			IGI	MGI:101876 MGI:106907 	J:160813 	
+MGI:106907	Tead4	TEA domain family member 4	6		positive regulation of stem cell population maintenance			IGI	MGI:101876 MGI:109241 	J:160813 	
+MGI:1098693	Tet1	tet methylcytosine dioxygenase 1	10		stem cell population maintenance			IMP		J:148409 	
+MGI:106032	Tfap2c	transcription factor AP-2, gamma	2		germ-line stem cell population maintenance	has the participant primordial germ cell		IMP	MGI:2176695 	J:156642 	
+MGI:106032	Tfap2c	transcription factor AP-2, gamma	2		somatic stem cell population maintenance	happens in trophectoderm,affects a population of trophoblast cell|happens in trophectoderm,affects a population of multi fate stem cell		IMP	MGI:3040993 	J:162675 	
+MGI:106032	Tfap2c	transcription factor AP-2, gamma	2		stem cell population maintenance	affects a population of trophoblast cell		IDA		J:160495 	
+MGI:106032	Tfap2c	transcription factor AP-2, gamma	2		stem cell population maintenance	affects a population of trophoblast cell		IMP		J:160495 	
+MGI:104890	Tpt1	tumor protein, translationally-controlled 1	14		stem cell population maintenance			IMP		J:170271 	
+MGI:1933302	Trim8	tripartite motif-containing 8	19		stem cell population maintenance			IMP		J:177748 	
+MGI:1330810	Trp63	transformation related protein 63	16		positive regulation of somatic stem cell population maintenance			IMP		J:220326 	
+MGI:2445126	Tut4	terminal uridylyl transferase 4	4		stem cell population maintenance			ISO	Q5TAX3 	J:164563 	
+MGI:2135272	Vangl2	VANGL planar cell polarity 2	1		somatic stem cell population maintenance			IMP		J:149821 	
+MGI:1202305	Vps72	vacuolar protein sorting 72	3		somatic stem cell population maintenance	affects a population of hematopoietic stem cell		IDA		J:150463 	
+MGI:1919765	Wdr43	WD repeat domain 43	17		regulation of stem cell population maintenance			IMP		J:278445 	
+MGI:1923696	Wdr62	WD repeat domain 62	7		neuronal stem cell population maintenance			ISO	Q5M9F2 	J:73065 	
+MGI:98961	Wnt7a	wingless-type MMTV integration site family, member 7A	6		somatic stem cell population maintenance			IMP	MGI:1857704 	J:149821 	
+MGI:1197020	Wnt9b	wingless-type MMTV integration site family, member 9B	11		mesenchymal stem cell maintenance involved in nephron morphogenesis	happens in metanephric mesenchyme		IMP	MGI:3526437 	J:171512 	
+MGI:1197020	Wnt9b	wingless-type MMTV integration site family, member 9B	11		negative regulation of stem cell population maintenance			ISO	O14905 	J:164563 	
+MGI:103262	Yap1	yes-associated protein 1	9		positive regulation of stem cell population maintenance			IMP		J:160813 	
+MGI:103262	Yap1	yes-associated protein 1	9		somatic stem cell population maintenance	happens in intestine epithelium,affects a population of somatic stem cell		IDA		J:141457 	
+MGI:1914552	Zc3h13	zinc finger CCCH type containing 13	14		regulation of stem cell population maintenance			IMP		J:261823 	
+MGI:107945	Zfp36l2	zinc finger protein 36, C3H type-like 2	17		somatic stem cell population maintenance			IMP		J:199080 	
+MGI:2442566	Zfp322a	zinc finger protein 322A	13		positive regulation of stem cell population maintenance			IDA		J:255341 	
+MGI:1915286	Zfp706	zinc finger protein 706	15		negative regulation of stem cell population maintenance			IMP		J:221548 	
+MGI:2683087	Zhx2	zinc fingers and homeoboxes 2	15		somatic stem cell population maintenance	happens in cerebral cortex,affects a population of neuroblast (sensu Vertebrata)		IDA		J:149817 	
+

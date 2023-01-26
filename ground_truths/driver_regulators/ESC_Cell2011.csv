@@ -1,0 +1,17 @@
+TFs,TFs_ori,TFs_mouse,Function
+POU5F1,4-Oct,Pou5f1,Core circuitry
+SOX2,Sox2,Sox2,Core circuitry
+NANOG,Nanog,Nanog,Core circuitry
+TCF3,Tcf3,Tcf3,Wnt signaling to core circuitry
+STAT3,Stat3,Stat3,Lif signaling to core circuitry
+SMAD1,Smad1,Smad1,BMP signaling to core circuitry
+SMAD2,Smad2,Smad2,TGF-¦Â/Activin/Nodal signaling
+SMAD3,Smad3,Smad3,TGF-¦Â/Activin/Nodal signaling
+MYC,c-Myc,Myc,Proliferation
+ESRRB,Esrrb,Esrrb,Steroid hormone receptor
+SALL4,Sall4,Sall4,Embryonic regulator
+TBX3,Tbx3,Tbx3,Mediates LIF signaling
+ZFX,Zfx,Zfx,Self-renewal
+THAP11,Ronin,Thap11,Metabolism
+KLF4,Klf4,Klf4,LIF signaling
+PRDM14,Prdm14,Prdm14,ESC identity
