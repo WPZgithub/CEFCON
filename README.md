@@ -71,13 +71,13 @@ You can run the `run_CEFCON.sh` bash file for a usage example.
 ## Citation
 Please cite the following paper, if you find the repository or the paper useful.
 
-Peizhuo Wang, Xiao Wen, Peng Lang, Han Li, Hantao Shu, Lin Gao, Dan Zhao and Jianyang Zeng, [A network-based framework for deciphering driver regulators of cell fate decisions from single-cell RNA-seq data](https://github.com/WPZgithub/CEFCON), Preprint, 2023 
+Peizhuo Wang, Xiao Wen, Peng Lang, Han Li, Hantao Shu, Lin Gao, Dan Zhao and Jianyang Zeng, [A network-based framework for deciphering driver regulators of cell fate decisions from single-cell RNA-seq data](https://github.com/WPZgithub/CEFCON), --, 2023 
 
 ```
 @article{wang2023cefcon,
   title={A network-based framework for deciphering driver regulators of cell fate decisions from single-cell RNA-seq data},
   author={Wang, peizhuo and Wen, Xiao and Lang, Peng and Li, Han and Shu, Hantao and Gao, Lin and Zhao, Dan and Zeng, Jianyang},
-  journal={Preprint},
+  journal={--},
   year={2023}
 }
 ```
