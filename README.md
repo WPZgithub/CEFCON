@@ -5,7 +5,7 @@ CEFCON takes a prior gene interaction network and expression profiles from scRNA
 developmental trajectory as inputs, and consists of three main components, including cell-lineage-specific gene 
 regulatory network (GRN) construction, driver regulator identification and regulon-like gene module (RGM) identification.
 
-![Overview.png](https://github.com/WPZgithub/CEFCON/blob/main/Overview.png)
+![Overview.png](https://github.com/WPZgithub/CEFCON/raw/main/Overview.png)
 
 CEFCON first uses the graph attention neural networks under a contrastive learning framework to construct reliable GRNs 
 for individual developmental cell lineages. Then, CEFCON characterizes the gene regulatory dynamics from a perspective 
