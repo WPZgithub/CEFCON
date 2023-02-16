@@ -7,7 +7,7 @@ from .driver_regulators import driver_regulators, highly_weighted_genes
 from .utils import *
 
 def main():
-    parser = argparse.ArgumentParser(prog='cefcon', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser = argparse.ArgumentParser(prog='CEFCON', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser = add_main_args(parser)
     args = parser.parse_args()
 
@@ -51,11 +51,18 @@ def main():
     print('Identifying driver regulators...')
     critical_genes, out_critical_genes, in_critical_genes = highly_weighted_genes(gene_influence_scores,
                                                                                   topK=args.topK_drivers)
-    cellFate_drivers_set, MDS_driver_set, MFVS_driver_set, _ = driver_regulators(G_predicted,
+    cellFate_drivers_set, MDS_driver_set, MFVS_driver_set, a = driver_regulators(G_predicted,
                                                                                  gene_influence_scores,
                                                                                  topK=args.topK_drivers,
                                                                                  driver_union=True,
                                                                                  plot_Venn=False)
+    ### Temp for Case analysis
+    import pickle
+    DriverSet = {'N_genes':data.n_vars, 'MDS':MDS_driver_set, 'MFVS':MFVS_driver_set, 'Critical':a}
+    DriverSet_file = open(fspath(p/'DriverSet.pkl'), 'wb')
+    pickle.dump(DriverSet, DriverSet_file)
+    DriverSet_file.close()
+    ###
 
     # Driver genes ranking save to file
     drivers_results = gene_influence_scores.loc[gene_influence_scores.index.isin(list(cellFate_drivers_set)), :].copy()
@@ -85,15 +92,15 @@ def add_main_args(parser: argparse.ArgumentParser):
     # Input data
     input_parser = parser.add_argument_group(title='Input data options')
     input_parser.add_argument('--input_expData', type=str, required=True, metavar='PATH',
-                              help='input expression data file')
+                              help='path to the input gene expression data')
     input_parser.add_argument('--input_priorNet', type=str, required=True, metavar='PATH',
-                              help='input prior network file')
+                              help='path to the input prior gene interaction network')
     input_parser.add_argument('--input_genesDE', type=str, default=None, metavar='PATH',
-                              help='input differential expression score file')
+                              help='path to the input gene differential expression score')
     input_parser.add_argument('--TFs', type=str, default=None, metavar='PATH',
-                              help='input transcriptional factors list')
+                              help='path to the input transcriptional factors list')
     input_parser.add_argument('--additional_edges_pct', type=float, default=0.01,
-                              help='percentage of additional interactions with highly co-expressions')
+                              help='proportion of high co-expression interactions to be added')
 
     # GRN
     grn_parser = parser.add_argument_group(title='Cell-lineage-specific GRN construction options')
@@ -109,7 +116,7 @@ def add_main_args(parser: argparse.ArgumentParser):
     grn_parser.add_argument("--heads", type=int, default=4,
                             help="number of heads")
     grn_parser.add_argument("--attention", type=str, default='COS', choices=['COS', 'AD', 'SD'],
-                            help="type of attention function")
+                            help="type of attention scoring function")
     grn_parser.add_argument('--miu', type=float, default=0.5,
                             help='parameter for considering the importance of attention coefficients of the first GNN layer')
     grn_parser.add_argument('--epochs', type=int, default=350,
@@ -125,7 +132,7 @@ def add_main_args(parser: argparse.ArgumentParser):
     # Driver regulators
     driver_parser = parser.add_argument_group(title='Driver regulator identification options')
     driver_parser.add_argument('--topK_drivers', type=int, default=50,
-                               help="number of candidate drivers genes according to the influence score")
+                               help="number of top-ranked candidate driver genes according to their influence scores")
 
     # Output dir
     parser.add_argument("--out_dir", type=str, required=True, default='./output',

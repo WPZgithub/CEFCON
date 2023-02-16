@@ -7,28 +7,39 @@ regulatory network (GRN) construction, driver regulator identification and regul
 
 ![Overview.png](https://github.com/WPZgithub/CEFCON/blob/main/Overview.png)
 
+CEFCON first uses the graph attention neural networks under a contrastive learning framework to construct reliable GRNs 
+for individual developmental cell lineages. Then, CEFCON characterizes the gene regulatory dynamics from a perspective 
+of network control theory and identifies the driver regulators that steer cell fate decisions. 
+CEFCON also detects the gene regulatory modules (i.e., RGMs) involving the identified driver regulators and measure 
+their activities based on the [AUCell](https://github.com/aertslab/AUCell) method. 
+
 ## Installation
+This code was originally run on a Linux x86_64 machine with a GTX3090 NVIDIA GPU.
 ### Requirements
+Please ensure that the following packages are installed in order to run the codes.
 - python>=3.8
-- numpy, scipy, pandas, scikit-learn, tqdm
 - [pytorch>=1.8.0](https://pytorch.org/get-started/locally/) 
 - [torch-geometric>=2.1.0](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html)
-- [scanpy>=1.9.0](https://scanpy.readthedocs.io/en/stable/installation.html)
+- [scanpy>=1.8.2](https://scanpy.readthedocs.io/en/stable/installation.html)
 - networkx>=2.8.0
 - cvxpy>=1.2.0
 - gurobipy>=9.5.0
 - [pyscenic>=0.12.0](https://pyscenic.readthedocs.io/en/latest/installation.html)
+- numpy, scipy, pandas, scikit-learn, tqdm
 - Recommended: An NVIDIA GPU with CUDA support for GPU acceleration
-### Optional (for evaluation and other analyses)
+### Optional (for performance evaluation and other analyses)
 - rpy2>=3.4.1
 - R>=3.6
   - PRROC (R package)
-- matplotlib-venn
-- palantir
+- matplotlib>=3.5.3
+- matplotlib-venn>=0.11.7
+- seaborn>=0.12.1
+- [palantir==1.0.1](https://github.com/dpeerlab/palantir)
 ### Install using pip
 ```
 pip install git+https://github.com/WPZgithub/CEFCON.git
 ```
+It may take about 10-20 minutes to install these dependencies.
 
 ### Using GUROBI
 
@@ -46,27 +57,33 @@ We recommend using GPU. If so, you will need to install the GPU version of PyTor
 ## Input data
 
 - `Prior gene interaction network`: an edgelist formatted network file.\
-&emsp;&emsp; We provide prior gene interaction networks for human and mouse respectively, located in `/prior_data`.
+&emsp;We provide prior gene interaction networks for human and mouse respectively, located in `/prior_data`.
 - `scRNA-seq data`: a '.csv' file in which rows represent cells and columns represent genes, or a '.h5ad' formatted file with AnnData objects. 
 - `Differential expression level`: a 'csv' file contains the log fold change of each gene.
 
-Examples of input data are located in `/example_data`.\
-The pre-processed data in the paper can be downloaded from [here](https://zenodo.org/record/7564872). 
+An example of input data (i.e., the hESC dataset with 1,000 highly variable genes) are located in `/example_data`
+All the input data in the paper can be downloaded from [here](https://zenodo.org/record/7564872). 
 
 ## Usage example
 ### Command line usage
 ```
-cefcon [-h] --input_expData PATH --input_priorNet PATH [--input_genesDE PATH] [--TFs PATH] [--additional_edges_pct ADDITIONAL_EDGES_PCT] [--cuda CUDA] [--seed SEED] [--hidden_dim HIDDEN_DIM] [--output_dim OUTPUT_DIM] [--heads HEADS] [--attention {COS,AD,SD}] [--miu MIU] [--epochs EPOCHS] [--repeats REPEATS] [--edge_threshold_param EDGE_THRESHOLD_PARAM] [--remove_self_loops] [--topK_drivers TOPK_DRIVERS] --out_dir OUT_DIR
+cefcon [-h] --input_expData PATH --input_priorNet PATH [--input_genesDE PATH] [--TFs PATH] \
+           [--additional_edges_pct ADDITIONAL_EDGES_PCT] [--cuda CUDA] [--seed SEED] \
+           [--hidden_dim HIDDEN_DIM] [--output_dim OUTPUT_DIM] [--heads HEADS] [--attention {COS,AD,SD}] \
+           [--miu MIU] [--epochs EPOCHS] [--repeats REPEATS] [--edge_threshold_param EDGE_THRESHOLD_PARAM] \
+           [--remove_self_loops] [--topK_drivers TOPK_DRIVERS] --out_dir OUT_DIR
 ```
-Please use `cefcon -h` to view parameters information. \
+Please use `cefcon.py -h` to view parameters information. \
 You can run the `run_CEFCON.sh` bash file for a usage example.
 
-- Output (in the output folder `${OUT_DIR}/`):
-    - The constructed cell-lineage-specific GRN with default name "cl_GRN.csv";
-    - The obtained gene embeddings with default name "gene_embs.csv";
-    - A list of identified driver regulators with default name "driver_regulators.csv";
-    - A list of obtained RGMs with default name "RGMs.csv";
-    - The AUCell activity matrix of the obtained RGMs with default name "AUCell_mtx.csv".
+- The output results can be found in the folder `${OUT_DIR}/`:
+    - "cl_GRN.csv": the constructed cell-lineage-specific GRN;
+    - "gene_embs.csv": the obtained gene embeddings;
+    - "driver_regulators.csv": a list of identified driver regulators;
+    - "RGMs.csv": a list of obtained RGMs;
+    - "AUCell_mtx.csv": the AUCell activity matrix of the obtained RGMs.
+
+It may take about 2-5 minutes to run on the example data.
 
 ## Citation
 Please cite the following paper, if you find the repository or the paper useful.
