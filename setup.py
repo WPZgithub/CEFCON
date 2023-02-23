@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 def readme():
-    with open('README.md', encoding='utf-8') as f:
+    with open('README.md', 'r', encoding='utf-8') as f:
         content = f.read()
     return content
 
@@ -28,7 +28,7 @@ setup(
         'torch>=1.8'
         'torch-geometric>=2.1.0',
         'scanpy>=1.9.0',
-        'networkx>=2.8.0',
+        'networkx>=2.8.0,<3.0',
         'cvxpy>=1.2.0',
         'gurobipy>=9.5.0',
         'pyscenic>=0.12.0',
