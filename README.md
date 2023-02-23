@@ -21,7 +21,7 @@ Please ensure that the following packages are installed in order to run the code
 - [pytorch>=1.8.0](https://pytorch.org/get-started/locally/) 
 - [torch-geometric>=2.1.0](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html)
 - [scanpy>=1.8.2](https://scanpy.readthedocs.io/en/stable/installation.html)
-- networkx>=2.8.0
+- networkx>=2.8.0,<3.0
 - cvxpy>=1.2.0
 - gurobipy>=9.5.0
 - [pyscenic>=0.12.0](https://pyscenic.readthedocs.io/en/latest/installation.html)
@@ -43,7 +43,7 @@ It may take about 10-20 minutes to install these dependencies.
 
 ### Using GUROBI
 
-We recommend using [GRUOBI](https://www.gurobi.com/) to solve the integer linear programming (ILP) problem for identifying driver genes.
+We recommend using [GRUOBI](https://www.gurobi.com/) to solve the integer linear programming (ILP) problem when identifying driver genes.
 GUROBI is a commercial solver that requires licenses to run. Thankfully, it provides free licenses in academia, as well as trial
 licenses outside academia. If there is no problem about the licenses, you need to install the
 `gurobipy` package.
