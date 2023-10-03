@@ -1,7 +1,7 @@
 # CEFCON
 
 CEFCON is a computational tool for deciphering driver regulators of cell fate decisions from single-cell RNA-seq data.
-CEFCON takes a prior gene interaction network and expression profiles from scRNA-seq data associated with a given 
+It takes a prior gene interaction network and expression profiles from scRNA-seq data associated with a given 
 developmental trajectory as inputs, and consists of three main components, including cell-lineage-specific gene 
 regulatory network (GRN) construction, driver regulator identification and regulon-like gene module (RGM) identification.
 
@@ -9,22 +9,24 @@ regulatory network (GRN) construction, driver regulator identification and regul
 
 ### About method
 CEFCON initially employs the graph attention neural networks under a contrastive learning framework to construct reliable GRNs 
-for specific developmental cell lineages (Fig. b). Subsequently, CEFCON characterizes the gene regulatory dynamics from a perspective 
+for specific developmental cell lineages (Fig. b). Subsequently, CEFCON characterizes gene regulatory dynamics from the perspective 
 of network control theory and identifies the driver regulators that steer cell fate decisions (Fig. c). 
 Moreover, CEFCON detects gene regulatory modules (i.e., RGMs) involving the identified driver regulators and measure 
-their activities based on the [AUCell](https://github.com/aertslab/AUCell) method (Fig. d). 
+their activities using [AUCell](https://github.com/aertslab/AUCell) (Fig. d). 
 
 ## Installation
-This code was originally run on a Linux x86_64 machine.
+CEFCON was originally tested on Ubuntu 20.04 with Python (3.8~3.10). 
+We recommend run CEFCON on CUDA if possible. 
+The following packages are required to be able to run this code:
+
 ### Requirements
-Please ensure that the following packages are installed in order to run the codes.
 - python(==3.10)
 - [pytorch(==1.13.0)](https://pytorch.org/get-started/locally/) 
 - [torch-geometric(>=2.1.0)](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html)
 - [scanpy(>=1.8.2)](https://scanpy.readthedocs.io/en/stable/installation.html)
 - networkx(>=3.0)
 - cvxpy(>=1.2.0)
-- gurobipy(>=10.0.0)
+- [gurobipy(>=10.0.0)](https://pypi.org/project/gurobipy/)
 - [pyscenic(>=0.12.0)](https://pyscenic.readthedocs.io/en/latest/installation.html)
 - numpy, scipy, pandas, scikit-learn, tqdm
 - Recommended: An NVIDIA GPU with CUDA support for GPU acceleration
@@ -54,7 +56,7 @@ If you have difficulty using GUROBI, a non-commercial solver, [SCIP](https://www
 
 ### Using GPU
 
-We recommend using GPU. If so, you will need to install the GPU version of PyTorch.
+We recommend using GPU. If you choose to do so, you will need to install the GPU version of PyTorch.
 
 ## Usage example
 ### Command line usage
