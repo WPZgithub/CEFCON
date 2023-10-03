@@ -1,10 +1,14 @@
 import argparse
 from os import fspath
 from pathlib import Path
+import pandas as pd
 
-from .cellLineage_GRN import cl_GRN
-from .driver_regulators import driver_regulators, highly_weighted_genes
-from .utils import *
+import sys
+sys.path.insert(0, '/home/wangpeizhuo')
+from cefcon.cell_lineage_GRN import NetModel
+from cefcon.cefcon_result_object import CefconResults
+from cefcon.utils import data_preparation
+
 
 def main():
     parser = argparse.ArgumentParser(prog='CEFCON', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -17,75 +21,42 @@ def main():
         Path.mkdir(p)
 
     ## load data
-    print('Data loading and preprocessing...')
-    data = data_preparation(args.input_expData, args.input_priorNet,
-                            genes_DE=args.input_genesDE,
-                            TF_list=args.TFs,
+    data = data_preparation(args.input_expData, args.input_priorNet, genes_DE=args.input_genesDE,
                             additional_edges_pct=args.additional_edges_pct)
-    if args.input_genesDE is not None:
-        genes_DEscore = data.var_names[data.var['node_score_auxiliary']>1]
-    else:
-        genes_DEscore = None
+    data = data['all']
 
     ## GRN construction
-    print('Constructing cell-lineage-specific GRN...')
-    cefcon_GRN_model = cl_GRN(hidden_dim=args.hidden_dim,
-                              output_dim=args.output_dim,
-                              heads_first=args.heads,
-                              attention_type=args.attention,
-                              miu=args.miu,
-                              epochs=args.epochs,
-                              repeats=args.repeats,
-                              seed=args.seed,
-                              cuda=args.cuda,
-                              )
+    cefcon_GRN_model = NetModel(hidden_dim=args.hidden_dim,
+                                output_dim=args.output_dim,
+                                heads_first=args.heads,
+                                attention_type=args.attention,
+                                miu=args.miu,
+                                epochs=args.epochs,
+                                repeats=args.repeats,
+                                seed=args.seed,
+                                cuda=args.cuda,
+                                )
     cefcon_GRN_model.run(data, showProgressBar=True)
-    G_predicted = cefcon_GRN_model.get_network(edge_threshold_zscore=None,
+    G_predicted = cefcon_GRN_model.get_network(keep_self_loops=~args.remove_self_loops,
                                                edge_threshold_avgDegree=args.edge_threshold_param,
-                                               keep_self_loops=~args.remove_self_loops,
-                                               output_file=fspath(p/'cl_GRN.csv'))
-    node_embeddings = cefcon_GRN_model.get_gene_embeddings(output_file=fspath(p/'gene_embs.csv'))
-    gene_influence_scores = cefcon_GRN_model.get_gene_influence_scores()
+                                               edge_threshold_zscore=None,
+                                               output_file=fspath(p / 'cell_lineage_GRN.csv'))
+    node_embeddings = cefcon_GRN_model.get_gene_embedding(output_file=fspath(p / 'gene_embs.csv'))
+    cefcon_results = CefconResults(adata=cefcon_GRN_model._adata,
+                                   network=G_predicted,
+                                   gene_embedding=node_embeddings)
 
     ## Driver regulators
-    print('Identifying driver regulators...')
-    critical_genes, out_critical_genes, in_critical_genes = highly_weighted_genes(gene_influence_scores,
-                                                                                  topK=args.topK_drivers)
-    cellFate_drivers_set, MDS_driver_set, MFVS_driver_set, a = driver_regulators(G_predicted,
-                                                                                 gene_influence_scores,
-                                                                                 topK=args.topK_drivers,
-                                                                                 driver_union=True,
-                                                                                 plot_Venn=False)
-    ### Temp for Case analysis
-    import pickle
-    DriverSet = {'N_genes':data.n_vars, 'MDS':MDS_driver_set, 'MFVS':MFVS_driver_set, 'Critical':a}
-    DriverSet_file = open(fspath(p/'DriverSet.pkl'), 'wb')
-    pickle.dump(DriverSet, DriverSet_file)
-    DriverSet_file.close()
-    ###
-
-    # Driver genes ranking save to file
-    drivers_results = gene_influence_scores.loc[gene_influence_scores.index.isin(list(cellFate_drivers_set)), :].copy()
-    drivers_results['is_MDS'] = np.isin(drivers_results.index, list(MDS_driver_set))
-    drivers_results['is_MFVS'] = np.isin(drivers_results.index, list(MFVS_driver_set))
-    if args.TFs is not None:
-        TFs = data.var_names[data.var['is_TF'] == 1]
-        drivers_results['is_TF'] = np.isin(drivers_results.index, TFs.values)
-    drivers_results = drivers_results.sort_values(by='Score', ascending=False)
-    drivers_results.to_csv(fspath(p/'driver_regulators.csv'))
+    cefcon_results.gene_influence_score()
+    cefcon_results.driver_regulators(topK=args.topK_drivers, output_file=fspath(p / 'driver_regulators.csv'))
 
     ## RGMs
-    print('Identifying regulon-like gene modules...')
-    RGMs_results = regulon_activity(data.to_df(), G_predicted,
-                                    out_critical_genes.intersection(cellFate_drivers_set),
-                                    in_critical_genes.intersection(cellFate_drivers_set),
-                                    DEgenes=genes_DEscore,
-                                    cell_label=None)
-    RGMs = pd.DataFrame([{'Driver_Regulator':r.name, 'Members': list(r.gene2weight.keys())} for r in RGMs_results['regulons']])
-    RGMs.to_csv(fspath(p/'RGMs.csv'))
-    RGMs_results['aucell'].to_csv(fspath(p/'AUCell_mtx.csv'))
+    RGMs_results_dict = cefcon_results.RGM_activity(return_value=True)
+    RGMs = pd.DataFrame([{'Driver_Regulator': r.name, 'Members': list(r.gene2weight.keys())} for r in RGMs_results_dict['RGMs']])
+    RGMs.to_csv(fspath(p / 'RGMs.csv'))
+    RGMs_results_dict['aucell'].to_csv(fspath(p / 'AUCell_mtx.csv'))
 
-    print('Done! Please check the results in "%s/"' % args.out_dir)
+    print('[Done!] Please check the results in "%s/"' % args.out_dir)
 
 
 def add_main_args(parser: argparse.ArgumentParser):
@@ -97,8 +68,6 @@ def add_main_args(parser: argparse.ArgumentParser):
                               help='path to the input prior gene interaction network')
     input_parser.add_argument('--input_genesDE', type=str, default=None, metavar='PATH',
                               help='path to the input gene differential expression score')
-    input_parser.add_argument('--TFs', type=str, default=None, metavar='PATH',
-                              help='path to the input transcriptional factors list')
     input_parser.add_argument('--additional_edges_pct', type=float, default=0.01,
                               help='proportion of high co-expression interactions to be added')
 
@@ -106,7 +75,7 @@ def add_main_args(parser: argparse.ArgumentParser):
     grn_parser = parser.add_argument_group(title='Cell-lineage-specific GRN construction options')
     grn_parser.add_argument('--cuda', type=int, default=0,
                             help="an integer greater than -1 indicates the GPU device number and -1 indicates the CPU device")
-    grn_parser.add_argument('--seed', type=int, default=2022,
+    grn_parser.add_argument('--seed', type=int, default=2023,
                             help="random seed (set to -1 means no random seed is assigned)")
 
     grn_parser.add_argument("--hidden_dim", type=int, default=128,
@@ -120,18 +89,18 @@ def add_main_args(parser: argparse.ArgumentParser):
     grn_parser.add_argument('--miu', type=float, default=0.5,
                             help='parameter for considering the importance of attention coefficients of the first GNN layer')
     grn_parser.add_argument('--epochs', type=int, default=350,
-                            help='number of epochs')
+                            help='number of epochs for one run')
     grn_parser.add_argument('--repeats', type=int, default=5,
-                            help='number of repeats')
+                            help='number of run repeats')
 
     grn_parser.add_argument("--edge_threshold_param", type=int, default=8,
-                            help="threshold for selecting top-weighted edges")
+                            help="threshold for selecting top-weighted edges (larger values means more edges)")
     grn_parser.add_argument("--remove_self_loops", action="store_true",
                             help="remove self loops")
 
     # Driver regulators
     driver_parser = parser.add_argument_group(title='Driver regulator identification options')
-    driver_parser.add_argument('--topK_drivers', type=int, default=50,
+    driver_parser.add_argument('--topK_drivers', type=int, default=100,
                                help="number of top-ranked candidate driver genes according to their influence scores")
 
     # Output dir
@@ -139,6 +108,7 @@ def add_main_args(parser: argparse.ArgumentParser):
                         help="results output path")
 
     return parser
+
 
 if __name__ == "__main__":
     main()
