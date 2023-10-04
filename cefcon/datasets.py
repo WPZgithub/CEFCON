@@ -238,7 +238,7 @@ def convert_human_to_mouse_network(net: pd.DataFrame):
 
 
 def mouse_hsc_nestorowa16(fpath: Optional[str] = './data_cache/mouse_hsc_nestorowa16_v0.h5ad', version: Optional[str] = 'v0'):
-    if fpath=='./data_cache/mouse_hsc_nestorowa16_v0.h5ad' or version=='v0':
+    if version=='v0':
         fpath = './data_cache/mouse_hsc_nestorowa16_v0.h5ad'
         url = 'https://zenodo.org/record/7564872/files/mouse_hsc_nestorowa16_v0.h5ad'
         print('Load mouse_hsc_nestorowa16_v0.h5ad')
