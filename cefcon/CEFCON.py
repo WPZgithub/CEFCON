@@ -28,7 +28,7 @@ def main():
     ## GRN construction
     cefcon_GRN_model = NetModel(hidden_dim=args.hidden_dim,
                                 output_dim=args.output_dim,
-                                heads_first=args.heads,
+                                heads=args.heads,
                                 attention_type=args.attention,
                                 miu=args.miu,
                                 epochs=args.epochs,
