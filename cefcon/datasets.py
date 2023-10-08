@@ -12,7 +12,7 @@ import zipfile
 from tqdm.auto import tqdm
 
 
-def _download_from_url(file_url: str, save_path: str):
+def _download_from_url(file_url: str, save_path: Path):
     try:
         response = requests.get(file_url, stream=True)
         response.raise_for_status()
@@ -24,7 +24,8 @@ def _download_from_url(file_url: str, save_path: str):
     block_size = 8192
     progress_bar = tqdm(total=total_size, unit='B', unit_scale=True)
 
-    with open(save_path, 'wb') as file:
+    download_file = save_path.parent / file_url.split('/')[-1]
+    with open(download_file, 'wb') as file:
         for chunk in response.iter_content(chunk_size=block_size):
             if chunk:
                 file.write(chunk)
@@ -32,9 +33,11 @@ def _download_from_url(file_url: str, save_path: str):
 
     progress_bar.close()
 
-    if save_path.endswith('.zip'):
-        with zipfile.ZipFile(save_path, 'r') as zip_file:
+    if str(download_file).endswith('.zip'):
+        with zipfile.ZipFile(download_file, 'r') as zip_file:
             zip_file.extractall(os.path.dirname(save_path))
+            zip_file.close()
+        os.remove(download_file)
 
     print(f'Ths data has been downloaded to `{save_path}`.')
 
@@ -45,18 +48,18 @@ def load_human_prior_interaction_network(dataset: str = 'nichenet',
 
     # The URL for every dataset. These datasets are stored at zenodo (https://doi.org/10.5281/zenodo.7564872).
     urls = {
-        'nichenet': 'https://zenodo.org/record/7564872/files/NicheNet_human.zip',
-        'pathwaycommons': 'https://zenodo.org/record/7564872/files/PathwayCommons12.All.hgnc.zip',
-        'inbiomap': 'https://zenodo.org/record/7564872/files/InBioMap.zip',
-        'harmonizome': 'https://zenodo.org/record/7564872/files/Harmonizome_nichenet.zip',
-        'omnipath_interaction': 'https://zenodo.org/record/7564872/files/Omnipath_interaction.zip',
+        'nichenet': 'https://zenodo.org/record/8013900/files/NicheNet_human.zip',
+        'pathwaycommons': 'https://zenodo.org/record/8013900/files/PathwayCommons12.All.hgnc.zip',
+        'inbiomap': 'https://zenodo.org/record/8013900/files/InBioMap.zip',
+        'harmonizome': 'https://zenodo.org/record/8013900/files/Harmonizome_nichenet.zip',
+        'omnipath_interactions': 'https://zenodo.org/record/8013900/files/Omnipath_interaction.zip',
     }
     filenames = {
         'nichenet': 'NicheNet_human.csv',
         'pathwaycommons': 'PathwayCommons12.All.hgnc.sif',
         'inbiomap': 'InBioMap.csv',
         'harmonizome': 'Harmonizome_nichenet.csv',
-        'omnipath_interaction': 'Omnipath_interaction.csv',
+        'omnipath_interactions': 'Omnipath_interaction.csv',
     }
 
     # Download if the file does not exist
@@ -88,7 +91,7 @@ def load_human_prior_interaction_network(dataset: str = 'nichenet',
         prior_net = pd.read_csv(data_path, sep='\t')
         prior_net = prior_net.loc[:, ['from', 'to']]
 
-    elif dataset == 'omnipath_interaction':  # 525,430
+    elif dataset == 'omnipath_interactions':  # 525,430
         prior_net = pd.read_csv(data_path)
         prior_net.rename(columns={'source_genesymbol': 'from', 'target_genesymbol': 'to'}, inplace=True)
         complex_idx = prior_net['source'].str.startswith('COMPLEX') | \
@@ -117,7 +120,7 @@ def load_human_prior_interaction_network(dataset: str = 'nichenet',
 
     else:
         print(f"Value error. {dataset} is not available.")
-        print("Available option: {'nichenet', 'pathwaycommons', 'inbiomap', 'harmonizome', 'omnipath_interaction'}")
+        print("Available option: {'nichenet', 'pathwaycommons', 'inbiomap', 'harmonizome', 'omnipath_interactions'}")
 
     if ('is_directed' in prior_net) and only_directed:
         prior_net = prior_net[prior_net['is_directed'] == 1]
@@ -240,16 +243,14 @@ def convert_human_to_mouse_network(net: pd.DataFrame):
 def mouse_hsc_nestorowa16(fpath: Optional[str] = './data_cache/mouse_hsc_nestorowa16_v0.h5ad', version: Optional[str] = 'v0'):
     if version=='v0':
         fpath = './data_cache/mouse_hsc_nestorowa16_v0.h5ad'
-        url = 'https://zenodo.org/record/7564872/files/mouse_hsc_nestorowa16_v0.h5ad'
+        url = 'https://zenodo.org/record/8013900/files/mouse_hsc_nestorowa16_v0.h5ad'
         print('Load mouse_hsc_nestorowa16_v0.h5ad')
     elif version=='v1':
         fpath = './data_cache/mouse_hsc_nestorowa16_v1.h5ad'
-        url = 'https://zenodo.org/record/7564872/files/mouse_hsc_nestorowa16_v1.h5ad'
+        url = 'https://zenodo.org/record/8013900/files/mouse_hsc_nestorowa16_v1.h5ad'
         print('Load mouse_hsc_nestorowa16_v1.h5ad')
     else:
-        fpath = './data_cache/mouse_hsc_nestorowa16_v2.h5ad'
-        url = 'https://zenodo.org/record/7564872/files/mouse_hsc_nestorowa16_v2.h5ad'
-        print('Load mouse_hsc_nestorowa16_v2.h5ad')
+        print('Wrong data!')
     adata = sc.read(fpath, backup_url=url, sparse=True, cache=True)
     adata.var_names_make_unique()
     return adata
