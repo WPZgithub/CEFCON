@@ -32,7 +32,7 @@ setup(
         'scanpy>=1.9.0',
         'networkx>=3.0',
         'cvxpy>=1.2.0',
-        'gurobi>=10.0.0',
+        'gurobipy>=10.0.0',
         'pyscenic>=0.12.0',
         'matplotlib',
         'matplotlib-venn',
