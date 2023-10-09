@@ -16,12 +16,12 @@ their activities using [AUCell](https://github.com/aertslab/AUCell) (Fig. d).
 
 ## Installation
 CEFCON was originally tested on Ubuntu 20.04 with Python (3.8~3.10). 
-We recommend run CEFCON on CUDA if possible. 
+We recommend running CEFCON on CUDA if possible. 
 The following packages are required to be able to run this code:
 
 ### Requirements
-- python(==3.10)
-- [pytorch(==1.13.0)](https://pytorch.org/get-started/locally/) 
+- python(>=3.8,<=3.10)
+- [pytorch(>=1.13.0,<2.0)](https://pytorch.org/get-started/locally/) 
 - [torch-geometric(>=2.1.0)](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html)
 - [scanpy(>=1.8.2)](https://scanpy.readthedocs.io/en/stable/installation.html)
 - networkx(>=3.0)
@@ -36,7 +36,7 @@ The following packages are required to be able to run this code:
 - seaborn(>=0.12.1)
 - [palantir(==1.0.1)](https://github.com/dpeerlab/palantir)
 - rpy2(>=3.4.1)
-- R(>=3.6)
+- R(>=4.0)
   - PRROC (R package)
   - slingshot (R package)
   - MAST (R package)
@@ -52,7 +52,7 @@ GUROBI is a commercial solver that requires licenses to run. Thankfully, it prov
 licenses outside academia. If there is no problem about the licenses, you need to install the
 `gurobipy` package.
 
-If you have difficulty using GUROBI, a non-commercial solver, [SCIP](https://www.scipopt.org/), will be used. But it does not ensure a successful solution.
+If difficulties arise while using GUROBI, the non-commercial solver, [SCIP](https://www.scipopt.org/), will be employed as an alternative. But the use of SCIP does not come with a guarantee of achieving a successful solution.
 
 ### Using GPU
 
@@ -117,7 +117,7 @@ for lineage, data_li in data.items():
 ## Citation
 Please cite the following paper, if you find the repository or the paper useful.
 
-Peizhuo Wang, Xiao Wen, Han Li, Peng Lang, Shuya Li, Yipin Lei, Hantao Shu, Lin Gao, Dan Zhao and Jianyang Zeng, [A network-based framework for deciphering driver regulators of cell fate decisions from single-cell RNA-seq data](https://github.com/WPZgithub/CEFCON), Preprint, 2023 
+Peizhuo Wang, Xiao Wen, Han Li, Peng Lang, Shuya Li, Yipin Lei, Hantao Shu, Lin Gao, Dan Zhao and Jianyang Zeng, [A network-based framework for deciphering driver regulators of cell fate decisions from single-cell RNA-seq data](https://github.com/WPZgithub/CEFCON), --, 2023 
 
 ```
 @article{wang2023cefcon,
