@@ -38,7 +38,7 @@ setup(
         'matplotlib-venn',
         'seaborn',
         'biomart',
-        'r',
+        #'r',
         'rpy2',
     ],
     # package_dir={'cefcon':'cefcon'},

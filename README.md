@@ -40,9 +40,19 @@ The following packages are required to be able to run this code:
   - PRROC (R package)
   - slingshot (R package)
   - MAST (R package)
+### Setup an environment
+```
+conda create -y --name CEFCON python=3.10
+conda activate CEFCON
+```
 ### Install using pip
 ```
 pip install git+https://github.com/WPZgithub/CEFCON.git
+```
+### Install R and the required packages
+```
+conda install -y -c conda-forge r
+R --no-save -q < r_env.R
 ```
 
 ### Using GUROBI
@@ -93,6 +103,11 @@ All the input data in the paper can be downloaded from [here](https://zenodo.org
 **Please check this [Notebook](https://github.com/WPZgithub/CEFCON/blob/main/notebooks/preprocessing_nestorowa16_data.ipynb) for scRNA-seq preprocessing.**
 ```python
 import cefcon as cf
+
+# We assume you have an Anndata object containing scRNA-seq data, cell lineages information,
+# and gene differential expression levels (optional).
+# We also assume you have a pandas dataframe containing the prior gene interaction network
+# in edgelist format.
 
 # Data preparation
 data = cf.data_preparation(adata, prior_network)
