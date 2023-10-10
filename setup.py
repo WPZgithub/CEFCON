@@ -20,7 +20,7 @@ setup(
     entry_points={
         "console_scripts": ['cefcon = cefcon.CEFCON:main']
     },
-    python_requires="==3.10",  # >=3.10 is recommended
+    python_requires=">=3.8,<3.11",  # >=3.10 is recommended
     install_requires=[
         'numpy',
         'scipy',
@@ -39,7 +39,7 @@ setup(
         'seaborn',
         'biomart',
         #'r',
-        'rpy2',
+        'rpy2<3.5.13',
     ],
     # package_dir={'cefcon':'cefcon'},
     license='MIT',
