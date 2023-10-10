@@ -40,19 +40,19 @@ The following packages are required to be able to run this code:
   - PRROC (R package)
   - slingshot (R package)
   - MAST (R package)
-### Setup an environment
+### Setup a [conda](https://docs.conda.io/projects/miniconda/en/latest/) environment
 ```
 conda create -y --name CEFCON python=3.10
 conda activate CEFCON
 ```
-### Install using pip
-```
-pip install git+https://github.com/WPZgithub/CEFCON.git
-```
 ### Install R and the required packages
 ```
 conda install -y -c conda-forge r
-R --no-save -q < r_env.R
+R --no-save -q < ./r_env.R
+```
+### Install using pip
+```
+pip install git+https://github.com/WPZgithub/CEFCON.git
 ```
 
 ### Using GUROBI
@@ -87,14 +87,14 @@ Please run the `run_CEFCON.sh` bash file for a usage example.
 &emsp;We provide prior gene interaction networks for human and mouse respectively, located in `/prior_data`.
 - `Gene differential expression level`: a 'csv' file contains the log fold change of each gene.
 
-An example of input data (i.e., the hESC dataset with 1,000 highly variable genes) are located in `/example_data`.
-All the input data in the paper can be downloaded from [here](https://zenodo.org/record/7564872). 
+An example of input data (i.e., the hESC dataset with 1,000 highly variable genes) can be found in `/example_data`.
+All the input data mentioned in the paper can be downloaded from [here](https://zenodo.org/record/7564872). 
 
 
 #### The output results can be found in the folder `${OUT_DIR}/`:
     - "cell_lineage_GRN.csv": the constructed cell-lineage-specific GRN;
-    - "gene_embs.csv": the obtained gene embeddings;
-    - "driver_regulators.csv": a list of identified driver regulators;
+    - "gene_embs.csv": the gene embeddings;
+    - "driver_regulators.csv": a list of identified driver regulators with their influence scores;
     - "RGMs.csv": a list of obtained RGMs;
     - "AUCell_mtx.csv": the AUCell activity matrix of the obtained RGMs.
 
@@ -104,7 +104,7 @@ All the input data in the paper can be downloaded from [here](https://zenodo.org
 ```python
 import cefcon as cf
 
-# We assume you have an Anndata object containing scRNA-seq data, cell lineages information,
+# We assume you have an AnnData object containing scRNA-seq data, cell lineages information,
 # and gene differential expression levels (optional).
 # We also assume you have a pandas dataframe containing the prior gene interaction network
 # in edgelist format.
