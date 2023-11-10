@@ -1,5 +1,7 @@
 # CEFCON
 
+[![DOI](https://zenodo.org/badge/423767675.svg)](https://zenodo.org/doi/10.5281/zenodo.10101434)
+
 CEFCON is a computational tool for deciphering driver regulators of cell fate decisions from single-cell RNA-seq data.
 It takes a prior gene interaction network and expression profiles from scRNA-seq data associated with a given 
 developmental trajectory as inputs, and consists of three main components, including cell-lineage-specific gene 
