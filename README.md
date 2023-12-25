@@ -134,13 +134,16 @@ for lineage, data_li in data.items():
 ## Citation
 Please cite the following paper, if you find the repository or the paper useful.
 
-Peizhuo Wang, Xiao Wen, Han Li, Peng Lang, Shuya Li, Yipin Lei, Hantao Shu, Lin Gao, Dan Zhao and Jianyang Zeng, [A network-based framework for deciphering driver regulators of cell fate decisions from single-cell RNA-seq data](https://github.com/WPZgithub/CEFCON), --, 2023 
+Peizhuo Wang, Xiao Wen, Han Li, Peng Lang, Shuya Li, Yipin Lei, Hantao Shu, Lin Gao, Dan Zhao and Jianyang Zeng, [Deciphering driver regulators of cell fate decisions from single-cell transcriptomics data with CEFCON](https://www.nature.com/articles/s41467-023-44103-3#Ack1), Nat Commun, 14, 8459 (2023). 
 
 ```
 @article{wang2023cefcon,
-  title={A network-based framework for deciphering driver regulators of cell fate decisions from single-cell RNA-seq data},
+  title={Deciphering driver regulators of cell fate decisions from single-cell transcriptomics data with CEFCON},
   author={Wang, peizhuo and Wen, Xiao and Li, Han and Lang, Peng and Li, Shuya and Yipin, Lei and Shu, Hantao and Gao, Lin and Zhao, Dan and Zeng, Jianyang},
-  journal={-},
+  journal={Nature Communications},
+  volume={14},
+  number={1},
+  pages={8459},
   year={2023}
 }
 ```
