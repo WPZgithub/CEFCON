@@ -12,8 +12,6 @@ from scanpy import AnnData
 import torch
 from torch import Tensor, nn
 import torch.nn.functional as F
-from torch import multiprocessing as mp
-from functools import partial
 
 import torch_geometric as pyg
 from torch_geometric.nn.conv import MessagePassing
@@ -235,15 +233,21 @@ class GRN_Encoder(nn.Module):
 
 
 class NetModel(object):
-    """Summary of class here.
+    """
 
-    description
+    The model for constructing the cell-lineage-specific GRN.
 
-    Attributes:
-        hidden_dim:
-        output_dim:
-        heads_first:
-
+    Args:
+        hidden_dim (int, optional): hidden dimension of the GNN encoder (default: 128)
+        output_dim (int, optional): output dimension of the GNN encoder (default: 64)
+        heads (int, optional): number of heads for the multi-head attention (d8tefault: 4)
+        attention_type (str, optional): type of attention scoring function ('COS', 'SD', 'AD') (default: 'COS')
+        dropout (float, optional): dropout rate (default: 0.1)
+        miu (float, optional): parameter (0~1) for considering the importance of attention coefficients of the first GNN layer (default: 0.5)
+        epochs (int, optional): number of epochs for one repeat (default: 350)
+        repeats (int, optional): number of repeats (default: 5)
+        seed (int, optional): random seed (set to -1 means no random seed is assigned)
+        cuda (int, optional): an integer greater than -1 indicates the GPU device number and -1 indicates the CPU device
     """
 
     def __init__(self,

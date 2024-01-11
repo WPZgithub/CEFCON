@@ -20,6 +20,10 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
                      input_priorNet: Union[str, pd.DataFrame],
                      genes_DE: Optional[Union[str, pd.DataFrame, pd.Series]] = None,
                      additional_edges_pct: float = 0.01) -> dict[str: AnnData]:
+    """
+    Prepare the data object for CEFCON.
+    """
+
     print('[0] - Data loading and preprocessing...')
 
     ## [1] Single-cell RNA-seq data
@@ -187,6 +191,9 @@ def cluster_cell_by_RGM(auc_mtx, true_cell_label, method='ward', k=None):
 
 
 def network_topological_properties(prior_network: pd.DataFrame):
+    """
+    Compute the basic topology metrics of the input network.
+    """
     import networkx as nx
     from sklearn.linear_model import LinearRegression as lr
 
@@ -350,7 +357,7 @@ def process_MAST_R(temp_R_dir: str, split_num: int = 4):
 
 def plot_controllability_metrics(cefcon_results: Union[dict, list], return_value: bool = False):
     """
-
+    Plot bar charts for controllability analyses.
     """
     # calculate metrics
     con_df = pd.DataFrame(columns=['MDS_controllability_score', 'MFVS_controllability_score',

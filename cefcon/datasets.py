@@ -136,6 +136,7 @@ def convert_human_to_mouse_network(net: pd.DataFrame):
     import biomart
 
     print('Convert genes of the prior interaction network to mouse gene symbols:')
+    print('Linking the Ensembl server...')
     with tqdm(total=10, desc='Processing', miniters=1) as outer_bar:
         outer_bar.update()
 
@@ -231,13 +232,6 @@ def convert_human_to_mouse_network(net: pd.DataFrame):
           f"#Edges: {len(prior_net_converted)}")
 
     return prior_net_converted
-
-
-# def human_bonemarrow_setty19(fpath: Optional[str] = './data_cache/human_bonemarrow_setty19.h5ad'):
-#     url = 'https://zenodo.org/record/7564872/files/human_bonemarrow_setty19.h5ad'
-#     adata = sc.read(fpath, backup_url=url, sparse=True, cache=True)
-#     adata.var_names_make_unique()
-#     return adata
 
 
 def mouse_hsc_nestorowa16(fpath: Optional[str] = './data_cache/mouse_hsc_nestorowa16_v0.h5ad', version: Optional[str] = 'v0'):

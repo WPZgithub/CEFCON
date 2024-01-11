@@ -9,7 +9,7 @@ def readme():
 
 setup(
     name='cefcon',
-    version='0.2.0',
+    version='0.2.1',
     description='Deciphering cell fate control from single-cell RNA-seq data',
     long_description=readme(),
     long_description_content_type='text/markdown',
@@ -17,10 +17,14 @@ setup(
     author_email='wangpeizhuo_37@163.com',
     url='https://github.com/WPZgithub/CEFCON',
     packages=find_packages('.'),
+    package_data={
+        'cefcon': ['resources/*'],
+        'cefcon': ['*.R'],
+    },
     entry_points={
         "console_scripts": ['cefcon = cefcon.CEFCON:main']
     },
-    python_requires=">=3.8,<3.11",  # >=3.10 is recommended
+    python_requires=">=3.9,<3.11",  # >=3.10 is recommended
     install_requires=[
         'numpy',
         'scipy',
@@ -40,7 +44,7 @@ setup(
         'biomart',
         #'r',
         'rpy2<3.5.13',
+        'jupyter'
     ],
-    # package_dir={'cefcon':'cefcon'},
     license='MIT',
 )

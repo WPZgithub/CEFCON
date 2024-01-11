@@ -3,12 +3,11 @@ from os import fspath
 from pathlib import Path
 import pandas as pd
 
-import sys
-sys.path.insert(0, '/home/wangpeizhuo')
 from cefcon.cell_lineage_GRN import NetModel
 from cefcon.cefcon_result_object import CefconResults
 from cefcon.utils import data_preparation
 
+# TODO: 1) Modify the processing of input data to accommodate multiple lineages; 2) Improve the prompt message
 
 def main():
     parser = argparse.ArgumentParser(prog='CEFCON', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -83,9 +82,9 @@ def add_main_args(parser: argparse.ArgumentParser):
     grn_parser.add_argument("--output_dim", type=int, default=64,
                             help="output dimension of the GNN encoder")
     grn_parser.add_argument("--heads", type=int, default=4,
-                            help="number of heads")
+                            help="number of heads of multi-head attention. Default is 4")
     grn_parser.add_argument("--attention", type=str, default='COS', choices=['COS', 'AD', 'SD'],
-                            help="type of attention scoring function")
+                            help="type of attention scoring function (\'COS\', \'AD\', \'SD\'). Default is \'COS\'")
     grn_parser.add_argument('--miu', type=float, default=0.5,
                             help='parameter for considering the importance of attention coefficients of the first GNN layer')
     grn_parser.add_argument('--epochs', type=int, default=350,

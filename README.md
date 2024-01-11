@@ -17,12 +17,12 @@ Moreover, CEFCON detects gene regulatory modules (i.e., RGMs) involving the iden
 their activities using [AUCell](https://github.com/aertslab/AUCell) (Fig. d). 
 
 ## Installation
-CEFCON was originally tested on Ubuntu 20.04 with Python (3.8~3.10). 
+CEFCON was originally tested on Ubuntu 20.04 with Python (3.9~3.10). 
 We recommend running CEFCON on CUDA if possible. 
 The following packages are required to be able to run this code:
 
 ### Requirements
-- python(>=3.8,<=3.10)
+- python(>=3.9,<=3.10)
 - [pytorch(>=1.13.0,<2.0)](https://pytorch.org/get-started/locally/) 
 - [torch-geometric(>=2.1.0)](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html)
 - [scanpy(>=1.8.2)](https://scanpy.readthedocs.io/en/stable/installation.html)
