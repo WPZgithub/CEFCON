@@ -18,7 +18,7 @@ setup(
     url='https://github.com/WPZgithub/CEFCON',
     packages=find_packages('.'),
     package_data={
-        'cefcon': ['*.R'， 'resources/*'],
+        'cefcon': ['*.R', 'resources/*'],
     },
     entry_points={
         "console_scripts": ['cefcon = cefcon.CEFCON:main']
