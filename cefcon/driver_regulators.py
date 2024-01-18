@@ -129,9 +129,11 @@ FVS control for a directed network.
 Use efficient graph reduction and then solve the ILP problem using gurobi. 
 A set S \subset V of nodes in a graph G=(V,E) is a feedback vertex set if the removal of these nodes leaves the graph
 without feedback loops.
-Refs: [1] Structure-based control of complex networks with nonlinear dynamics.
+Refs: [1] Dynamics and control at feedback vertex sets. ii: a faithful monitor to determine the diversity of molecular activities in regulatory networks.
+      Journal of Theoretical Biology, 2013
+      [2] Structure-based control of complex networks with nonlinear dynamics.
       Proceedings of the National Academy of Sciences, 2017
-      [2] On computing the minimum feedback vertex set of a directed graph by contraction operations.
+      [3] On computing the minimum feedback vertex set of a directed graph by contraction operations.
       IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 2000
       [ILP] An exact algorithm for selecting partial scan flip-flops. 1994
 """
