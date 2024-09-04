@@ -19,7 +19,6 @@ pseudotime_lineages <- read.csv(paste0(out_dir, '/pseudotime_lineages.csv'), hea
 
 ## MAST
 # MAST assumes that log-transformed approximately scale-normalized data is provided (such as log2(TPM+1))
-split_num <- 4
 for(p in colnames(pseudotime_lineages))
 {
   lin <- pseudotime_lineages[, p]

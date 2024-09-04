@@ -35,7 +35,6 @@ write.csv(pseudotime, paste0(out_dir, '/pseudotime_lineages.csv'), quote=FALSE)
 
 ## MAST
 # MAST assumes that log-transformed approximately scale-normalized data is provided (such as log2(TPM+1))
-split_num <- 4
 for(p in colnames(pseudotime))
 {
   lin <- pseudotime[, p]
