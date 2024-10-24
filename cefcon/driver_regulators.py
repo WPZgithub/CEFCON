@@ -107,6 +107,11 @@ def MDScontrol(directed_graph: nx.DiGraph, solver='GUROBI'):
         # elif solver == 'XPRESS':
         #        prob.solve(solver=cvx.XPRESS, verbose=False)
         #        print("optimal value with XPRESS:", prob.value)
+        elif solver == 'GLPK_MI':
+            # Solve with CLARABEL.
+            print('      Solving by GLPK_MI...(', end='')
+            prob.solve(solver=cvx.GLPK_MI, verbose=False)
+            print('optimal value with GLPK_MI:{},'.format(prob.value), end='  ')
         else:
             # Solve with SCIP
             print('      Inaccurate solver is selected! Now, solving by SCIP...(', end='')
@@ -330,6 +335,11 @@ def MFVScontrol(directed_graph: nx.DiGraph, nodes_importance: pd.DataFrame, solv
         # elif solver=='XPRESS':
         #    prob.solve(solver=cvx.XPRESS, verbose=False)
         #    print("optimal value with XPRESS:", prob.value)
+        elif solver == 'GLPK_MI':
+            # Solve with CLARABEL.
+            print('      Solving by GLPK_MI...(', end='')
+            prob.solve(solver=cvx.GLPK_MI, verbose=False)
+            print('optimal value with GLPK_MI:{},'.format(prob.value), end='  ')
         else:
             # Solve with SCIP
             print('      Inaccurate solver is selected. Now, solving by SCIP...(', end='')

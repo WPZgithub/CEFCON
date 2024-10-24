@@ -9,7 +9,7 @@ def readme():
 
 setup(
     name='cefcon',
-    version='0.2.1',
+    version='0.3.0',
     description='Deciphering cell fate control from single-cell RNA-seq data',
     long_description=readme(),
     long_description_content_type='text/markdown',
@@ -23,14 +23,14 @@ setup(
     entry_points={
         "console_scripts": ['cefcon = cefcon.CEFCON:main']
     },
-    python_requires=">=3.9,<3.11",  # >=3.10 is recommended
+    python_requires=">=3.9,<3.12",  # >=3.10 is recommended
     install_requires=[
         'numpy',
         'scipy',
         'pandas',
         'scikit-learn',
         'tqdm',
-        'torch>=1.13.0,<2.0',
+        'torch>=1.13.0',
         'torch-geometric>=2.1.0',
         'scanpy>=1.9.0',
         'networkx>=3.0',
@@ -42,8 +42,9 @@ setup(
         'seaborn',
         'biomart',
         #'r',
-        'rpy2<3.5.13',
-        'jupyter'
+        'rpy2',
+        'jupyter',
+        'nxviz'
     ],
     license='MIT',
 )

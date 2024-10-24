@@ -6,7 +6,7 @@ from .utils import data_preparation
 from .cell_lineage_GRN import NetModel
 from .driver_regulators import driver_regulators, highly_weighted_genes
 
-__version__ = '0.2.1'
+__version__ = '0.3.0'
 __url__ = 'https://github.com/WPZgithub/CEFCON'
 __author__ = 'Peizhuo Wang'
 __author_email__ = 'wangpeizhuo_37@163.com'

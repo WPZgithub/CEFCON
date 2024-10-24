@@ -27,7 +27,6 @@ from torch_geometric.data import Data
 
 from .cefcon_result_object import CefconResults
 
-
 class GraphAttention_layer(MessagePassing):
     def __init__(self,
                  input_dim: int,
@@ -240,13 +239,13 @@ class NetModel(object):
     Args:
         hidden_dim (int, optional): hidden dimension of the GNN encoder (default: 128)
         output_dim (int, optional): output dimension of the GNN encoder (default: 64)
-        heads (int, optional): number of heads for the multi-head attention (d8tefault: 4)
+        heads (int, optional): number of heads for the multi-head attention (default: 4)
         attention_type (str, optional): type of attention scoring function ('COS', 'SD', 'AD') (default: 'COS')
         dropout (float, optional): dropout rate (default: 0.1)
         miu (float, optional): parameter (0~1) for considering the importance of attention coefficients of the first GNN layer (default: 0.5)
         epochs (int, optional): number of epochs for one repeat (default: 350)
         repeats (int, optional): number of repeats (default: 5)
-        seed (int, optional): random seed (set to -1 means no random seed is assigned)
+        seed (int, optional): random seed. Set to -1 means no random seed is assigned (default: -1)
         cuda (int, optional): an integer greater than -1 indicates the GPU device number and -1 indicates the CPU device
     """
 
@@ -257,7 +256,7 @@ class NetModel(object):
                  attention_type: str = 'COS',
                  dropout: float = 0.1,
                  miu: float = 0.5,
-                 epochs: int = 500,
+                 epochs: int = 350,
                  repeats: int = 5,
                  seed: int = -1,
                  cuda: int = -1,
@@ -429,6 +428,21 @@ class NetModel(object):
                     edge_threshold_avgDegree: Optional[int] = 10,
                     edge_threshold_zscore: Optional[float] = None,
                     output_file: Optional[str] = None) -> nx.DiGraph:
+        """
+        The function is used to generate a predicted gene regulatory network (GRN) from the learned attention coefficients.
+
+        Parameters:
+            keep_self_loops (bool): A flag indicating whether to keep self-loops in the predicted network. Default is True.
+            edge_threshold_avgDegree (Optional[int]): The average degree threshold for selecting edges.
+                Only the top (N_nodes*edge_threshold_avgDegree) edges are kept. Default is 10.
+            edge_threshold_zscore (Optional[float]): The z-score threshold for selecting edges.
+                Only the edges with a z-score greater than edge_threshold_zscore are kept. Default is None.
+                Ignored if 'edge_threshold_avgDegree' is not None.
+            output_file (Optional[str]): The file path to save the predicted network. If None, the network is not saved. Default is None.
+
+        Returns:
+            (nx.DiGraph): The predicted gene regulatory network.
+        """
 
         edge_index_ori = self.edge_index
         edge_index_with_selfloop, att_coefs_with_selfloop = self._att_coefs[0], self._att_coefs[1]
@@ -549,6 +563,17 @@ class NetModel(object):
         return G_nx
 
     def get_gene_embedding(self, output_file: Optional[str] = None) -> pd.DataFrame:
+        """
+        This function retrieves the gene embeddings learned by the network model.
+
+        Parameters:
+            output_file (Optional[str]): The file path to save the gene embeddings.
+                If None, the gene embeddings are not saved. Default is None.
+
+        Returns:
+            (pd.DataFrame): A DataFrame containing the gene embeddings. The index of the DataFrame is the gene name.
+        """
+
         if self.GRN_predicted is None:
             raise ValueError(
                 f'Did not find the predicted network. Run `NetModel.get_network` first.'
@@ -566,6 +591,21 @@ class NetModel(object):
                            keep_self_loops: bool = True,
                            edge_threshold_avgDegree: Optional[int] = 10,
                            edge_threshold_zscore: Optional[float] = None) -> CefconResults:
+        """
+        This function retrieves the CEFCON results, which include the predicted gene regulatory network (GRN)
+        and the gene embeddings learned by the network model.
+
+        Parameters:
+            keep_self_loops (bool): A flag indicating whether to keep self-loops in the predicted network. Default is True.
+            edge_threshold_avgDegree (int): The average degree threshold for selecting edges.
+                Only the top (N_nodes*edge_threshold_avgDegree) edges are kept. Default is 10.
+            edge_threshold_zscore (Optional[float]): The z-score threshold for selecting edges.
+                Only the edges with a z-score greater than edge_threshold_zscore are kept. Default is None.
+                Ignored if 'edge_threshold_avgDegree' is not None.
+
+        Returns:
+            (CefconResults): An object containing the input data, predicted gene regulatory network (GRN) and the gene embeddings.
+        """
 
         network = self.get_network(keep_self_loops, edge_threshold_avgDegree, edge_threshold_zscore)
         gene_embedding = self.get_gene_embedding()

@@ -1,3 +1,4 @@
+from operator import index
 from typing import Optional
 
 import pandas as pd
@@ -80,9 +81,20 @@ class CefconResults:
         influence_score = influence_score.sort_values(by='influence_score', ascending=False)
         self.influence_score = influence_score
 
-    def driver_regulators(self, topK: int = 100, return_value: bool = False, output_file: Optional[str] = None):
+    def driver_regulators(self,
+                          topK: int = 100,
+                          solver: str = 'GUROBI',
+                          return_value: bool = False,
+                          output_file: Optional[str] = None):
         """
-        Obtain driver regulators from the constructed cell-lineage-specific GRN
+        Obtain driver regulators from the constructed cell-lineage-specific GRN.
+
+        Parameters:
+            topK (int): The maximum number of top-ranked driver regulators to consider. Default is 100.
+            solver (str): The optimization solver to use for finding the driver regulators. Default is 'GUROBI'.
+                The current available solvers are 'GUROBI', 'SCIP', and 'GLPK_MI'.
+            return_value (bool): If True, the function will return the driver regulator DataFrame. Default is False.
+            output_file (str): If provided, the driver regulator DataFrame will be saved to this file path.
         """
         if self.influence_score is None:
             self.gene_influence_score()
@@ -91,7 +103,7 @@ class CefconResults:
                                                                                                      self.influence_score,
                                                                                                      topK=topK,
                                                                                                      driver_union=True,
-                                                                                                     solver='GUROBI')
+                                                                                                     solver=solver)
         self.driver_regulator['is_TF'] = self.driver_regulator.index.isin(self.TFs)
 
         if isinstance(output_file, str):
@@ -99,16 +111,21 @@ class CefconResults:
         if return_value:
             return self.driver_regulator
 
-    def RGM_activity(self, num_workers: int = 8, return_value: bool = False):
+    def RGM_activity(self, num_workers: int = 8, return_value: bool = False, output_file: Optional[str] = None):
         """
         Select RGMs of driver regulators and calculate their activities in each cell.
         Activity score is calculated based on AUCell, which is from the `pyscenic` package.
+
+        Parameters:
+            num_workers (int): The number of worker processes to use for AUCell calculation. Default is 8.
+            return_value (bool): If True, the function will return the calculated AUCell matrices. Default is False.
+            output_file (str): If provided, the calculated AUCell matrices will be saved to this file path.
         """
         print('[3] - Identifying regulon-like gene modules...')
 
         if self.driver_regulator is None:
             raise ValueError(
-                f'Did not find the result of driver regulators. Run `cefcon.NetModel.driver_regulators` first.'
+                f'No result found for driver regulators. Please run `cefcon.NetModel.driver_regulators` first.'
             )
         from pyscenic.aucell import aucell
         from ctxcore.genesig import GeneSignature
@@ -159,6 +176,14 @@ class CefconResults:
         self.RGMs_AUCell_dict = RGMs_AUCell_dict
         print('Done!')
 
+        if isinstance(output_file, str):
+            pd_RGMs = pd.DataFrame(index=['genes'], columns=auc_mtx.columns)
+            for r in RGMs:
+                pd_RGMs.at['genes', r.name] = list(r.gene2weight.keys())
+            result = pd.concat([pd_RGMs, auc_mtx], axis=0)
+            result.columns.name = 'RGM'
+            result.index.name = 'Cell'
+            result.to_csv(output_file)
         if return_value:
             return RGMs_AUCell_dict
 
@@ -243,6 +268,17 @@ class CefconResults:
                        )
         annotate.circos_labels(sub_net, sort_by='influence_score', layout='rotate')
 
+        # Get the figure and axes from the circos plot
+        fig = plt.gcf()
+        ax = plt.gca()
+
+        # Make background transparent
+        fig.patch.set_facecolor('none')
+        ax.set_facecolor('none')
+
+        ax.set_axis_off()
+        plt.tight_layout()
+
     def plot_driver_genes_Venn(self):
         """
         Plot Venn diagram of MDS, MFVS and top-ranked regulators.
@@ -277,10 +313,21 @@ class CefconResults:
         # plt.savefig('drivers_Venn_plot.svg', dpi=600, format='svg', bbox_inches='tight')
         plt.show()
 
-    def plot_RGM_activity_heatmap(self, cell_label: Optional[pd.DataFrame] = None, type: str = 'out'):
+    def plot_RGM_activity_heatmap(self,
+                                  cell_label: Optional[pd.DataFrame] = None,
+                                  type: str = 'out',
+                                  z_score: Optional[int] = 0):
         """
         Plot clustermap of RGM activity matrix.
-        If `cell_label` is provided, cells are ordered by cell clusters, else cells are ordered by hierarchical clustering.
+
+        Parameters:
+            cell_label (pd.DataFrame, optional): A DataFrame containing cell labels.
+                If provided, cells are ordered by cell clusters, else cells are ordered by hierarchical clustering.
+                Defaults to None.
+            type (str, optional): Type of RGM activity to plot.
+                It can be 'out', 'in', or 'all'. Defaults to 'out'.
+            z_score (int, optional): Either 0 (rows) or 1 (columns).
+                Whether or not to calculate z-scores for the rows or the columns.  Defaults to 0.
         """
         if self.RGMs_AUCell_dict is None:
             raise ValueError(
@@ -310,7 +357,7 @@ class CefconResults:
         f = plt.figure()
         sns.set_theme(font_scale=f.get_dpi()/150)
         g = sns.clustermap(auc_mtx.T, method='ward', square=False, linecolor='black',
-                           z_score=0, vmin=-2.5, vmax=2.5,
+                           z_score=z_score, vmin=-2.5, vmax=2.5,
                            col_cluster=col_cluster, col_colors=network_colors, cmap="RdBu_r",
                            figsize=(4.5, 0.15 * auc_mtx.shape[1]),
                            xticklabels=False, yticklabels=True, dendrogram_ratio=0.12,

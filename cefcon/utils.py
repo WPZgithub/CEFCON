@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from anndata import AnnData
-from scipy import sparse
+from scipy import sparse, stats
 import networkx as nx
 import scanpy as sc
 from typing import Optional, Union
@@ -15,13 +15,31 @@ import seaborn as sns
 
 from .resources import TFs_human, TFs_mouse
 
-
 def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
                      input_priorNet: Union[str, pd.DataFrame],
-                     genes_DE: Optional[Union[str, pd.DataFrame, pd.Series]] = None,
+                     genes_DE: Optional[Union[str, pd.DataFrame]] = None,
                      additional_edges_pct: float = 0.01) -> dict[str: AnnData]:
     """
     Prepare the data object for CEFCON.
+
+    Parameters:
+        input_expData (str, AnnData or pd.DataFrame): The input single-cell RNA sequencing data.
+            It can be provided as a file path, an AnnData object or a pandas DataFrame.
+            If it is a file path, the file must be a csv format file with a ‘.csv’ suffix,
+            where rows represent cells and columns represent genes.
+        input_priorNet (str or pd.DataFrame): The prior gene interaction network.
+            It can be provided as a file path or a pandas DataFrame.
+            The network is in edgelist format, where each line of data is in the form of 'source,target,weight(optional)'.
+        genes_DE (str or pd.DataFrame): The differential expression information for genes.
+            It can be provided as a file path or a pandas DataFrame. Default is None.
+            If it is None and 'input_expData' is an AnnData object, the var[l + ‘_logFC’] of the AnnData object is
+            recognised as the gene differential expression score for the corresponding lineage l. Otherwise, the
+            effect of gene differential expression is not considered.
+        additional_edges_pct (float): The percentage of additional edges to add to the prior gene interaction network.
+                                      Default is 0.01. If set to 0, no additional edges are added, which saves computational cost
+
+    Returns:
+        (dict[str: AnnData]): A dictionary of AnnData objects, where each object represents a lineage in the input data.
     """
 
     print('[0] - Data loading and preprocessing...')
@@ -40,22 +58,22 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
     elif isinstance(input_expData, pd.DataFrame):
         adata = sc.AnnData(X=input_expData)
     else:
-        raise Exception("Invalid input! The input format must be '.csv' file or '.h5ad' "
-                        "formatted file, or an 'AnnData' object!", input_expData)
+        raise Exception("Invalid input! The input must be '.csv' format file or '.h5ad' "
+                        "format file, or an 'AnnData' object!", input_expData)
 
     possible_species = 'mouse' if bool(re.search('[a-z]', adata.var_names[0])) else 'human'
 
     # Gene symbols are uniformly handled in uppercase
     adata.var_names = adata.var_names.str.upper()
 
-    ## [2] Prior network data
+    ## [2] Prior gene interaction network
     if isinstance(input_priorNet, str):
         netData = pd.read_csv(input_priorNet, index_col=None, header=0)
     elif isinstance(input_priorNet, pd.DataFrame):
         netData = input_priorNet.copy()
     else:
         raise Exception("Invalid input!", input_priorNet)
-    # make sure the genes of prior network are in the input scRNA-seq data
+    # make sure the input scRNA-seq data contains genes from the prior network
     netData['from'] = netData['from'].str.upper()
     netData['to'] = netData['to'].str.upper()
     netData = netData.loc[netData['from'].isin(adata.var_names.values)
@@ -74,7 +92,7 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
     centrality = pd.concat([in_degree, out_degree], axis=1)
     centrality = centrality.loc[priori_network_nodes, :]
 
-    ## [3] A mapper for node index and gene name
+    ## [3] Create a mapper for node indices and gene names
     idx_GeneName_map = pd.DataFrame({'idx': range(len(priori_network_nodes)),
                                      'geneName': priori_network_nodes},
                                     index=priori_network_nodes)
@@ -82,7 +100,7 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
     edgelist = pd.DataFrame({'from': idx_GeneName_map.loc[netData['from'].tolist(), 'idx'].tolist(),
                              'to': idx_GeneName_map.loc[netData['to'].tolist(), 'idx'].tolist()})
 
-    ## [4] add TF information
+    ## [4] Add TF information
     is_TF = np.ones(len(priori_network_nodes), dtype=int)
     if possible_species == 'human':
         TFs_df = TFs_human
@@ -99,8 +117,13 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
         cells_in_lineage_dict = {l: adata.obs_names[adata.obs[l].notna()] for l in lineages}
 
     print(f"Consider the input data with {len(cells_in_lineage_dict)} lineages:")
+    if isinstance(genes_DE, str):
+        genes_DE = pd.read_csv(genes_DE, index_col=0, header=0)
+    if isinstance(genes_DE, pd.DataFrame) and (len(genes_DE)!=len(cells_in_lineage_dict)):
+        raise Exception("The number of columns in 'genes_DE' does not match the number of lineages!", genes_DE)
+
     adata_lineages = dict()
-    for l, c in cells_in_lineage_dict.items():
+    for li, (l, c) in enumerate(cells_in_lineage_dict.items()):
         print(f"  Lineage - {l}:")
 
         adata_l = sc.AnnData(X=adata[c, :].to_df())
@@ -110,37 +133,38 @@ def data_preparation(input_expData: Union[str, sc.AnnData, pd.DataFrame],
         adata_l.uns['name'] = l
 
         ## [5] Additional edges with high spearman correlation
-        if isinstance(adata_l.X, sparse.csr_matrix):
-            gene_exp = pd.DataFrame(adata_l.X.A.T, index=priori_network_nodes)
-        else:
-            gene_exp = pd.DataFrame(adata_l.X.T, index=priori_network_nodes)
+        if additional_edges_pct > 0:
+            if isinstance(adata_l.X, sparse.csr_matrix):
+                gene_exp = pd.DataFrame(adata_l.X.A.T, index=priori_network_nodes)
+            else:
+                gene_exp = pd.DataFrame(adata_l.X.T, index=priori_network_nodes)
 
-        ori_edgeNum = len(edgelist)
-        edges_corr = np.absolute(np.array(gene_exp.T.corr('spearman')))
-        np.fill_diagonal(edges_corr, 0.0)
-        x, y = np.where(edges_corr > 0.6)
-        addi_top_edges = pd.DataFrame({'from': x, 'to': y, 'weight': edges_corr[x, y]})
-        addi_top_k = int(gene_exp.shape[0] * (gene_exp.shape[0] - 1) * additional_edges_pct)
-        if len(addi_top_edges) > addi_top_k:
-            addi_top_edges = addi_top_edges.sort_values(by=['weight'], ascending=False)
-            addi_top_edges = addi_top_edges.iloc[0:addi_top_k, 0:2]
-        edgelist = pd.concat([edgelist, addi_top_edges.iloc[:, 0:2]], ignore_index=True)
-        edgelist = edgelist.drop_duplicates(subset=['from', 'to'], keep='first', inplace=False)
-        print('    {} extra edges (Spearman correlation > 0.6) are added into the prior gene interaction network.\n'
-              '    Total number of edges: {}.'.format((len(edgelist) - ori_edgeNum), len(edgelist)))
+            ori_edgeNum = len(edgelist)
+            SCC, _ = stats.spearmanr(gene_exp, axis=1)  # scipy.stats.spearmanr is faster
+            edges_corr = np.absolute(SCC)
+            np.fill_diagonal(edges_corr, 0.0)
+            x, y = np.where(edges_corr > 0.6)
+            addi_top_edges = pd.DataFrame({'from': x, 'to': y, 'weight': edges_corr[x, y]})
+            addi_top_k = int(gene_exp.shape[0] * (gene_exp.shape[0] - 1) * additional_edges_pct)
+            if len(addi_top_edges) > addi_top_k:
+                addi_top_edges = addi_top_edges.sort_values(by=['weight'], ascending=False)
+                addi_top_edges = addi_top_edges.iloc[0:addi_top_k, 0:2]
+            edgelist = pd.concat([edgelist, addi_top_edges.iloc[:, 0:2]], ignore_index=True)
+            edgelist = edgelist.drop_duplicates(subset=['from', 'to'], keep='first', inplace=False)
+            print('    {} extra edges (Spearman correlation > 0.6) are added to the prior gene interaction network.\n'
+                  '    Total number of edges: {}.'.format((len(edgelist) - ori_edgeNum), len(edgelist)))
 
         adata_l.uns['edgelist'] = edgelist
 
-        ## [6] Differential expression scores
+        ## [6] Add differential expression scores to the objects
         logFC = adata.var.get(l + '_logFC')
         if (genes_DE is None) and (logFC is None):
             pass
         else:
-            if genes_DE is not None:
-                if isinstance(genes_DE, str):
-                    genes_DE = pd.read_csv(genes_DE, index_col=0, header=0)
-            else:  # logFC is not None
+            if logFC is not None:
                 genes_DE = logFC
+            else:  # genes_DE is a dataframe
+                genes_DE = genes_DE.loc[:, li]
 
             genes_DE = pd.DataFrame(genes_DE).iloc[:, 0]
             genes_DE.index = genes_DE.index.str.upper()

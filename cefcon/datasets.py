@@ -13,6 +13,13 @@ from tqdm.auto import tqdm
 
 
 def _download_from_url(file_url: str, save_path: Path):
+    """
+    Downloads a file from a given URL to a specified save path.
+
+    Parameters:
+        file_url (str): The URL from which the file needs to be downloaded.
+        save_path (Path): The path where the downloaded file needs to be saved.
+    """
     try:
         response = requests.get(file_url, stream=True)
         response.raise_for_status()
@@ -45,6 +52,19 @@ def _download_from_url(file_url: str, save_path: Path):
 def load_human_prior_interaction_network(dataset: str = 'nichenet',
                                          only_directed: bool = False,
                                          force_download: bool = False):
+    """
+    Load and process a human prior gene interaction network dataset.
+
+    Parameters:
+        dataset (str): The name of the dataset to load. Default is 'nichenet'.
+            Available options: {'nichenet', 'pathwaycommons', 'inbiomap', 'harmonizome', 'omnipath_interactions'}.
+        only_directed (bool): Whether to only include directed edges in the network. Default is False.
+        force_download (bool): Whether to force the download of the dataset, even if it already exists locally. Default is False.
+
+    Returns:
+        (pd.DataFrame): A DataFrame containing the processed prior gene interaction network.
+            The DataFrame has two columns: 'from' and 'to', representing the source and target genes of the edges.
+    """
 
     # The URL for every dataset. These datasets are stored at zenodo (https://doi.org/10.5281/zenodo.7564872).
     urls = {
@@ -62,12 +82,13 @@ def load_human_prior_interaction_network(dataset: str = 'nichenet',
         'omnipath_interactions': 'Omnipath_interaction.csv',
     }
 
-    # Download if the file does not exist
+    # Download if the file does not exist locally or 'force_download' is True
     data_path = Path('./data_cache') / filenames[dataset]
     if force_download or not data_path.exists():
         data_path.parent.mkdir(parents=True, exist_ok=True)
         _download_from_url(urls[dataset], data_path)
 
+    # Process the dataset based on its name
     if dataset == 'nichenet':  # 5,583,023
         prior_net = pd.read_csv(data_path, index_col=None, header=0)
 
@@ -126,16 +147,29 @@ def load_human_prior_interaction_network(dataset: str = 'nichenet',
         prior_net = prior_net[prior_net['is_directed'] == 1]
 
     prior_net = prior_net[['from', 'to']].drop_duplicates().astype(str)
+
     print(f"Load the prior gene interaction network: {dataset}. "
-          f"#Genes: {len(np.unique(prior_net.iloc[:, [0, 1]]))}, #Edges: {len(prior_net)}")
+          f"#Genes: {len(np.unique(prior_net.iloc[:, [0, 1]]))}, "
+          f"#Edges: {len(prior_net)}")
 
     return prior_net
 
 
-def convert_human_to_mouse_network(net: pd.DataFrame):
+def convert_human_to_mouse_network(net: pd.DataFrame, save: bool = False):
+    """
+    Converts the gene symbols of a human prior gene interaction network to mouse gene symbols.
+
+    Parameters:
+        net (pd.DataFrame): A DataFrame representing the human prior gene interaction network.
+                            It should have two columns named 'from' and 'to', representing the interacting genes.
+        save (bool): A flag indicating whether to save the converted network. Default is False.
+
+    Returns:
+        (pd.DataFrame): A DataFrame representing the converted mouse prior gene interaction network.
+    """
     import biomart
 
-    print('Convert genes of the prior interaction network to mouse gene symbols:')
+    print('Convert genes of the prior gene interaction network to mouse gene symbols.')
     print('Linking the Ensembl server...')
     with tqdm(total=10, desc='Processing', miniters=1) as outer_bar:
         outer_bar.update()
@@ -148,7 +182,7 @@ def convert_human_to_mouse_network(net: pd.DataFrame):
                 print(f'Server \'http://{name}.ensembl.org/biomart/\' is OK')
                 break
             except Exception as e:
-                print(f'404 Client Error: Not Found for url: http://{name}.ensembl.org/biomart//martservice')
+                print(f'[Error] Server not available: http://{name}.ensembl.org/biomart//martservice')
 
         human_dataset = server.datasets['hsapiens_gene_ensembl']
         outer_bar.update()
@@ -231,6 +265,11 @@ def convert_human_to_mouse_network(net: pd.DataFrame):
           f"#Genes: {len(np.unique(prior_net_converted.iloc[:, [0, 1]]))}, "
           f"#Edges: {len(prior_net_converted)}")
 
+    if save:
+        file_name = Path('./data_cache') / 'prior_net_for_mouse.csv'
+        prior_net_converted.to_csv(file_name)
+        print(f'Ths converted network has been save to `{file_name}`.')
+
     return prior_net_converted
 
 
@@ -244,7 +283,8 @@ def mouse_hsc_nestorowa16(fpath: Optional[str] = './data_cache/mouse_hsc_nestoro
         url = 'https://zenodo.org/record/8013900/files/mouse_hsc_nestorowa16_v1.h5ad'
         print('Load mouse_hsc_nestorowa16_v1.h5ad')
     else:
-        print('Wrong data!')
+        raise ValueError("Value error. version should be 'v0' or 'v1'.")
+
     adata = sc.read(fpath, backup_url=url, sparse=True, cache=True)
     adata.var_names_make_unique()
     return adata
