@@ -23,7 +23,7 @@ setup(
     entry_points={
         "console_scripts": ['cefcon = cefcon.CEFCON:main']
     },
-    python_requires=">=3.9,<3.12",  # >=3.10 is recommended
+    python_requires=">=3.9,<3.13",  # >=3.10 is recommended
     install_requires=[
         'numpy',
         'scipy',
